@@ -1,17 +1,43 @@
-# Welcome to MkDocs
+# My Notes for nearly Everything
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+- Learn
+- Linux
+- Programming
+- ReadingNotes
+- Network
+- Papers
+- ConfigExamples
+- Git
+- Misc
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+<details> <summary>Learn</summary>
 
-## Project layout
+- LearnGPU2CPU-by-GPT
+- LearnMLIR  
+- LearnMocCUDA  
+- LearnPolygeist  
+- LearnPolyhedralModel
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+</details>
+
+<details> <summary>Linux</summary>
+
+- LinuxFamily
+- Display
+- UserManagement
+- InputMethod: Fcitx
+- Nautlius: Debian File Explorer
+
+</details>
+
+<details> <summary>Programming</summary>
+
+- CRTP: Compile-Time-Reflection-Programming
+</details>
+
+<details> <summary>ConfigExamples</summary>
+
+- `.clang-format`
+- `.gitignore`
+</details>
