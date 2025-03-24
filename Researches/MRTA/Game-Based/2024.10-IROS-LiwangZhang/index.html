@@ -1,0 +1,2496 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://houhuawei23.github.io/knowledge_base/Researches/MRTA/Game-Based/2024.10-IROS-LiwangZhang/">
+      
+      
+        <link rel="prev" href="../2024.05-ICRA-LiwangZhang/">
+      
+      
+        <link rel="next" href="../2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>2024.10-IROS-LiwangZhang - HHW KnowledgeBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#202410-iros-coalition-formation-game-approach-for-task-allocation-in-heterogeneous-multi-robot-systems-under-resource-constraints" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="HHW KnowledgeBase" class="md-header__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HHW KnowledgeBase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2024.10-IROS-LiwangZhang
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="HHW KnowledgeBase" class="md-nav__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HHW KnowledgeBase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Notes for nearly Everything
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BookMarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Links Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ConfigExamples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ProgrammingLangs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ProgrammingLangs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Python/PythonLibs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Libs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Rust/Rust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Readings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Readings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1835-%E9%9D%92%E5%B9%B4%E5%9C%A8%E9%80%89%E6%8B%A9%E8%81%8C%E4%B8%9A%E6%97%B6%E7%9A%84%E8%80%83%E8%99%91-%E9%A9%AC%E5%85%8B%E6%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    青年在选择职业时的考虑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1938-%E8%AE%BA%E9%9D%92%E5%B9%B4%E7%9A%84%E4%BF%AE%E5%85%BB-%E5%BC%A0%E9%97%BB%E5%A4%A9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年的修养-张闻天（1938年4月28日）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1946-%E8%AE%BA%E9%9D%92%E5%B9%B4%E4%BF%AE%E5%85%BB-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年修养-张申府-1946
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1948-%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AD%A6%E9%A3%8E-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1948 研究与学风-张申府
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/2017.04-%E8%94%A1%E5%85%83%E5%9F%B9%E4%BB%BB%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E9%95%BF%E4%B9%8B%E5%B0%B1%E8%81%8C%E6%BC%94%E8%AF%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017-04 蔡元培任北京大学校长之就职演说
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Researches
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Researches
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note for Scientific Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Robot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MRTA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            MRTA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MRTA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UAV Swarm Task Assignment Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game Based
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Game Based
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2024.05-ICRA-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.05-ICRA-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2024.10-IROS-LiwangZhang
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2024.10-IROS-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-model-and-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Model And Problem Formulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Model And Problem Formulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-system-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. System Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. System Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义与符号
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-cost-model-of-uavs" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Cost Model of UAVs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Cost Model of UAVs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flight-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flight Cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperation-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cooperation Cost
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Problem Formulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-based-coalition-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game-based Coalition Formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game-based Coalition Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-coalition-formation-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Coalition Formation Game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-analysis-of-nash-stable-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Analysis of Nash Stable Partition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-implementation-and-related-analsis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm Implementation and Related Analsis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm Implementation and Related Analsis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-coalition-formation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Coalition Formation Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-analysis-of-algorithm-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Analysis of Algorithm Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-results-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation Results and Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Results and Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mission-scenario-and-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Mission Scenario and Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-analysis-of-results-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Analysis of Results B. 结果分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions-and-future-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusions and Future Works
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Survey
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Survey
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Survey/2004.09-IJRS-MRTA-Taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2004.09-IJRS-MRTA-Taxonomy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Survey/2021.09-CSMS-Review-Dynamic-SwarmUAV-TA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021.09-CSMS-Review-Dynamic-SwarmUAV-TA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Survey/2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Survey/2023.11-JIRS-Review-TA-Methods-for-UAVs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023.11-JIRS-Review-TA-Methods-for-UAVs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SystemOM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            SystemOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SystemOM/PowerShell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SystemOM/SystemOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System OM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Techs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Techs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/GitBook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitBook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Lalrpop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lalrpop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/NodeJs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/PersonalWebsite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PersonalWebsite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VScode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-model-and-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Model And Problem Formulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Model And Problem Formulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-system-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. System Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. System Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义与符号
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-cost-model-of-uavs" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Cost Model of UAVs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Cost Model of UAVs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flight-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flight Cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperation-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cooperation Cost
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Problem Formulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-based-coalition-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game-based Coalition Formation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game-based Coalition Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-coalition-formation-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Coalition Formation Game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-analysis-of-nash-stable-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Analysis of Nash Stable Partition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-implementation-and-related-analsis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm Implementation and Related Analsis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm Implementation and Related Analsis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-coalition-formation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Coalition Formation Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-analysis-of-algorithm-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Analysis of Algorithm Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-results-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation Results and Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Results and Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mission-scenario-and-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Mission Scenario and Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-analysis-of-results-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Analysis of Results B. 结果分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions-and-future-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusions and Future Works
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="202410-iros-coalition-formation-game-approach-for-task-allocation-in-heterogeneous-multi-robot-systems-under-resource-constraints">2024.10-IROS: Coalition Formation Game Approach for Task Allocation in Heterogeneous Multi-Robot Systems under Resource Constraints</h1>
+<p>资源约束下异构多机器人系统任务分配的联盟形成博弈方法</p>
+<ul>
+<li>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</li>
+<li>Liwang Zhang; Dong Liang; Minglong Li; Wenjing Yang; Shaowu Yang</li>
+<li><a href="https://ieeexplore.ieee.org/document/10801429">ieeexplore</a></li>
+<li><a href="https://doi.org/10.1109/IROS58592.2024.10801429">doi</a></li>
+</ul>
+<hr />
+<p>TLDR</p>
+<ul>
+<li>资源约束：即每个无人机资源有限，一般采用资源向量描述</li>
+<li>异构：不同类型无人机资源向量不同</li>
+<li>联盟形成博弈 <span class="arithmatex">\(\mathcal{G}(\mathcal{R},\succ)\)</span>：<ul>
+<li>由无人机效用函数决定无人机对联盟的偏好关系</li>
+<li>可证明其为精确势博弈，一定存在纳什均衡</li>
+<li>提出的任务分配算法在每一步都优化机器人的效用函数（即同时在优化势函数），即算法可以达到纳什均衡？</li>
+</ul>
+</li>
+<li>无人机对任务的成本模型<span class="arithmatex">\({\mu _i}\left( {{S_{{t_j}}}} \right)\)</span>：飞行成本+执行成本+协作成本</li>
+</ul>
+<hr />
+<h2 id="abstract">Abstract:</h2>
+<p>This paper studies a case of the multi-robot task allocation (MRTA) problem, where each unmanned aerial vehicle (UAV) is endowed with multiple but limited resources. Completing each task necessitates UAVs to combine different resources through coalition formation, which will incur various costs including flight cost, execution cost, and cooperation cost. To minimize the total cost while maximizing both task completion rate and resource utilization rate, we model the MRTA problem of the UAVs as a <strong>leader-follower coalition formation game</strong>. In this game, leader UAVs coordinate follower UAVs to fulfill task resource requisites. Meanwhile, follower UAVs select suitable coalitions to join based on the <strong>altruistic preference</strong>. Theoretical analysis confirms the existence of a Nash stable partition in the coalition formation game. To achieve this stable partition, we propose a coalition formation algorithm. Simulation experiments validate that the proposed algorithm outperforms existing methods for the MRTA problem under resource constraints in terms of both task completion rate and resource utilization rate.</p>
+<p>本文研究了多机器人任务分配 （MRTA） 问题的一个案例，其中每个无人机 （UAV） 都被赋予了<strong>多个但有限的资源</strong>。完成每项任务都需要无人机通过联盟组建来组合不同的资源，这将产生包括飞行成本、执行成本和合作成本在内的各种成本。为了最大限度地降低总成本，同时最大限度地提高任务完成率和资源利用率，我们将无人机的 MRTA 问题建模为 <strong>“领导者-追随者”联盟形成博弈</strong>。在这个博弈中，领导者无人机协调跟随无人机来完成任务资源要求。同时，追随者无人机根据<strong>利他主义偏好</strong>选择合适的联盟加入。理论分析证实了联盟形成博弈中存在纳什稳定分区。为了实现这种稳定的分区，我们提出了一种联盟形成算法。仿真实验验证了所提算法在资源约束下对 MRTA 问题的要求，在任务完成率和资源利用率方面均优于现有方法。</p>
+<ul>
+<li>多机器人任务分配 MRTA 问题</li>
+<li>“领导者-追随者”联盟形成博弈<ul>
+<li>领导者无人机协调跟随无人机来完成任务资源要求</li>
+<li>追随者无人机根据<strong>利他主义偏好</strong>选择合适的联盟加入</li>
+</ul>
+</li>
+<li>理论分析证实了联盟形成博弈中存在纳什稳定分区</li>
+<li>提出了一种实现此稳定分区的联盟形成算法</li>
+<li>仿真实验验证 均优于现有方法</li>
+</ul>
+<hr />
+<ul>
+<li><a href="#202410-iros-coalition-formation-game-approach-for-task-allocation-in-heterogeneous-multi-robot-systems-under-resource-constraints">2024.10-IROS: Coalition Formation Game Approach for Task Allocation in Heterogeneous Multi-Robot Systems under Resource Constraints</a></li>
+<li><a href="#abstract">Abstract:</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#related-work">Related Work</a></li>
+<li><a href="#system-model-and-problem-formulation">System Model And Problem Formulation</a><ul>
+<li><a href="#a-system-model">A. System Model</a></li>
+<li><a href="#定义与符号"><strong>定义与符号</strong></a></li>
+<li><a href="#b-cost-model-of-uavs">B. Cost Model of UAVs</a></li>
+<li><a href="#flight-cost">Flight Cost</a></li>
+<li><a href="#execution-cost">Execution Cost</a></li>
+<li><a href="#cooperation-cost">Cooperation Cost</a></li>
+<li><a href="#c-problem-formulation">C. Problem Formulation</a></li>
+</ul>
+</li>
+<li><a href="#game-based-coalition-formation">Game-based Coalition Formation</a><ul>
+<li><a href="#a-coalition-formation-game">A. Coalition Formation Game</a></li>
+<li><a href="#b-analysis-of-nash-stable-partition">B. Analysis of Nash Stable Partition</a></li>
+</ul>
+</li>
+<li><a href="#algorithm-implementation-and-related-analsis">Algorithm Implementation and Related Analsis</a><ul>
+<li><a href="#a-coalition-formation-algorithm">A. Coalition Formation Algorithm</a></li>
+<li><a href="#b-analysis-of-algorithm-complexity">B. Analysis of Algorithm Complexity</a></li>
+</ul>
+</li>
+<li><a href="#simulation-results-and-analysis">Simulation Results and Analysis</a><ul>
+<li><a href="#a-mission-scenario-and-settings">A. Mission Scenario and Settings</a></li>
+<li><a href="#b-analysis-of-results-b-结果分析">B. Analysis of Results B. 结果分析</a></li>
+</ul>
+</li>
+<li><a href="#conclusions-and-future-works">Conclusions and Future Works</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>单任务机器人和多机器人任务瞬时分配 ST-MR-IA</p>
+<p>In this paper, we present a game-theoretic task allocation framework aimed at improving task completion rate and resource utilization rate in situations where tasks require a variety of resources, while robotic resources are finite. Initially, we formulate the problem of resource-constrained, heterogeneous multi-robot task allocation as a leader-follower coalition formation game, establishing a utility function that motivates robots to opt for tasks. Subsequently, by leveraging the characteristics of exact potential games, we demonstrate the existence of a Nash stable partition. We then present a coalition formation algorithm for task allocation and examine the complexity of the algorithm. The key contributions of this paper are as follows:</p>
+<p>在本文中，我们提出了一个博弈论任务分配框架，旨在在任务需要多种资源而机器人资源有限的情况下提高任务完成率和资源利用率。最初，我们将资源受限、异构的多机器人任务分配问题表述为领导者-追随者联盟形成博弈，建立了一个激励机器人选择任务的效用函数。随后，通过利用精确势博弈的特征，我们证明了 Nash 稳定分区的存在。然后，我们提出了一种用于任务分配的联盟形成算法，并研究了该算法的复杂性。本文的主要贡献如下：</p>
+<ul>
+<li>We formulate the task allocation problem under resource constraints as a leader-follower coalition formation game, while proving that a Nash stable partition exists in the coalition formation game.<ul>
+<li>我们将资源约束下的任务分配问题表述为领导者-追随者联盟形成博弈，同时证明联盟形成博弈中存在纳什稳定分区。</li>
+</ul>
+</li>
+<li>We propose a coalition formation algorithm to address the task allocation problem under resource constraints in MRS, aiming to maximize task completion rate and resource utilization rate. Meanwhile, we analyze the complexity of the algorithm.<ul>
+<li>我们提出了一种联盟形成算法来解决 MRS 中资源约束下的任务分配问题，旨在最大限度地提高任务完成率和资源利用率。同时，我们分析了算法的复杂性。</li>
+</ul>
+</li>
+<li>The simulation experiments demonstrate that our approach outperforms previous work regarding task completion rate and resource utilization rate.<ul>
+<li>仿真实验表明，我们的方法在任务完成率和资源利用率方面优于以前的工作。</li>
+</ul>
+</li>
+</ul>
+<h2 id="related-work">Related Work</h2>
+<p>In recent years, game theory has been increasingly applied in MRS. Researchers have found that obtaining optimal task allocation results becomes increasingly difficult as the number and diversity of robots and tasks in scenarios increase. In [9], the authors demonstrate that solving the task allocation problem is NP-hard. Therefore, researchers continuously seek practical solutions to obtain high-quality approximate solutions [10]–​[14]. Compared to other commonly used task allocation solutions, such as market auction methods and heuristic approaches, the game-theoretic approach based on coalition formation allows robots to negotiate task allocation results with other robots through local communication, effectively reducing communication overhead and demonstrating robustness.</p>
+<p>近年来，博弈论在 MRS 中的应用越来越多。研究人员发现，随着场景中机器人和任务的数量和多样性的增加，获得最优任务分配结果变得越来越困难。在 [9] 中，作者证明了解决任务分配问题是 NP 困难的。因此，研究人员不断寻求实用的解决方案以获得高质量的近似解 [10] – [14] 。相较于市场竞价法、启发式等其他常用的任务分配方案，基于联盟形成的博弈论方法允许机器人通过本地通信与其他机器人协商任务分配结果，有效降低通信开销，展现鲁棒性。</p>
+<p>The authors in [15] propose an algorithm based on the anonymous hedonic game to solve the task allocation problem for large-scale homogeneous robots, which demonstrates good scalability, adaptability, and robustness. Based on this work, the authors in [14] consider the scenario where each task has a minimum requirement for the number of robots needed to complete it and design a virtual utility function that allows each robot to choose a task that has not met the minimum requirement. According to [16], the authors propose a preference-driven method based on hedonic game to solve the task allocation problem for multi-robot systems in emergency rescue scenarios, and demonstrate that the algorithm can be effectively executed even when communication distances are insufficient. The study of [17] considers the energy consumption of UAVs during position scheduling and task execution and propose a task allocation algorithm based on coalition formation game, effectively reducing the flight loss of UAVs. The work in [18] proposes a reputation-based coalition formation mechanism. This mechanism enhances the efficiency of creating optimal coalitions by analyzing the cooperative behavior of robots, thereby excluding unreliable ones.</p>
+<ul>
+<li>作者 [<a href="./2018.12-TRO-Anonymous-Hedonic-Game-TA.md">15</a>] 提出了一种基于<strong>匿名享乐博弈</strong>的算法来解决大规模同质机器人的任务分配问题，表现出良好的可扩展性、适应性和鲁棒性。</li>
+<li>基于这项工作，作者考虑了 [14] 每个任务对完成该任务所需的机器人数量有最低要求的场景，并设计了一个虚拟效用函数，允许每个机器人选择不满足最低要求的任务。</li>
+<li>根据 [<a href="../2024.05-ICRA-LiwangZhang/">16</a>] ，作者提出了一种基于享乐博弈的偏好驱动方法，以解决紧急救援场景中多机器人系统的任务分配问题，并证明即使在通信距离不足的情况下，该算法也可以有效执行。</li>
+<li>该 [<a href="./2020.08-Energy-Efficient-Task-Cooperation-for-MUAV-Network_CFGame-Approach.md">17</a>] 研究考虑了无人机在位置调度和任务执行过程中的能量消耗，提出了一种基于联盟形成博弈的任务分配算法，有效降低了无人机的飞行损失。</li>
+<li>[18] 提出了一种基于声誉的联盟形成机制。这种机制通过分析机器人的协作行为来提高创建最佳联盟的效率，从而排除不可靠的机器人。</li>
+</ul>
+<p>Table I compares our work with existing works based on different criterias. Although previous game-theoretic approaches based on coalition formation have been applied by researchers in task allocation, they cannot effectively address the issue when each task requires multiple types of resources and the robots have insufficient resources. The main reason is that in those approaches, robots are considered self-interested individuals who only care about their own costs, but not whether the tasks are completed. Therefore, we need to design a utility function that motivates robots to choose appropriate tasks in order to improve task completion rate and resource utilization rate. This challenging problem has not been well addressed in the existing works.</p>
+<p>Table I 根据不同的标准将我们的工作与现有作品进行比较。尽管研究人员在任务分配中应用了以前基于联盟形成的博弈论方法，但当每个任务都需要多种类型的资源且机器人资源不足时，它们无法有效解决该问题。主要原因是，在这些方法中，<strong>机器人被认为是自私自利的个体，他们只关心自己的成本，而不关心任务是否完成</strong>。因此，我们需要设计一个<strong>效用函数</strong>，激励机器人选择合适的任务，以提高任务完成率和资源利用率。这个具有挑战性的问题在现有工作中没有得到很好的解决。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Works</th>
+<th style="text-align: center;">Heterogeneous</th>
+<th style="text-align: center;">Coalition</th>
+<th style="text-align: center;">Resource-Constrained</th>
+<th style="text-align: center;">Task Completion Rate</th>
+<th style="text-align: center;">Resource Utilization Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">[13]</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td style="text-align: center;">[14]</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td style="text-align: center;">[15]</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td style="text-align: center;">[16]</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td style="text-align: center;">[17]</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td style="text-align: center;">[18]</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ours</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-model-and-problem-formulation">System Model And Problem Formulation</h2>
+<h3 id="a-system-model">A. System Model</h3>
+<ul>
+<li>R: set of UAVs</li>
+<li>T: set of Tasks</li>
+<li>S: set of coalitions</li>
+</ul>
+<p>Consider a scenario where many UAVs are deployed to perform multiple tasks. Each task requires various resources, with specific quantities needed for each type, each UAV possesses different amounts of resources. Due to resource constraints faced by individual UAVs, UAVs must form coalitions to undertake tasks. We define the set of UAVs as <span class="arithmatex">\(\mathcal{R}=\{r_1,r_2,\ldots,r_I\}\)</span>, where <span class="arithmatex">\(r_i\)</span> represents the <span class="arithmatex">\(i\)</span>-th UAV in the collection, and <span class="arithmatex">\(I\)</span> is the total number of UAVs. The vector <span class="arithmatex">\(\mathcal{X} _{r_i}= [ x_{r_i}^1, x_{r_i}^2, \ldots , x_{r_i}^{N_z}]\)</span> represents the types and quantities of resources owned by UAV <span class="arithmatex">\(r_i\)</span>, where <span class="arithmatex">\(N_z\)</span> represents the number of types of resources. Similarly, we define the set of tasks as <span class="arithmatex">\(\mathcal{T}=\{t_1,t_2,\ldots,t_J\}\)</span>, where <span class="arithmatex">\(t_j\)</span> represents the <span class="arithmatex">\(j\)</span>-th task, and <span class="arithmatex">\(J\)</span> is the total number of tasks The vector <span class="arithmatex">\(\mathcal{X}_{t_j}=[x_{t_j}^{1},x_{t_j}^{2},\ldots,x_{t_j}^{N_z}]\)</span> represents the types and quantities of resources required by task <span class="arithmatex">\(t_j.\)</span> We define the set of coalitions as <span class="arithmatex">\(\mathcal{S}=\{S_{t_1},S_{t_2},...,S_{t_J}\}.\)</span> Each coalition executing a task is disjoint, meaning that <span class="arithmatex">\(S_{t_p}\cap S_{t_q}=\varnothing\)</span> for <span class="arithmatex">\(p\neq q.\)</span> This indicates that a UAV cannot simultaneously be part of two different task coalitions. Fig.2 shows a simple example of coalition formation game solving task allocation under resource constraints.</p>
+<p>考虑一个场景：多架无人机（UAV）被部署以执行多项任务。每项任务需要多种资源，且每种资源的需求量不同；每架无人机拥有不同数量的资源。由于单架无人机的资源有限，无人机必须组成联盟来完成任务。</p>
+<h4 id="_1"><strong>定义与符号</strong></h4>
+<ol>
+<li><strong>无人机集合</strong>：<span class="arithmatex">\(\mathcal{R}=\{r_1,r_2,\ldots,r_I\}\)</span>，其中 <span class="arithmatex">\(r_i\)</span> 表示第 <span class="arithmatex">\(i\)</span> 架无人机，<span class="arithmatex">\(I\)</span> 是无人机总数。</li>
+<li><strong>无人机资源向量</strong>：<span class="arithmatex">\(\mathcal{X}_{r_i}= [x_{r_i}^1, x_{r_i}^2, \ldots, x_{r_i}^{N_z}]\)</span>，表示无人机 <span class="arithmatex">\(r_i\)</span> 拥有的各类资源的数量，<span class="arithmatex">\(N_z\)</span> 表示资源类型的数量。</li>
+<li><strong>任务集合</strong>：<span class="arithmatex">\(\mathcal{T}=\{t_1,t_2,\ldots,t_J\}\)</span>，其中 <span class="arithmatex">\(t_j\)</span> 表示第 <span class="arithmatex">\(j\)</span> 项任务，<span class="arithmatex">\(J\)</span> 是任务总数。</li>
+<li><strong>任务资源需求向量</strong>：<span class="arithmatex">\(\mathcal{X}_{t_j}=[x_{t_j}^{1},x_{t_j}^{2},\ldots,x_{t_j}^{N_z}]\)</span>，表示任务 <span class="arithmatex">\(t_j\)</span> 所需的各类资源的数量。</li>
+<li><strong>联盟集合</strong>：<span class="arithmatex">\(\mathcal{S}=\{S_{t_1},S_{t_2},...,S_{t_J}\}\)</span>，其中每个联盟 <span class="arithmatex">\(S_{t_j}\)</span> 负责执行任务 <span class="arithmatex">\(t_j\)</span>。</li>
+<li><strong>联盟不相交性</strong>：<span class="arithmatex">\(S_{t_p}\cap S_{t_q}=\varnothing\)</span>（<span class="arithmatex">\(p\neq q\)</span>），即一架无人机不能同时属于两个不同的任务联盟。</li>
+</ol>
+<p>图 2 展示了一个简单的联盟形成博弈示例，用于解决资源约束下的任务分配问题。</p>
+<p align="center"> 
+<img src="https://hhw-knowledge-base-bucket.oss-cn-wuhan-lr.aliyuncs.com/Researches/MRTA/2024.10-IROS-LiwangZhang/Leader-Follower-coalition-formation-game.png" width=60%/>
+</p>
+
+<h3 id="b-cost-model-of-uavs">B. Cost Model of UAVs</h3>
+<h4 id="flight-cost">Flight Cost</h4>
+<div class="arithmatex">\[
+E_{i,j}^f = {g_i}\cdot e_i^f\cdot\frac{{{d_{i,j}}}}{{v_i^f}},\tag{1}
+\]</div>
+<h4 id="execution-cost">Execution Cost</h4>
+<p>无人机执行任务 t 的执行成本取决于执行任务所花费的时间和无人机之间的通信时间。我们假设一旦领导者无人机检测到任务，它就会继续前往任务的位置。执行任务 τtj 所花费的时间由任务本身的性质决定，而联盟中无人机之间的通信时间定义为通信量与通信速度的比率，其中通信速度确定如下：</p>
+<div class="arithmatex">\[
+\begin{align*} &amp; {R_{i,j}} = {B_j}{\log _2}(1 + SNR), \\ &amp; SNR = \frac{{{p_i}{G_{i,j}}}}{{{N_j}}},{G_{i,j}} = \frac{{{C_{i,j}}}}{{d_{i,j}^\delta }}, \tag{2}\end{align*}
+\]</div>
+<p>其中 B 是联盟 Stj 的通信带宽 ，SNR 表示信噪比，Gi，j 表示无线信道链路上的信道增益，pi 是传输功率，δ 是路径损耗指数，N 是噪声 [20] 的功率谱密度。</p>
+<p>对于联盟来说 Stj ，由于每架跟随无人机都会将其数据传输给领导者无人机，因此数据总量等于 (∣∣Stj∣∣−1)⋅λ ，其中 ∣∣Stj∣∣ 代表传入 Stj 的无人机数量，λ 代表用于通信的数据量。特别是，只有一架无人机的联盟不需要计算通信时间。在这种情况下，执行任务的总时间可以表示为：</p>
+<div class="arithmatex">\[
+{T_{i,j}} = \begin{cases} {{\tau _{{t_j}}} + \frac{{\left| {{S_{{t_j}}} - 1} \right|\lambda }}{{{R_{i,j}}}},}&amp;{\left| {{\mathcal{S}_{{t_j}}}} \right| &gt; 1,} \\ {{\tau _{{t_j}}},}&amp;{\left| {{\mathcal{S}_{{t_j}}}} \right| = 1.} \end{cases}\tag{3}
+\]</div>
+<p>则，执行成本表示为：</p>
+<div class="arithmatex">\[
+E_{i,j}^c = {T_{i,j}}\cdot e_i^h,\tag{4}
+\]</div>
+<p>其中 <span class="arithmatex">\(e^h_i\)</span> 是无人机悬停时每单位时间消耗的能量 <span class="arithmatex">\(r_i\)</span>。</p>
+<h4 id="cooperation-cost">Cooperation Cost</h4>
+<p>合作成本代表联盟中无人机之间的协作成本，与联盟中无人机的数量有关。在考虑联盟的合作成本时，无人机加入联盟的边际成本会随着联盟规模的增长而增加，因为随着联盟成员的增加，协调和沟通的复杂性也越来越高。因此，我们考虑将其定义为二次函数：</p>
+<div class="arithmatex">\[
+{\Xi _{{S_{{t_j}}}}} = {\left| {{S_{{t_j}}}} \right|^2},\tag{5}
+\]</div>
+<p>即 Stj 执行任务 T 的联盟的合作成本。</p>
+<p>总之，无人机 ri 在联盟内执行任务 t 的总成本函数 Stj 由下式给出</p>
+<div class="arithmatex">\[
+{\mu _i}\left( {{S_{{t_j}}}} \right) = {\alpha _1}\cdot\tilde E_{i,j}^f + {\alpha _2}\cdot\tilde E_{i,j}^c + {\alpha _3}\cdot{\tilde \Xi _{{S_{{t_j}}}}},\tag{6}
+\]</div>
+<p>其中 α1、α2 α3 表示为相应成本附加的权重。由于影响总成本函数的因素具有不同的维度，我们使用最小-最大归一化将飞行成本、执行成本和合作成本映射到区间 [0,1]：</p>
+<div class="arithmatex">\[
+\begin{align*} &amp; \tilde E_{i,j}^f = \frac{{E_{i,j}^f - E_{\min }^f}}{{E_{\max }^f - E_{\min }^f}}, \\ &amp; \tilde E_{i,j}^c = \frac{{E_{i,j}^c - E_{\min }^c}}{{E_{\max }^c - E_{\min }^c}}, \\ &amp; {{\tilde \Xi }_{{S_{{t_j}}}}} = \frac{{{\Xi _{{S_{{t_j}}}}} - {\Xi _{\min }}}}{{{\Xi _{\max }} - {\Xi _{\min }}}}. \tag{7}\end{align*}
+\]</div>
+<h3 id="c-problem-formulation">C. Problem Formulation</h3>
+<p>在本文中，我们的目标是确定一个联盟分区，以确保尽可能高的<strong>任务完成率</strong>，同时最大限度地提高资源利用率。首先，我们将任务完成率定义为：</p>
+<div class="arithmatex">\[
+\begin{gather*} {D_{{t_j}}} = \frac{1}{{{N_z}}}\sum\limits_{{x^l} \in {\mathcal{X}_{{t_j}}}} \theta \left( {x_{{t_j}}^l} \right), \\ \theta \left( {x_{{t_j}}^l} \right) = \begin{cases} {1,}&amp;{{\text{ if }}x_{{t_j}}^l \leq \sum\nolimits_{{r_i} \in {\mathcal{S}_{{t_j}}}} {x_{{r_i}}^l,} } \\ {0,}&amp;{{\text{ if }}x_{{t_j}}^l &gt; \sum\nolimits_{{r_i} \in {\mathcal{S}_{{t_j}}}} {x_{{r_i}}^l.} } \end{cases}\tag{8}\end{gather*}
+\]</div>
+<p>接下来，我们定义<strong>资源利用率</strong>，它由实际使用的资源与投入的资源的比率表示。联盟的资源利用率 Stj 可以表示如下：</p>
+<div class="arithmatex">\[
+{W_{{t_j}}} = \frac{1}{{{N_z}}}\sum\limits_{k = 1}^{{N_z}} {\frac{{\sum\nolimits_{{r_i} \in {\mathcal{S}_{{t_j}}}} {\omega _{{r_i}}^k} }}{{\sum\nolimits_{{r_i} \in {\mathcal{S}_{{t_j}}}} {x _{{r_i}}^k} }}} ,\tag{9}
+\]</div>
+<p>其中 ωkri ，表示无人机 ri 在执行任务 t 时实际使用的资源 k 的数量。</p>
+<p>因此，UAV ri 在联盟 Stj 中的效用函数可以表示为：</p>
+<div class="arithmatex">\[
+{u_i}\left( {{S_{{t_j}}}} \right) = \frac{{{D_{{t_j}}} + {W_{{t_j}}}}}{{{\mu _i}\left( {{S_{{t_j}}}} \right)}}.\tag{10}
+\]</div>
+<p>Our optimization problem can be formulated as:</p>
+<div class="arithmatex">\[
+\begin{align*} &amp; \mathop {\max }\limits_{_{\left\{ {{x_{ij}}} \right\}}} \sum\limits_{\forall {r_i} \in \mathcal{R}} {\sum\limits_{\forall {t_j} \in \mathcal{T}} {{u_i}} } \left( {{S_{{t_j}}}} \right){x_{ij}}
+\end{align*}
+\]</div>
+<p>subject to</p>
+<div class="arithmatex">\[
+\begin{align*}
+&amp; {S_{{t_j}}} \cap {S_{t_j^\prime }} = \emptyset ,\quad \forall {t_j},t_j^\prime \in \mathcal{T}, \\
+&amp; \left| {{S_{{t_j}}}} \right| \geq 1,\quad \forall {t_j} \in \mathcal{T}, \\
+&amp; \sum\limits_{\forall {t_j} \in \mathcal{T}} {{x_{ij}}} \leq 1,\quad \forall {r_i} \in \mathcal{R}, \\
+&amp; {x_{ij}} \in \{ 0,1\} ,\quad \forall \left( {{r_i},{t_j}} \right) \in \mathcal{R} \times \mathcal{T}, \tag{11}\end{align*}
+\]</div>
+<p>where xij is a binary decision variable with a value of 1 if task tj is assigned to UAV ri; Otherwise, xij = 0.</p>
+<h2 id="game-based-coalition-formation">Game-based Coalition Formation</h2>
+<h3 id="a-coalition-formation-game">A. Coalition Formation Game</h3>
+<p>为了解决上一节讨论的优化问题，本节将问题建模为联盟形成博弈。联盟形成博弈是一种合作博弈，其中玩家相互结成联盟以最大化其集体利益 [<a href="/Learn/LearnGameTheory/Coalition-Formation-Game/2022-phd-Axiomatic-and-Computational-Analysis-of-Altruism-Fairness-and-Stability-in-CFGames.md">21</a>] 。联盟形成博弈的定义如下：</p>
+<p>[Definition 1] (Coalition Formation Game). A coalition formation game is defined as a tuple <span class="arithmatex">\(\mathcal{G}(\mathcal{R},\succ)\)</span>, where <span class="arithmatex">\(\mathcal{R}\)</span> is the set of players, and <span class="arithmatex">\(\succ:=(\succ _1,\succ _2,...,\succ _I)\)</span> is a profile of preferences that defines the order of players' preferences over coalitions.</p>
+<p>[<strong>定义 1</strong>]（联盟形成博弈）：联盟形成博弈定义为一个元组 <span class="arithmatex">\(\mathcal{G}(\mathcal{R},\succ)\)</span>，其中：</p>
+<ul>
+<li><span class="arithmatex">\(\mathcal{R}\)</span> 是玩家集合；</li>
+<li>
+<p><span class="arithmatex">\(\succ:=(\succ_1,\succ_2,...,\succ_I)\)</span> 是玩家对联盟的偏好序列表，表示每个玩家对可能联盟的偏好顺序。</p>
+</li>
+<li>
+<p><strong>核心概念</strong>：联盟形成博弈关注玩家如何根据自身偏好选择联盟。</p>
+</li>
+<li><strong>偏好关系</strong>：每个玩家 <span class="arithmatex">\(i\)</span> 的偏好关系 <span class="arithmatex">\(\succ_i\)</span> 决定了其对不同联盟的排序，从而影响联盟的形成。</li>
+</ul>
+<p>Next, we provide the definition of a <strong>Nash stable partition</strong> in the coalition formation game:</p>
+<p>接下来，我们给出联盟形成博弈中纳什稳定分割的定义：</p>
+<p>Definition 2 (Nash Stable Partition). The coalition partition set S is Nash stable if and only if no player is willing to unilaterally change strategies to improve their utility, i.e.,</p>
+<p>定义 2（纳什稳定划分）。联盟划分集 <span class="arithmatex">\(S\)</span> 是纳什稳定的，当且仅当没有任何玩家愿意单方面改变策略以提高其效用，即</p>
+<div class="arithmatex">\[
+{S_{{t^{\ast}}}}{ \succ _i}{S_{{t_j}}},\forall {t_j} \in \mathcal{T},\forall {r_i} \in \mathcal{R},\forall {S_{{t_j}}} \in \mathcal{S},\tag{12}
+\]</div>
+<p>where <span class="arithmatex">\(t^{\ast}\)</span> is the task selected by UAV <span class="arithmatex">\(r_i\)</span> after achieving a Nash stable partition.</p>
+<p>The preference relation plays a crucial role in coalition formation games. The commonly used preference relations are self-interested preference and Pareto preference. Under self-interested preference, UAVs only consider their utility without concern for the collective. Under Pareto preference, a UAV will only choose to change strategies when the utility of all UAVs in its current coalition and the coalition being joined increases. Such strict constraints can hinder the formation of coalition structures. Given that the objective of this paper is to maximize the global task completion rate and resource utilization rate in task allocation, an altruistic preference relation is adopted, which prioritizes the overall benefits over individual interests and is defined as follows:</p>
+<p>偏好关系在联盟形成博弈中起着至关重要的作用。常用的偏好关系是自利偏好和 Pareto 偏好。在自私自利的偏好下，无人机只考虑它们的效用，而不关心集体。在帕累托偏好下，无人机只有在其当前联盟和正在加入的联盟中所有无人机的效用增加时才会选择改变策略。这种严格的限制会阻碍联盟结构的形成。鉴于本文的目标是在任务分配中最大化全局任务完成率和资源利用率，采用利他偏好关系，将整体利益置于个人利益之上，定义如下：</p>
+<p><strong>利他主义偏好关系</strong></p>
+<p>Definition 3 (<strong>Altruistic Preference Relation</strong>). For any two coalitions <span class="arithmatex">\(S_{t_p}\)</span> and <span class="arithmatex">\(S_{t_q}\)</span>, containing <span class="arithmatex">\(r_n\)</span>, the preference relation of the UAV <span class="arithmatex">\(r_n\)</span> can be expressed as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_{t_p} &amp; \succ_nS_{t_q} \\
+&amp; \Leftrightarrow \\
+\sum_{r_i\in S_{t_p}}u_i\left(S_{t_p}\right)+\sum_{r_j\in S_{t_q}\setminus\{r_n\}}u_j\left(S_{t_q}\setminus\{r_n\}\right)
+&amp; &gt;
+\sum_{r_i\in S_{t_p}\setminus\{r_n\}}u_i\left(S_{t_p}\setminus\{r_n\}\right)+\sum_{r_j\in S_{t_q}}u_j\left(S_{t_q}\right).
+\end{aligned}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(r_n\)</span> 在 <span class="arithmatex">\(S_{t_p}\)</span> 联盟中时的总效用 = <span class="arithmatex">\(S_{t_p}\)</span> 的效用 + <span class="arithmatex">\(S_{t_q}\)</span> 去除 <span class="arithmatex">\(r_n\)</span> 后的效用</li>
+<li><span class="arithmatex">\(r_n\)</span> 在 <span class="arithmatex">\(S_{t_p}\)</span> 联盟中时的总效用 &gt; <span class="arithmatex">\(r_n\)</span> 在 <span class="arithmatex">\(S_{t_q}\)</span> 联盟中时的总效用</li>
+<li>则 <span class="arithmatex">\(r_n\)</span> 更偏好 <span class="arithmatex">\(S_{t_p}\)</span></li>
+</ul>
+<h3 id="b-analysis-of-nash-stable-partition">B. Analysis of Nash Stable Partition</h3>
+<p>在本小节中，我们将分析联盟形成博弈中 Nash 稳定分区的存在。基于利他偏好关系，我们通过引入<strong>精确势博弈</strong>的纳什均衡的存在来证明稳定联盟的存在。</p>
+<p>Definition 4. (<strong>Exact Potential Game</strong>).Given a game, if exist a <strong>potential function</strong>. such that:</p>
+<ul>
+<li><span class="arithmatex">\(\forall r_i\in\mathcal{R}, \forall S_{\Pi(i)}, S_{\Pi^{\prime}(i)}\in\mathcal{S}\)</span>,<ul>
+<li>where <span class="arithmatex">\(\Pi(i)\)</span> represents the task selected by UAV <span class="arithmatex">\(r_i\)</span> and,</li>
+</ul>
+</li>
+<li>satisfying the condition that follows, we can call this game an exact potential game.</li>
+</ul>
+<p>$$
+{U_i}\left( {{S_{\Pi (i)}},{S_{\Pi ( - i)}}} \right) - {U_i}\left( {{S_{{\Pi ^\prime }(i)}},{S_{{\Pi ^\prime }( - i)}}} \right) = \Phi \left( {{S_{\Pi (i)}},{S_{\Pi ( - i)}}} \right) - \Phi \left( {{S_{{\Pi ^\prime }(i)}},{S_{{\Pi ^\prime }( - i)}}} \right).</p>
+<p>\tag{14}
+$$</p>
+<p>Notably, every exact potential game has at least one pure strategy Nash equilibrium [22], which will play a crucial role in our subsequent proofs.</p>
+<p><strong>定义 4</strong>（<strong>精确势博弈</strong>）：给定一个博弈，如果存在一个<strong>势函数</strong>，使得：</p>
+<ul>
+<li>对于所有 <span class="arithmatex">\(r_i\in\mathcal{R}\)</span> 和所有 <span class="arithmatex">\(S_{\Pi(i)}, S_{\Pi^{\prime}(i)}\in\mathcal{S}\)</span>，<ul>
+<li>其中 <span class="arithmatex">\(\Pi(i)\)</span> 表示无人机 <span class="arithmatex">\(r_i\)</span> 选择的任务，</li>
+</ul>
+</li>
+<li>满足以下条件，则该博弈称为精确势博弈：</li>
+</ul>
+<div class="arithmatex">\[
+{U_i}\left( {{S_{\Pi (i)}},{S_{\Pi ( - i)}}} \right) - {U_i}\left( {{S_{{\Pi ^\prime }(i)}},{S_{{\Pi ^\prime }( - i)}}} \right) = \Phi \left( {{S_{\Pi (i)}},{S_{\Pi ( - i)}}} \right) - \Phi \left( {{S_{{\Pi ^\prime }(i)}},{S_{{\Pi ^\prime }( - i)}}} \right).
+\tag{14}
+\]</div>
+<ul>
+<li><strong>核心概念</strong>：精确势博弈通过势函数将玩家的效用变化与全局势能变化联系起来。</li>
+<li><strong>势函数的作用</strong>：势函数 <span class="arithmatex">\(\Phi\)</span> 反映了博弈的全局状态，玩家的策略选择直接影响势函数的值。</li>
+<li><strong>纳什均衡的存在性</strong>：精确势博弈的势函数性质保证了至少存在一个纯策略纳什均衡，这为博弈的稳定性和收敛性提供了理论支持。</li>
+<li>势函数简化了对博弈动态的分析。在精确势博弈中，玩家的效用变化可以通过势函数的变化来表示。这意味着我们可以通过研究势函数的性质，而不是单独分析每个玩家的效用函数，从而简化对博弈的分析。</li>
+</ul>
+<p>值得注意的是，每个<strong>精确势博弈</strong>都至少有一个<strong>纯策略纳什均衡</strong> [22] ，这将在我们后续的证明中发挥至关重要的作用。</p>
+<p><strong>Theorem 1</strong>. The coalition formation game based on the proposed altruistic preference relation can ensure the existence of Nash stable partitions.</p>
+<p><strong>定理 1</strong> .基于所提出的利他偏好关系的联盟形成博弈可以保证 Nash 稳定分区的存在。</p>
+<p>Proof: First, we define the potential function as the global utility function, i.e.,</p>
+<div class="arithmatex">\[
+\Phi = \sum\limits_{{r_k} \in \mathcal{R}} {{u_k}} \left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right),\tag{15}
+\]</div>
+<p>where <span class="arithmatex">\(S_{t_{k}}\)</span> represents the task coalition chosen by <span class="arithmatex">\(r_{k}\)</span> and <span class="arithmatex">\(S_{-{t_k}}\)</span> represents the strategies of
+all UAVs except <span class="arithmatex">\(r_k.\)</span> Once the UAV <span class="arithmatex">\(r_k\)</span> leaves its current coalition <span class="arithmatex">\(S_{t_k}\)</span> to join another
+coalition <span class="arithmatex">\(S_{t_k}^\prime\)</span>,the change in the potential function can be expressed as:</p>
+<div class="arithmatex">\[
+\begin{align*} &amp; \Phi \left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - \Phi \left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right) \\
+&amp; = {u_k}\left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - {u_k}\left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right) \\
+&amp; + \sum\limits_{{r_i} \in {\mathcal{S}_{{t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]} \\
+&amp; + \sum\limits_{{r_i} \in \mathcal{S}_{t_{k} }^\prime } {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]} \\
+&amp; + \sum\limits_{{r_i} \in {\mathcal{S}_{ - {t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]} \\
+&amp; + \sum\limits_{{r_i} \in {\mathcal{D}_k},i \ne k} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]} , \tag{16}\end{align*}
+\]</div>
+<p>where <span class="arithmatex">\(\mathcal{D}_k=\mathcal{R}\setminus\{S_{t_k}\cup S_{t_k}^{\prime}\}\)</span>.</p>
+<p>当 <span class="arithmatex">\(r_k\)</span> 从 <span class="arithmatex">\(S_{t_k}\)</span> 转移到 <span class="arithmatex">\(S_{t_k}^\prime\)</span> 时，势函数的变化可以分解为以下几个部分：</p>
+<ol>
+<li><span class="arithmatex">\(r_k\)</span> 自身的效用变化：<span class="arithmatex">\({u_k}\left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - {u_k}\left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right)\)</span>。</li>
+<li><span class="arithmatex">\(r_k\)</span> 原来所在联盟 <span class="arithmatex">\(S_{t_k}\)</span> 中其他无人机的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in {\mathcal{S}_{{t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+<li><span class="arithmatex">\(r_k\)</span> 新加入的联盟 <span class="arithmatex">\(S_{t_k}^\prime\)</span> 中其他无人机的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in \mathcal{S}_{t_{k} }^\prime } {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+<li>其他联盟 <span class="arithmatex">\(S_{-{t_k}}\)</span> 中无人机的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in {\mathcal{S}_{ - {t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+<li>不属于 <span class="arithmatex">\(S_{t_k}\)</span> 或 <span class="arithmatex">\(S_{t_k}^\prime\)</span> 的无人机 <span class="arithmatex">\(\mathcal{D}_k =\mathcal{R}\setminus\{S_{t_k}\cup S_{t_k}^{\prime}\}\)</span> 的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in {\mathcal{D}_k},i \ne k} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+</ol>
+<p>The change in utility due to the strategy change of UAV <span class="arithmatex">\(r_n\)</span> is represented as follows:</p>
+<div class="arithmatex">\[
+\begin{align*} &amp; {U_k}\left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - {U_k}\left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right) \\ &amp; = {u_k}\left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - {u_k}\left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right) \\ &amp; + \sum\limits_{{r_i} \in {\mathcal{S}_{{t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]} \\ &amp; + \sum\limits_{{r_i} \in \mathcal{S}_{{t_k}}^\prime } {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]} \\ &amp; + \sum\limits_{{r_i} \in {\mathcal{S}_{ - {t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}. \tag{17}\end{align*}
+\]</div>
+<p>人机 <span class="arithmatex">\(r_k\)</span> 的效用变化可以分解为以下几个部分：</p>
+<ol>
+<li><span class="arithmatex">\(r_k\)</span> 自身的效用变化：<span class="arithmatex">\({u_k}\left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - {u_k}\left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right)\)</span>。</li>
+<li><span class="arithmatex">\(r_k\)</span> 原来所在联盟 <span class="arithmatex">\(S_{t_k}\)</span> 中其他无人机的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in {\mathcal{S}_{{t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+<li><span class="arithmatex">\(r_k\)</span> 新加入的联盟 <span class="arithmatex">\(S_{t_k}^\prime\)</span> 中其他无人机的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in \mathcal{S}_{{t_k}}^\prime } {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+<li>其他联盟 <span class="arithmatex">\(S_{-{t_k}}\)</span> 中无人机的效用变化：<span class="arithmatex">\(\sum\limits_{{r_i} \in {\mathcal{S}_{ - {t_k}}}} {\left[ {{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right)} \right]}\)</span>。</li>
+</ol>
+<p>According to Equation (10), each UAV’s utility function is independent of the coalitions performing other tasks. Therefore, we have</p>
+<div class="arithmatex">\[
+{u_i}\left( {{S_{{t_i}}},S_{ - {t_i}}^\prime } \right) - {u_i}\left( {{S_{{t_i}}},{S_{ - {t_i}}}} \right) = 0,\quad \forall {r_i} \in {\mathcal{D}_k},i \ne k.\tag{18}
+\]</div>
+<p>Through combining Equations(16)-​(18), we can know that</p>
+<div class="arithmatex">\[
+\Phi \left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - \Phi \left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right) = {U_k}\left( {S_{{t_k}}^\prime ,{S_{ - {t_k}}}} \right) - {U_k}\left( {{S_{{t_k}}},{S_{ - {t_k}}}} \right). \tag{19}
+\]</div>
+<p>The difference in the potential function can represent the change in the utility function of the UAV. According to Definition 4, it is known that the coalition formation game proposed based on our altruistic preference relation can guarantee the existence of a Nash stable partition. Hence, Theorem 1 is proved.</p>
+<p>势函数的差异可以表示无人机效用函数的变化。根据定义 4，众所周知，基于我们的<strong>利他偏好关系提出的联盟形成博弈</strong>可以保证 Nash 稳定分区的存在。因此，定理 1 被证明。</p>
+<blockquote>
+<p>定义势博弈的势函数为“全局效用函数的总和“，并证明个体效用变化 <span class="arithmatex">\(\Delta U_k\)</span> = 势函数变化 <span class="arithmatex">\(\Delta \Phi\)</span>，满足<strong>精确势博弈</strong>的定义 \
+而 [22] 证明，每个精确势博弈都一定存在一个纯策略纳什均衡。\
+则上述定义的”利他偏好关系提出的联盟形成博弈“一定存在一个纯策略纳什均衡/纳什稳定分区一定存在。</p>
+</blockquote>
+<h2 id="algorithm-implementation-and-related-analsis">Algorithm Implementation and Related Analsis</h2>
+<p align="center"> 
+<img src="https://hhw-knowledge-base-bucket.oss-cn-wuhan-lr.aliyuncs.com/Researches/MRTA/2024.10-IROS-LiwangZhang/Alg1-CoalitionFormationAlgorithm.png" width=60%/>
+</p>
+
+<div class="language-cpp highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Partition</span><span class="w"> </span><span class="nf">Alg1</span><span class="p">(</span><span class="n">R</span><span class="w"> </span><span class="cm">/* UAV set*/</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="cm">/* Tasks set */</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="c1">// Each UAV that discovers a task becomes the leader</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="c1">// UAV, while the remaining UAVs are designated as</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="c1">// follower UAVs. Let follower UAVs randomly select</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="c1">// a task tj, for_all tj in T to form an initial partition;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Partition</span><span class="p">();</span><span class="w"> </span><span class="c1">// init partition</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">l_max</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">each</span><span class="w"> </span><span class="n">ri</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">tj</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">      </span><span class="c1">// According to Equation (10), each leader UAV</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">      </span><span class="c1">// calculate the four utility values u1, u2, u3, u4</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">      </span><span class="c1">// when UAV ri leaves its current coalition Stj</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">      </span><span class="c1">// and joins the new coalition S′tj;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">u3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="c1">// UAV ri leaves its current coalition Stj</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="c1">// and joins the new coalition S′tj;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">the</span><span class="w"> </span><span class="n">coalition</span><span class="w"> </span><span class="n">structure</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">changed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">      </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// S changed</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">      </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>在本节中，我们提出了一种联盟形成算法来实现 Nash 稳定分区，旨在提高任务完成率和资源利用率。此外，我们还讨论了算法的复杂性。</p>
+<h3 id="a-coalition-formation-algorithm">A. Coalition Formation Algorithm</h3>
+<p>在初始化阶段，标识任务的每个 UAV 都承担与该任务关联的联盟的<strong>领导者 UAV</strong> 的角色。同时，其余的无人机充当<strong>跟随者无人机</strong>。这些追随无人机随机加入现有联盟，建立联盟的初始配置。</p>
+<p>随后，在每次迭代期间，追随无人机使用 Equation (8) 计算各自的成本，并将此信息发送给独立联盟的<strong>领导者无人机</strong>。然后，领导者无人机通过考虑任务完成率和资源利用率来评估每个跟随无人机的效用值。每个追随者无人机根据定义 3 中概述的利他主义偏好关系选择更合适的联盟。这个迭代过程一直持续到联盟结构在足够多的 lmax 步骤中保持不变。此时它已经达到了 Nash 稳定分区。中 Algorithm 1 提供了详细算法的伪代码。</p>
+<h3 id="b-analysis-of-algorithm-complexity">B. Analysis of Algorithm Complexity</h3>
+<ul>
+<li>I: 无人机总数</li>
+<li>J: 任务总数</li>
+</ul>
+<p>在本小节中，我们将研究算法的复杂性，以更深入地了解所提出的联盟形成算法。如定理 1 所示，我们提出的联盟形成博弈算法迭代收敛以形成 Nash 稳定分区。</p>
+<ul>
+<li>我们将 <span class="arithmatex">\(l_{max}\)</span> 定义为算法执行的最大迭代次数。</li>
+<li>在每次迭代中，每个 follower UAV 都会遍历 <span class="arithmatex">\(J\)</span> 任务，计算其成本，然后将此信息发送给各自的领导者 UAV。执行此步骤的时间复杂度为 <span class="arithmatex">\(O(I•J)\)</span> 。</li>
+<li>然后，每个联盟中的领导者无人机会计算与联盟中 UAV 数量相关的效用值 ()。因此，的时间 Algorithm 1 复杂度为 <span class="arithmatex">\(O(l_{\text{max}}•I•J^2)\)</span>。</li>
+</ul>
+<blockquote>
+<p>难道不是 <span class="arithmatex">\(O(l_max • I • J • I)\)</span> ??</p>
+</blockquote>
+<h2 id="simulation-results-and-analysis">Simulation Results and Analysis</h2>
+<p>本节将设计一个模拟实验来验证算法的有效性。此外，它将通过与以前的工作进行比较来展示所提出的算法框架在资源限制下的性能。</p>
+<h3 id="a-mission-scenario-and-settings">A. Mission Scenario and Settings</h3>
+<p>A. 任务场景和设置</p>
+<p>In this subsection, we set the parameters for the UAVs and tasks. To ensure that critical information can be shared between UAVs, we assume that all communication between UAVs is connected. Each leader UAV can broadcast task information to all follower UAVs. Without loss of generality, the parameters characterizing the UAVs and the tasks are assigned randomly, while a comprehensive list of these parameters, along with their respective physical interpretations, is provided in Table II.</p>
+<p>在本小节中，我们将设置 UAV 和任务的参数。为了确保关键信息可以在 UAV 之间共享，我们假设 UAV 之间的所有通信都是互联的。每个 leader 无人机都可以向所有 follower UAV 广播任务信息。在不失去通用性的情况下，表征无人机和任务的参数是随机分配的，而这些参数的完整列表以及它们各自的物理解释在 Table II 中提供。</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Value</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UAV Position</td>
+<td>[0,1000]×[0,1000]</td>
+<td>m</td>
+</tr>
+<tr>
+<td>Task Position</td>
+<td>[0,1000]×[0,1000]</td>
+<td>m</td>
+</tr>
+<tr>
+<td>Types of Resources</td>
+<td>5</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Quantity of Resources</td>
+<td>[0,10]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>UAV Mass</td>
+<td>[10,15]</td>
+<td>kg</td>
+</tr>
+<tr>
+<td>Flight Energy per Unit Time</td>
+<td>[1,3]</td>
+<td>mW</td>
+</tr>
+<tr>
+<td>Hover Energy per Unit Time</td>
+<td>[1,3]</td>
+<td>mW</td>
+</tr>
+<tr>
+<td>Average Flight Speed</td>
+<td>[20,30]</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td>Communication Bandwidth</td>
+<td>[5,15]</td>
+<td>kHz</td>
+</tr>
+<tr>
+<td>Transmission Power of UAV</td>
+<td>[20,30]</td>
+<td>dBm</td>
+</tr>
+<tr>
+<td>Antenna Gain Constant</td>
+<td>1</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Attenuation Factor</td>
+<td>3</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Noise Power</td>
+<td>[-60,-70]</td>
+<td>dBm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-analysis-of-results-b">B. Analysis of Results B. 结果分析</h3>
+<p>To investigate the impact of the number of UAVs and tasks on the convergence of the algorithm, we conduct 100 Monte Carlo simulations for scenarios with different numbers of UAVs and tasks. In the first group of experiments, we fix the number of tasks at 50 and vary the number of UAVs among {50, 70, 90, 110, 130, 150}. In the second group, we fix the number of UAVs at 90 and vary the number of tasks among {30, 40, 50, 60, 70, 80}. In the experiment, the maximum number of iterations lmax for algorithm execution was set to 100. Fig. 3 presents the results of these experiments through box plots. Fig. 3(a) shows that with a fixed number of tasks, the number of iterations increases linearly as the number of UAVs grows. Fig. 3(b) shows that with a fixed number of UAVs, the number of iterations increases slowly as the number of tasks grows. The growth in the number of iterations is more pronounced when increasing the number of UAVs compared to increasing the number of tasks. This is because adding more UAVs substantially increases the potential number of coalitions, resulting in a significant expansion of the search space. While increasing the number of tasks also contributes to problem complexity, its impact is less significant than that of increasing the number of UAVs.</p>
+<p>为了研究无人机和任务数量对算法收敛性的影响，我们对具有不同无人机和任务数量的场景进行了 100 次蒙特卡洛模拟。</p>
+<ul>
+<li>在第一组实验中，我们将任务数量固定为 50，并在 {50， 70， 90， 110， 130， 150} 之间改变无人机的数量。</li>
+<li>在第二组中，我们将无人机的数量固定为 90，并在 {30， 40， 50， 60， 70， 80} 之间改变任务的数量。</li>
+<li>在实验中，算法执行的最大迭代次数 <span class="arithmatex">\(l_{max}\)</span> 设置为 100。</li>
+</ul>
+<p>Fig. 3 通过箱线图显示这些实验的结果。</p>
+<ul>
+<li>Fig. 3(a) 显示，在任务数量固定的情况下，迭代次数随着 UAV 数量的增加而线性增加。</li>
+<li>Fig. 3(b) 表示在无人机数量固定的情况下，迭代次数会随着任务数量的增加而缓慢增加。</li>
+<li>与增加任务数量相比，增加 UAV 数量时，迭代次数的增长更为明显。<ul>
+<li>这是因为添加更多无人机会大大增加势的联盟数量，从而导致搜索空间的显着扩展。</li>
+<li>虽然增加任务数量也会增加问题的复杂性，但其影响不如增加 UAV 数量那么重要。</li>
+</ul>
+</li>
+</ul>
+<p>Next, we compare the performance of our proposed algorithm with the methods presented in [17] and [18]. The research in both papers investigates the MRTA problem under resource constraints, achieving notable results in task completion rate and resource utilization rate. Owing to the more comprehensive UAV cost model considered in this paper than in [18] and [17], to ensure experimental fairness, we standardized the cost function to enhance the evaluation of algorithm performance. We conduct experiments by fixing either the number of UAVs or the number of tasks. The experimental results are presented using box plots, where the three sets of data near each x-axis coordinate correspond to the same coordinate. In the first set of experiments, the number of tasks is fixed at 50, and the number of UAVs varies among 50, 70, 90, 110, 130, 150. In Fig. 4(a) and Fig. 4(b), we demonstrate the changes in task completion rate and resource utilization rate as the number of UAVs varies. For all schemes, the increase in the number of UAVs leads to an improvement in the task completion rate, as a more significant number of UAVs results in a larger supply of various resources in the formed coalition, thereby increasing the task completion rate. However, the increase in the number of UAVs leads to a decrease in the resource utilization rate. This is because the more resources provided by UAVs, the more likely it is for irrational resource usage to occur, thus reducing the resource utilization rate. In the second set of experiments, we fix the number of UAVs at 90 and vary the number of tasks among 30, 40, 50, 60, 70, 80. From Fig. 5(a) and Fig. 5(b), we can observe that as the number of tasks increases, the available resources are insufficient to meet all tasks, leading to a continuous decrease in the task completion rate. Additionally, the increase in the number of tasks provides opportunities to utilize the idle resources of the UAVs, thereby improving the resource utilization rate.</p>
+<p>接下来，我们将我们提出的算法的性能与 和 [18] 中 [17] 介绍的方法进行比较。两篇论文的研究都考察了资源约束下的 MRTA 问题，在任务完成率和资源利用率方面取得了显著的成果。由于本文考虑的无人机成本模型比 [18] 和 [17] 更全面，为了保证实验公平性，我们<strong>对成本函数进行了标准化</strong>，以增强对算法性能的评估。我们通过固定无人机数量或任务数量来进行实验。实验结果使用箱形图表示，其中每个 x 轴坐标附近的三组数据对应于相同的坐标。</p>
+<p>在第一组实验中，任务数量固定为 50，无人机数量在 50、70、90、110、130、150 之间变化。在 Fig. 4(a) 和 Fig. 4(b) 中，我们展示了随着无人机数量的变化，任务完成率和资源利用率的变化。</p>
+<ul>
+<li>对于所有方案，<strong>无人机数量的增加会导致任务完成率的提高</strong>，因为无人机数量的增加会导致形成的联盟中各种资源的供应增加，从而提高任务完成率。</li>
+<li>然而，<strong>无人机数量的增加导致资源利用率的下降</strong>。这是因为无人机提供的资源越多，就越容易发生不合理的资源使用，从而降低资源利用率。</li>
+</ul>
+<p>在第二组实验中，我们将无人机的数量固定为 90，并在 30、40、50、60、70、80 之间改变任务数量。</p>
+<ul>
+<li>从 Fig. 5(a) 和 Fig. 5(b) 中可以观察到，随着任务数量的增加，可用资源不足以满足所有任务，导致任务完成率持续下降。</li>
+<li>此外，任务数量的增加为利用无人机的闲置资源提供了机会，从而提高了资源利用率。</li>
+</ul>
+<p>Fig. 4 and Fig. 5 show that our solution outperforms the approaches described in [18] and [17] in terms of both task completion rate and resource utilization rate. This is because our solution employs a leader-follower coalition formation game, where the leader UAV considers the utility of each follower UAV by comprehensively evaluating both task completion rate and resource utilization rate. Guided by the altruistic preference, follower UAVs select coalitions that maximize the overall benefit of the system rather than individual interests.</p>
+<p>结合 Fig. 4 与 Fig. 5 表明我们的解决方案在任务完成率和资源利用率方面都优于所描述 [18] [17] 的方法。这是因为我们的解决方案采用了<strong>领导者 - 跟随者联盟形成博弈</strong>，其中领导者无人机通过综合评估任务完成率和资源利用率来考虑每架跟随无人机的效用。在利他主义偏好的指导下，追随者无人机选择使系统的整体利益最大化而不是个人利益最大化的联盟。</p>
+<p align="center"> 
+<img src="https://hhw-knowledge-base-bucket.oss-cn-wuhan-lr.aliyuncs.com/Researches/MRTA/2024.10-IROS-LiwangZhang/ExpResults.png" width=100%/>
+</p>
+
+<h2 id="conclusions-and-future-works">Conclusions and Future Works</h2>
+<p>在本文中，我们将 MRS 中资源约束下的任务分配问题建模为<strong>领导者-追随者联盟形成博弈</strong>问题。我们提出的联盟形成算法已被证明可以有效地显著提高任务完成率和资源利用率。通过利用精确势博弈的特征，我们在我们提出的框架中建立了纳什均衡的存在。通过广泛的仿真实验对我们的算法进行验证，表明它在任务完成率和资源利用率方面都优于资源约束下的现有 MRTA 问题方法。</p>
+<p>未来，我们计划扩大研究范围，以解决现实世界环境中的常见挑战，例如通信障碍和机器人故障。此外，我们打算将我们的研究结果应用于特定的实际场景，从而提高我们的方法在现实世界中的适用性和稳健性。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

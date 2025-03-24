@@ -1,0 +1,3754 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://houhuawei23.github.io/knowledge_base/Researches/MRTA/Survey/2004.09-IJRS-MRTA-Taxonomy/">
+      
+      
+        <link rel="prev" href="../../Game-Based/2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/">
+      
+      
+        <link rel="next" href="../2021.09-CSMS-Review-Dynamic-SwarmUAV-TA/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>2004.09-IJRS-MRTA-Taxonomy - HHW KnowledgeBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#200409-a-formal-analysis-and-taxonomy-of-task-allocation-in-multi-robot-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="HHW KnowledgeBase" class="md-header__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HHW KnowledgeBase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2004.09-IJRS-MRTA-Taxonomy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="HHW KnowledgeBase" class="md-nav__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HHW KnowledgeBase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Notes for nearly Everything
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BookMarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Links Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ConfigExamples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ProgrammingLangs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ProgrammingLangs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Python/PythonLibs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Libs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Rust/Rust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Readings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Readings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1835-%E9%9D%92%E5%B9%B4%E5%9C%A8%E9%80%89%E6%8B%A9%E8%81%8C%E4%B8%9A%E6%97%B6%E7%9A%84%E8%80%83%E8%99%91-%E9%A9%AC%E5%85%8B%E6%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    青年在选择职业时的考虑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1938-%E8%AE%BA%E9%9D%92%E5%B9%B4%E7%9A%84%E4%BF%AE%E5%85%BB-%E5%BC%A0%E9%97%BB%E5%A4%A9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年的修养-张闻天（1938年4月28日）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1946-%E8%AE%BA%E9%9D%92%E5%B9%B4%E4%BF%AE%E5%85%BB-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年修养-张申府-1946
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1948-%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AD%A6%E9%A3%8E-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1948 研究与学风-张申府
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/2017.04-%E8%94%A1%E5%85%83%E5%9F%B9%E4%BB%BB%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E9%95%BF%E4%B9%8B%E5%B0%B1%E8%81%8C%E6%BC%94%E8%AF%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017-04 蔡元培任北京大学校长之就职演说
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Researches
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Researches
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note for Scientific Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Robot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MRTA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            MRTA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MRTA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UAV Swarm Task Assignment Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game Based
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Game Based
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game-Based/2024.05-ICRA-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.05-ICRA-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game-Based/2024.10-IROS-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.10-IROS-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game-Based/2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Survey
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Survey
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2004.09-IJRS-MRTA-Taxonomy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2004.09-IJRS-MRTA-Taxonomy
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-robot-task-allocation-mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Robot Task Allocation (MRTA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toward-formal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toward Formal Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinatorial-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinatorial Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-the-greedy-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (The Greedy algorithm)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta-data-of-the-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meta-Data of the Paper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-algorithm-and-matroids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy Algorithm and Matroids
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competitive-analysis-of-greedy-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Competitive Analysis of Greedy Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-taxonomy-of-mrta-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Taxonomy of MRTA Problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-sr-ia-single-task-robots-single-robot-tasks-instantaneous-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-SR-IA: Single-task Robots, Single-robot Tasks, Instantaneous Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-optimal-assignment-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition (Optimal Assignment Problem)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-iterated-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variant: Iterated Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant: Iterated Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ble-mrta-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLE MRTA Architecture:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-ble-assignment-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (BLE Assignment Algorithm)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm (BLE Assignment Algorithm)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-online-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variant: Online Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant: Online Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#murdoch-system-and-assignment-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      MURDOCH System and Assignment Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-murdoch-assignment-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (MURDOCH Assignment Algorithm)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-sr-ta-single-task-robots-single-robot-tasks-time-extended-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-SR-TA: Single-task robots, single-robot tasks, time-extended assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-st-sr-ta-approximation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (ST-SR-TA Approximation Algorithm)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm (ST-SR-TA Approximation Algorithm)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Approaches:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-alliance-efficiency-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variant: ALLIANCE Efficiency Problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-mr-ia-single-task-robots-multirobot-tasks-instantaneous-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-MR-IA: Single-task robots, multirobot tasks, instantaneous assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-mr-ta-single-task-robots-multirobot-tasks-time-extended-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-MR-TA: Single-task Robots, Multirobot Tasks, Time-Extended Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt-sr-ia-mt-sr-ta-multi-task-robots-single-robot-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT-SR-IA &amp; MT-SR-TA: Multi-task robots, single-robot tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MT-SR-IA &amp; MT-SR-TA: Multi-task robots, single-robot tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt-mr-ia-multi-task-robots-multirobot-tasks-instantaneous-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT-MR-IA: Multi-task Robots, Multirobot Tasks, Instantaneous Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt-mr-ta-multi-task-robots-multirobot-tasks-time-extended-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT-MR-TA: Multi-task Robots, Multirobot Tasks, Time-Extended Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-of-existing-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis of Existing Approaches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results &amp; Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrelated-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrelated Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Constraints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 引言
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      多机器人任务分配（MRTA）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      朝向形式化分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 相关工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 效用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 组合优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 组合优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ahuja-magnanti-and-orlin-1993" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法（贪心算法） (Ahuja, Magnanti, and Orlin 1993)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 多机器人任务分配（MRTA）问题的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 多机器人任务分配（MRTA）问题的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-st-sr-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 ST-SR-IA：单任务机器人、单机器人任务、即时分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 ST-SR-IA：单任务机器人、单机器人任务、即时分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义（最优分配问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 变体：迭代分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1.1 变体：迭代分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ble-mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLE MRTA 架构：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 变体：在线分配
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-st-sr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 ST-SR-TA：单任务机器人、单机器人任务、时间扩展分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 ST-SR-TA：单任务机器人、单机器人任务、时间扩展分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 变体：联盟效率问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-st-mr-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 ST-MR-IA：单任务机器人、多机器人任务、即时分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-st-mr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 ST-MR-TA：单任务机器人、多机器人任务、时间扩展分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-mt-sr-ia-mt-sr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 # MT-SR-IA &amp; MT-SR-TA：多任务机器人、单机器人任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-mt-mr-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 MT-MR-IA：多任务机器人、多机器人任务、即时分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-mt-mr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7 MT-MR-TA：多任务机器人、多机器人任务、时间扩展分配
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 现有方法的分析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 现有方法的分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 方法论 Methodology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 结果与讨论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 其他问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 其他问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 相互关联的效用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务约束
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结：
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021.09-CSMS-Review-Dynamic-SwarmUAV-TA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021.09-CSMS-Review-Dynamic-SwarmUAV-TA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023.11-JIRS-Review-TA-Methods-for-UAVs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023.11-JIRS-Review-TA-Methods-for-UAVs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SystemOM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            SystemOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SystemOM/PowerShell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SystemOM/SystemOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System OM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Techs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Techs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/GitBook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitBook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Lalrpop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lalrpop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/NodeJs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/PersonalWebsite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PersonalWebsite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VScode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-robot-task-allocation-mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Robot Task Allocation (MRTA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toward-formal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toward Formal Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinatorial-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinatorial Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-the-greedy-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (The Greedy algorithm)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta-data-of-the-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meta-Data of the Paper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-algorithm-and-matroids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy Algorithm and Matroids
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competitive-analysis-of-greedy-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Competitive Analysis of Greedy Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-taxonomy-of-mrta-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Taxonomy of MRTA Problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-sr-ia-single-task-robots-single-robot-tasks-instantaneous-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-SR-IA: Single-task Robots, Single-robot Tasks, Instantaneous Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-optimal-assignment-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition (Optimal Assignment Problem)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-iterated-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variant: Iterated Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant: Iterated Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ble-mrta-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLE MRTA Architecture:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-ble-assignment-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (BLE Assignment Algorithm)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm (BLE Assignment Algorithm)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-online-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variant: Online Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variant: Online Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#murdoch-system-and-assignment-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      MURDOCH System and Assignment Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-murdoch-assignment-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (MURDOCH Assignment Algorithm)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-sr-ta-single-task-robots-single-robot-tasks-time-extended-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-SR-TA: Single-task robots, single-robot tasks, time-extended assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-st-sr-ta-approximation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm (ST-SR-TA Approximation Algorithm)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm (ST-SR-TA Approximation Algorithm)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Approaches:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variant-alliance-efficiency-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variant: ALLIANCE Efficiency Problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-mr-ia-single-task-robots-multirobot-tasks-instantaneous-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-MR-IA: Single-task robots, multirobot tasks, instantaneous assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st-mr-ta-single-task-robots-multirobot-tasks-time-extended-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST-MR-TA: Single-task Robots, Multirobot Tasks, Time-Extended Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt-sr-ia-mt-sr-ta-multi-task-robots-single-robot-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT-SR-IA &amp; MT-SR-TA: Multi-task robots, single-robot tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MT-SR-IA &amp; MT-SR-TA: Multi-task robots, single-robot tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt-mr-ia-multi-task-robots-multirobot-tasks-instantaneous-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT-MR-IA: Multi-task Robots, Multirobot Tasks, Instantaneous Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt-mr-ta-multi-task-robots-multirobot-tasks-time-extended-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT-MR-TA: Multi-task Robots, Multirobot Tasks, Time-Extended Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-of-existing-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis of Existing Approaches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results &amp; Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrelated-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrelated Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Constraints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 引言
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 引言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      多机器人任务分配（MRTA）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      朝向形式化分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 相关工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 效用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 组合优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 组合优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ahuja-magnanti-and-orlin-1993" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法（贪心算法） (Ahuja, Magnanti, and Orlin 1993)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 多机器人任务分配（MRTA）问题的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 多机器人任务分配（MRTA）问题的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-st-sr-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 ST-SR-IA：单任务机器人、单机器人任务、即时分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 ST-SR-IA：单任务机器人、单机器人任务、即时分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义（最优分配问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 变体：迭代分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1.1 变体：迭代分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ble-mrta" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLE MRTA 架构：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 变体：在线分配
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-st-sr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 ST-SR-TA：单任务机器人、单机器人任务、时间扩展分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 ST-SR-TA：单任务机器人、单机器人任务、时间扩展分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 变体：联盟效率问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-st-mr-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 ST-MR-IA：单任务机器人、多机器人任务、即时分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-st-mr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 ST-MR-TA：单任务机器人、多机器人任务、时间扩展分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-mt-sr-ia-mt-sr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 # MT-SR-IA &amp; MT-SR-TA：多任务机器人、单机器人任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-mt-mr-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 MT-MR-IA：多任务机器人、多机器人任务、即时分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-mt-mr-ta" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7 MT-MR-TA：多任务机器人、多机器人任务、时间扩展分配
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 现有方法的分析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 现有方法的分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 方法论 Methodology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 结果与讨论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 其他问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 其他问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 相互关联的效用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务约束
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结：
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="200409-a-formal-analysis-and-taxonomy-of-task-allocation-in-multi-robot-systems">2004.09: A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems</h1>
+<p>多机器人系统中任务分配的形式分析和分类</p>
+<ul>
+<li>Brian P. Gerkey and Maja J. Matarić</li>
+<li>The International Journal of Robotics Research (IJRS)</li>
+<li><a href="https://doi.org/10.1177/0278364904045564">doi</a></li>
+<li>TLDR: A domain-independent taxonomy of MRTA problems is given, and it is shown how many such problems can be viewed as instances of other, well-studied, optimization problems.</li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<p>Despite more than a decade of experimental work in multi-robot systems, important theoretical aspects of multi-robot coordination mechanisms have, to date, been largely untreated. To address this issue, we focus on the problem of multi-robot task allocation (MRTA). Most work on MRTA has been ad hoc and empirical, with many coordination architectures having been proposed and validated in a proof-of-concept fashion, but infrequently analyzed. With the goal of bringing objective grounding to this important area of research, we present a formal study of MRTA problems. A domain-independent taxonomy of MRTA problems is given, and it is shown how many such problems can be viewed as instances of other, well-studied, optimization problems. We demonstrate how relevant theory from operations research and combinatorial optimization can be used for analysis and greater understanding of existing approaches to task allocation, and to show how the same theory can be used in the synthesis of new approaches.</p>
+<p>尽管在多机器人系统方面进行了十多年的实验工作，但迄今为止，多机器人协调机制的重要理论方面在很大程度上尚未得到处理。为了解决这个问题，我们重点关注多机器人任务分配 （MRTA） 的问题。关于 MRTA 的大多数工作都是临时的和实证的，许多协调架构已经以概念验证的方式提出和验证，但很少进行分析。为了给这一重要的研究领域带来客观的基础，我们提出了一项关于 MRTA 问题的正式研究。给出了 MRTA 问题的领域无关分类法，并显示了有多少此类问题可以被视为其他经过充分研究的优化问题的实例。我们展示了如何使用运筹学和组合优化的相关理论来分析和更好地了解现有的任务分配方法，并展示了如何将相同的理论用于新方法的综合。</p>
+<ul>
+<li>Task Type: Single-Robot(SR) versus or Multi-Robot(MR) tasks</li>
+<li>Allocation Type: Instantaneous Assignment(IA) or Time-extened(TA) Assignemnt</li>
+<li>Robot Type: Single-Task(ST) verus or Multi-Task(MT) robots</li>
+<li>2x2x2</li>
+</ul>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>The field of mobile robotics has evolved in the past decade, shifting towards studying problems involving multiple robots instead of single ones. This shift ranges from basic tasks like foraging to complex activities like robot soccer, reflecting an increase in system complexity due to larger team sizes and more diverse robots and tasks. Researchers are now focusing on demonstrating coordinated behaviors in increasingly larger robot teams performing diverse tasks simultaneously for extended durations.</p>
+<p>Key points included:</p>
+<ul>
+<li>Research in mobile robotics has transitioned from single robot tasks to multi-robot systems.</li>
+<li>Complex tasks like robot soccer showcase the growing complexity in multi-robot systems.</li>
+<li>Increasing team sizes and task diversity contribute to the complexity of modern multi-robot systems.</li>
+<li>Studies now aim to depict large robot teams engaging in diverse tasks concurrently for prolonged periods.</li>
+</ul>
+<h3 id="multi-robot-task-allocation-mrta">Multi-Robot Task Allocation (MRTA)</h3>
+<p>Multi-robot coordination, especially in the context of task allocation, is a key focus area in research on multi-robot systems. Task allocation involves determining which robot should perform which task to achieve the system's overall goal cooperatively. Tasks in this context refer to individual subgoals necessary for achieving the global objective of the system, which can range from discrete actions like delivering a package to continuous tasks like monitoring a building entrance for intruders. Key points include:</p>
+<ul>
+<li>The concept of task independence is crucial, implying that each task can be considered and assigned independently of others.</li>
+<li>While this study focuses on intentional cooperation among robots through task-related communication and negotiation, it acknowledges that emergent approaches can also lead to coordinated behaviors without explicit cooperation.</li>
+<li>The debate between emergent and intentional cooperation methods persists, with intentional cooperation often considered better suited for real-world tasks due to predictability.</li>
+<li>Intentional cooperation is seen as beneficial for tasks humans might want robots to perform, allowing humans to deliberately cooperate with robotic systems.</li>
+<li>The study suggests intentional cooperation can optimize the use of diverse robot team capabilities, especially in heterogeneous teams.</li>
+<li>While intentional cooperation is emphasized at the task allocation level, how tasks are executed can vary, allowing flexibility in implementation methods tailored to specific tasks and team strengths.</li>
+</ul>
+<h3 id="toward-formal-analysis">Toward Formal Analysis</h3>
+<p>The section emphasizes the importance of addressing task allocation in multi-robot systems, particularly as systems become more complex. Here are the key points included:</p>
+<ul>
+<li>Task allocation in multi-robot systems is a crucial aspect that becomes more critical with system complexity.</li>
+<li>Existing methods for cooperative multi-robot systems are mostly ad hoc, lacking formal analysis techniques.</li>
+<li>Despite proposed cooperative architectures, there is still a lack of guidance on designing Multi-Robot Task Allocation (MRTA) systems.</li>
+<li>Little effort has been made to evaluate or compare different architectures for MRTA systems.</li>
+</ul>
+<p>The authors introduce a taxonomy based on organizational theory from various fields, such as operations research and combinatorial optimization, to address MRTA challenges:</p>
+<ul>
+<li>The taxonomy helps analyze and classify MRTA problems, enabling the evaluation and comparison of proposed solutions.</li>
+<li>For simpler MRTA problems, the authors offer complete analysis and optimal algorithms for solution.</li>
+<li>For more complex problems, they suggest approximation algorithms successful in other domains.</li>
+<li>In cases of extremely difficult problems without good approximations, formal characterizations are provided without definitive solution strategies.</li>
+</ul>
+<p>The presented approach is not exhaustive but serves as a foundational framework for understanding MRTA challenges and other aspects of multi-robot coordination, indicating a starting point for further exploration.</p>
+<h2 id="related-work">Related Work</h2>
+<p>Research in multi-robot systems has primarily focused on building and validating operational systems rather than offering general analyses. The literature contains numerous coordination architectures but lacks formal models. Various authors have categorized existing multi-robot systems based on team organization, communication topology, and team composition. The paper aims to categorize underlying coordination problems instead of architectures, while also discussing key solving architectures.</p>
+<ul>
+<li>Existing formal models of multi-robot coordination typically target medium-to-large systems with simple, homogeneous robots. Macroscopic models have been explored for systems like CEBOTS, showing their accuracy in describing robot behaviors but lacking in design guidance for control mechanisms.</li>
+<li>To address complex tasks requiring precise control, researchers have proposed information invariants formalism and prescriptive control-theoretic models. These models offer insights into coordination mechanisms for tasks like box-pushing and dexterous manipulations.</li>
+<li>Limited work has been done on formal modeling and comparing multi-robot coordination at the task allocation level. Research has compared planning approaches for planetary rover coordination and applied communication complexity theory to multi-robot algorithms.</li>
+<li>Process models like Petri nets and Partially Observable Markov Decision Processes, along with the hybrid system model, have been used to formalize multi-robot systems. However, these models can be complex for analysis and are often applied to single-robot behavior in analog environments via three-layer architectures.</li>
+<li>The paper's objective is to address the gap in the literature on multi-robot coordination by developing a task- and architecture-independent taxonomy based on optimization theory to study task allocation problems effectively.</li>
+</ul>
+<h2 id="utility">Utility</h2>
+<p>In the context of task allocation optimization, determining what to optimize is crucial. Since directly optimizing overall system performance is often challenging during execution, a performance estimate like utility is necessary. Here's a breakdown of the concept of utility in multi-robot coordination:</p>
+<ul>
+<li><strong>Definition of Utility:</strong><ul>
+<li>Utility serves as a fundamental concept in economics, game theory, and operations research, extending to multi-robot coordination.</li>
+<li>It revolves around individuals estimating the value or cost of actions they can take, referred to as fitness, valuation, or cost depending on the context.</li>
+<li>Utility estimation is integral to autonomous task allocation systems, facilitating comparison and selection among available alternatives.</li>
+</ul>
+</li>
+<li><strong>Factors in Utility Estimation:</strong><ul>
+<li>Each robot estimates its fitness for tasks based on:<ul>
+<li>The expected quality of task execution considering the method and equipment to be used.</li>
+<li>The expected resource cost considering the spatio-temporal requirements of the task.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Utility Calculation:</strong><ul>
+<li>Quality (Q) and cost (C) are standardized scales used to define the expected outcomes of task execution by a robot, resulting in a nonnegative utility measure.</li>
+<li>Utility helps in making efficient assignments by comparing the expected outcomes of different robots for the same task.</li>
+</ul>
+</li>
+<li><strong>Flexibility and Constraints:</strong><ul>
+<li>Utility estimates are inherently imprecise due to sensor noise, uncertainty, and environmental changes.</li>
+<li>The utility is considered optimal based on available information, implying the highest achievable overall utility given existing uncertainties.</li>
+<li>Utility estimators must produce single scalar values for tasks, accommodating various computation methods like probabilistic localization, planning, and learning.</li>
+</ul>
+</li>
+<li><strong>Incorporating Relevant Data:</strong><ul>
+<li>Utility calculations should include all relevant data about the robots and their environment to avoid overlooking important signals.</li>
+<li>Neglecting externalities in utility calculation can have adverse effects on overall system performance.</li>
+</ul>
+</li>
+</ul>
+<p>The notion of utility in multi-robot systems plays a critical role in optimizing task allocation by enabling robots to estimate the value and cost of tasks, aiding in efficient decision-making and coordination.</p>
+<h2 id="combinatorial-optimization">Combinatorial Optimization</h2>
+<p>Combinatorial optimization is introduced with a focus on task allocation problems and optimization concepts. Here's a breakdown of the key points:</p>
+<ul>
+<li><strong>Subset System</strong>:<ul>
+<li>In combinatorial optimization, a subset system consists of a finite set of objects and a collection of subsets called independent sets that maintain a specific property of inclusivity.</li>
+<li>The property states that if a set is in the collection, any of its subsets are also in the collection.</li>
+</ul>
+</li>
+<li><strong>Subset Maximization</strong>:<ul>
+<li>In this context, a utility function is defined over the elements of a subset system, aiming to maximize the total utility.</li>
+<li>The goal is to find a subset within the collection that maximizes this utility function.</li>
+</ul>
+</li>
+<li><strong>Oracle Validation</strong>:<ul>
+<li>Typically, the elements of the subset system are not directly provided or easily represented.</li>
+<li>An oracle is assumed to be available, capable of determining whether a proposed set belongs to the independent collection.</li>
+<li>The oracle's role is to verify the feasibility of a proposed solution, which is usually computationally easier than solving the entire optimization problem.</li>
+</ul>
+</li>
+<li><strong>Algorithms</strong>:<ul>
+<li>Various algorithms, such as the Greedy algorithm, are designed to tackle maximization problems over subset systems.</li>
+<li>The Greedy algorithm is particularly noteworthy in this context as it addresses combinatorial optimization challenges effectively.</li>
+</ul>
+</li>
+</ul>
+<h2 id="algorithm-the-greedy-algorithm">Algorithm (The Greedy algorithm)</h2>
+<p>The authors describe the Greedy algorithm in two steps:</p>
+<ol>
+<li><strong>Element Reordering</strong>:<ul>
+<li>Elements of set E = {e1, e2, ..., en} are reordered based on their utility values: u(e1) ≥ u(e2) ≥ ... ≥ u(en).</li>
+</ul>
+</li>
+<li><strong>Set Initialization</strong>:<ul>
+<li>Initialize set X as empty: X := ∅.</li>
+</ul>
+</li>
+</ol>
+<h2 id="meta-data-of-the-paper">Meta-Data of the Paper</h2>
+<p>The paper discusses an algorithm that is an abstraction of the greedy algorithm, known for repeatedly selecting the best available option to solve a problem. While the greedy algorithm is effective for some optimization problems, it can perform poorly on others.</p>
+<h2 id="greedy-algorithm-and-matroids">Greedy Algorithm and Matroids</h2>
+<ul>
+<li>Greedy algorithm: Efficient on certain subset systems, particularly those classified as matroids.</li>
+<li>Matroids: Defined by the ability to "grow" smaller independent sets by adding elements from larger sets, with the Greedy algorithm optimally solving associated maximization problems.</li>
+<li>Greedy-choice property: Matroids exhibit this property, essential for a greedy algorithm to achieve an optimal solution.</li>
+<li>Matroids' optimization problems: Well-suited for greedy algorithms, drawing significant interest due to their amenability to greedy solutions.</li>
+</ul>
+<h2 id="competitive-analysis-of-greedy-algorithm">Competitive Analysis of Greedy Algorithm</h2>
+<ul>
+<li>Greedy algorithm's limitations: Not optimal for every maximization problem, prompting the evaluation of its sub-optimal performance.</li>
+<li>Competitive factor: Used to measure the performance of sub-optimal algorithms, with an algorithm deemed α-competitive if its solution's utility is always at least 1/α of the optimal utility for any input.</li>
+</ul>
+<h2 id="a-taxonomy-of-mrta-problems">A Taxonomy of MRTA Problems</h2>
+<p>The taxonomy of Multi-Robot Task Allocation (MRTA) problems proposed in the paper aims to categorize these challenges based on specific axes to position them in a problem space and relate them to organizational theory and robotics literature solutions. Here are the key points from this taxonomy:</p>
+<ul>
+<li>The taxonomy defines three axes to describe MRTA problems:<ul>
+<li><strong>Single-task robots (ST) vs. multi-task robots (MT):</strong><ul>
+<li>ST implies each robot can handle only one task at a time, while MT indicates robots capable of handling multiple tasks simultaneously.</li>
+</ul>
+</li>
+<li><strong>Single-robot tasks (SR) vs. multi-robot tasks (MR):</strong><ul>
+<li>SR requires one robot per task, while MR involves tasks that may require multiple robots.</li>
+</ul>
+</li>
+<li><strong>Instantaneous assignment (IA) vs. time-extended assignment (TA):</strong><ul>
+<li>IA involves allocating tasks instantly based on available information, while TA allows more data for future planning.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Problems are denoted by a triple of two-letter abbreviations from the axes; for instance, ST-MR-IA represents multi-robot tasks assigned once to single-task robots.</li>
+<li>The taxonomy is designed to be detailed enough to characterize practical MRTA problems but not exhaustive. It facilitates meaningful problem characterization and often suggests solutions based on the defined axes.</li>
+<li>This taxonomy helps identify which MRTA problem each combination of axes represents, guiding towards relevant organizational theories and possible solutions. The paper further discusses MRTA problems not covered by this taxonomy in Section 7.</li>
+</ul>
+<h2 id="st-sr-ia-single-task-robots-single-robot-tasks-instantaneous-assignment">ST-SR-IA: Single-task Robots, Single-robot Tasks, Instantaneous Assignment</h2>
+<p>The ST-SR-IA issue is the most straightforward, akin to the Optimal Assignment Problem (OAP), initially delved into in game theory and later in operations research, particularly regarding personnel allocation. This problem, recurring and special across various disciplines, can be articulated differently. In the realm of Multi-Robot Task Allocation (MRTA), the dilemma is often described in terms of jobs and workers.</p>
+<ul>
+<li>The problem falls under the Optimal Assignment Problem (OAP) umbrella</li>
+<li>Originated in game theory and then explored in operations research</li>
+<li>Significance in multiple fields of study</li>
+<li>Commonly represented as jobs and workers in the context of MRTA</li>
+</ul>
+<h2 id="definition-optimal-assignment-problem">Definition (Optimal Assignment Problem)</h2>
+<p>The Optimal Assignment Problem (OAP) involves assigning workers to jobs to maximize overall expected performance based on skill ratings and job priorities. This can be formulated as an integral linear program to find the best worker-job assignments that optimize system utility.</p>
+<ul>
+<li>The OAP is often represented in various ways, such as through integral linear programming to maximize system utility while adhering to constraints of single-worker jobs and single-job workers.</li>
+<li>The OAP can be framed as the ST-SR-IA problem, where m robots are assigned to n prioritized tasks using utility estimates for robot-task pairs. Different approaches like centralized linear programming (Hungarian method) or distributed auction-based methods (Auction algorithm) can be employed for optimal task allocation.</li>
+<li>Linear programming duality plays a crucial role in understanding economically-inspired algorithms for task allocation, where a primal problem and its dual are equivalent. The Duality Theorem establishes that optimal solutions for the primal and dual problems yield the same total utility.</li>
+<li>Optimal auction algorithms in task allocation rely on establishing a price-based task market where tasks are sold to robots by brokers based on valuations. At equilibrium, each robot maximizes its profit by selecting a task that offers the highest utility.</li>
+<li>The equilibrium in the task market ensures that task allocations are optimal, leading to maximum profits for both robots and brokers. This equilibrium allocation solution aligns with the optimal solution of the dual OAP.</li>
+<li>While centralized assignment algorithms are faster, they incur higher communication overhead compared to distributed approaches like auction-based solutions. The choice between centralized and distributed methods involves a tradeoff between solution time and communication efficiency.</li>
+<li>The implementation of the Hungarian method in ANSI C for solving OAPs in Multi-Robot Task Allocation (MRTA) scenarios showed promise in efficiently solving assignment problems for various numbers of robots and tasks, making it suitable for real-world MRTA applications.</li>
+</ul>
+<h2 id="variant-iterated-assignment">Variant: Iterated Assignment</h2>
+<p>Many Multi-Robot Task Allocation (MRTA) problems do not follow a one-time assignment structure but can be seen as repeated instances of the Shortest Task-Shortest Route-Immediate Assignment (ST-SR-IA) approach. For instance, the Cooperative Multi-Object Multi-Robot Tracking (CMOMMT) problem involves coordinating robots to monitor multiple moving targets with uncertainties. In this scenario, robots need to decide which target to track based on new sensory data and utility estimates.</p>
+<h3 id="ble-mrta-architecture">BLE MRTA Architecture:</h3>
+<ul>
+<li><strong>Algorithm:</strong>The Broadcast of Local Eligibility (BLE) MRTA architecture addresses iterated assignment problems like CMOMMT.</li>
+<li><strong>Solution:</strong>BLE utilizes a specific algorithm to solve the challenges posed by iterated assignment in MRTA scenarios.</li>
+</ul>
+<h2 id="algorithm-ble-assignment-algorithm">Algorithm (BLE Assignment Algorithm)</h2>
+<p>The BLE assignment algorithm outlined in the paper follows a specific set of steps based on a Greedy algorithm:</p>
+<ul>
+<li>If any robot remains unassigned, the algorithm finds the robot-task pair with the highest utility and assigns the robot to that task.</li>
+<li>The assigned robot and task are then removed from consideration, and the algorithm loops back to step 1.</li>
+</ul>
+<h3 id="key-points">Key Points:</h3>
+<ul>
+<li>The Greedy algorithm used in BLE assignment is 2-competitive for the OAP (Online Assignment Problem) but may not always yield an optimal solution.</li>
+<li>The same algorithm has been employed in studies focusing on communication and coordination in Multi-Robot Task Allocation (MRTA).</li>
+<li>Other architectures like Parker's L-ALLIANCE have developed more sophisticated assignment algorithms learned from experience, potentially outperforming Greedy but not guaranteed to be be optimal.</li>
+<li>In robot soccer scenarios, where roles can be interchangeable, an iterated assignment problem emerges, leading to dynamic role reevaluation.</li>
+<li>Different strategies like ordering roles by priority and assigning based on utility are used, with variations in the algorithm's sophistication to address issues like excessive role-swapping.</li>
+<li>While optimal algorithms like the Hungarian method could replace suboptimal ones, the paper discusses the trade-off between the implementation cost of optimal solutions and their benefits in MRTA.</li>
+<li>The Greedy algorithm's worst-case behavior is producing solutions with half the optimal utility, posing questions about its performance on typical MRTA problems with structured utility landscapes.</li>
+</ul>
+<h2 id="variant-online-assignment">Variant: Online Assignment</h2>
+<p>In some Multi-Robot Task Allocation (MRTA) scenarios, tasks are revealed incrementally rather than all at once. This situation gives rise to the variant of the Simple Robot-Task Assignment Problem with Incompatible Agents (SR-ST-IA) known as online assignment. Key points regarding this variant include:</p>
+<ul>
+<li>Robots that are already assigned cannot be reassigned in the online assignment variant.</li>
+<li>The robot-task utility matrix is unveiled gradually, one column (or row) at a time.</li>
+<li>If reassigned robots are allowed, the problem becomes an iterated SR-ST-IA instance, solvable optimally with standard assignment algorithms.</li>
+</ul>
+<h3 id="murdoch-system-and-assignment-algorithm">MURDOCH System and Assignment Algorithm</h3>
+<p>The MURDOCH system, developed by Gerkey &amp; Matarić in 2002, addresses MRTA problems where tasks are randomly introduced into the system incrementally, aligning with the online assignment problem. The MURDOCH assignment algorithm is outlined as follows:</p>
+<ul>
+<li>Tasks are injected randomly into the system over time.</li>
+<li>The algorithm dynamically adapts to assign robots to newly revealed tasks.</li>
+<li>The MURDOCH system effectively tackles the challenges posed by online task allocation settings.</li>
+</ul>
+<h2 id="algorithm-murdoch-assignment-algorithm">Algorithm (MURDOCH Assignment Algorithm)</h2>
+<p>The MURDOCH assignment algorithm follows a simple yet effective approach in assigning new tasks to the most suitable available robot. Here are the key points:</p>
+<ul>
+<li>This algorithm falls under the category of Greedy algorithms and is specifically recognized as the Farthest Neighbor algorithm in the context of network flows.</li>
+<li>In the scenario of online assignment problems, the Greedy algorithm like MURDOCH is shown to be 3-competitive compared to the optimal offline solution that can be calculated post hoc.</li>
+<li>The performance bound achieved by the Greedy algorithm in online assignment, like MURDOCH, is deemed as the best achievable for any online assignment algorithm.</li>
+<li>The significance of MURDOCH lies in its efficiency, especially when there is no prior model of the tasks to be introduced and no provision for reassigning robots that have already been allocated tasks. These limitations emphasize the effectiveness of MURDOCH as an optimal task allocator in such conditions.</li>
+</ul>
+<h2 id="st-sr-ta-single-task-robots-single-robot-tasks-time-extended-assignment">ST-SR-TA: Single-task robots, single-robot tasks, time-extended assignment</h2>
+<p>When the system has more tasks than robots or there is a known task arrival model, the future utilities of tasks for robots can be predicted, leading to the ST-SR-TA problem. In this scenario, the goal is to create a time-extended task schedule for each robot while minimizing the total weighted cost.</p>
+<ul>
+<li><strong>Problem Description:</strong><ul>
+<li>Robots execute tasks simultaneously, and the optimization criterion is the weighted sum of execution costs (w_j * C_j).</li>
+<li>These problems fall under the class of scheduling problems and are strongly NP-hard due to the exponential space of possible schedules, hindering enumerative solutions even for small instances.</li>
+</ul>
+</li>
+<li><strong>Approach:</strong><ul>
+<li>One way to address ST-SR-TA is by approximating it as an ST-SR-IA problem (Section 5.1) without considering the time extension and then as an online assignment problem (Section 5.1.2).</li>
+<li>For instance, when there are m robots and n tasks with n &gt; m, an approximation algorithm is employed to tackle the problem effectively.</li>
+</ul>
+</li>
+</ul>
+<h2 id="algorithm-st-sr-ta-approximation-algorithm">Algorithm (ST-SR-TA Approximation Algorithm)</h2>
+<p>The ST-SR-TA approximation algorithm consists of the following key points:</p>
+<ul>
+<li>The algorithm optimally solves the initial m × n assignment problem initially.</li>
+<li>It then uses the Greedy algorithm to assign the remaining tasks in an online fashion as the robots become available.</li>
+<li>The algorithm's performance is at least as good as the standard Greedy algorithm, which is 3-competitive for online assignments.</li>
+<li>Performance improves when more tasks are assigned in the first step. As the difference between the number of robots and tasks decreases, the algorithm approaches optimality.</li>
+<li>While not guaranteed to provide optimal solutions, this algorithm is practical, especially for ST-SR-TA problems with short time horizons.</li>
+</ul>
+<h3 id="other-approaches">Other Approaches:</h3>
+<ul>
+<li>Another approach involves an iterative task allocation system like a price-based market, where robots exchange tasks over time to modify their schedules.</li>
+<li>A multi-robot exploration system demonstrates this idea, but without knowledge of the precise trading criteria between robots, it's challenging to assess the method's algorithmic characteristics, including solution quality.</li>
+</ul>
+<h2 id="variant-alliance-efficiency-problem">Variant: ALLIANCE Efficiency Problem</h2>
+<p>The ALLIANCE Efficiency Problem (AEP), formulated by Parker in 1995, focuses on minimizing the maximum time taken by a robot to complete a set of tasks allocated to it within a mission. This problem falls under the category of scheduling problems known as R || C max, which are strongly NP-hard. Parker demonstrated the NP-hardness of AEP by reducing it from the NP-complete problem PARTITION.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>AEP involves allocating tasks to robots to minimize the maximum time a robot takes to complete its assigned tasks.</li>
+<li>The problem belongs to the class of scheduling problems denoted as R || C max, which are known for their computational complexity.</li>
+<li>Parker utilized a learning approach in 1998 for AEP, where robots learn utility estimates and scheduling algorithms through experience.</li>
+<li>The learning-based system could potentially surpass approximation algorithms but does not guarantee superior performance in all cases.</li>
+</ul>
+<h2 id="st-mr-ia-single-task-robots-multirobot-tasks-instantaneous-assignment">ST-MR-IA: Single-task robots, multirobot tasks, instantaneous assignment</h2>
+<p>The ST-MR-IA problem involves tasks that need multiple robots, where group utilities are not simple sums of individual utilities. Here are key points from this section:</p>
+<ul>
+<li>In MRTA problems, groups of robots may need specific skills or devices, making utility definition complex and not additive across individual robots.</li>
+<li>Coalition formation in the multi-agent community addresses this challenge.</li>
+<li>The ST-MR-IA problem is akin to splitting robots into task-specific coalitions, resembling a set partition in mathematics.</li>
+<li>It relates to the Set Partitioning Problem (SPP) in combinatorial optimization:<ul>
+<li>SPP aims to find a maximum-utility partition of a set of elements.</li>
+<li>In the context of ST-MR-IA, robots form the set, feasible coalition-task pairs represent subsets, and utility estimates are calculated for each pair.</li>
+</ul>
+</li>
+<li>Although SPP is strongly NP-hard, heuristic algorithms, especially in crew scheduling for airlines, offer solutions.</li>
+<li>Approximation algorithms like those by others have successfully dealt with large instances of SPP efficiently.</li>
+<li>The potential applicability of these approximation algorithms to ST-MR-IA problems, especially with increasing computational power in robots, raises the question of parallelization.</li>
+<li>Implementing parallel SPP algorithms for multi-agent coalition formation is feasible.</li>
+<li>Pruning feasible coalition-task sets, leveraging metrics like physical distance, may be necessary to apply certain SPP algorithms effectively to ST-MR-IA problems.</li>
+</ul>
+<h2 id="st-mr-ta-single-task-robots-multirobot-tasks-time-extended-assignment">ST-MR-TA: Single-task Robots, Multirobot Tasks, Time-Extended Assignment</h2>
+<p>The ST-MR-TA class of problems involves coalition formation and scheduling, illustrated by the scenario of delivering packages of various sizes from a central distribution point to different locations. Key points include:</p>
+<ul>
+<li>Known package details (sizes and destinations) dictate the number of robots needed for each delivery.</li>
+<li>The task is to design a delivery schedule, ensuring an appropriate team size for each package.</li>
+<li>Achieving an optimal solution requires evaluating all possible schedules for coalitions, making it an NP-hard problem.</li>
+</ul>
+<p>When considering specific instances:</p>
+<ul>
+<li>If coalitions are predetermined (with one coalition per task allowed), the problem aligns with a multiprocessor scheduling challenge.</li>
+<li>Even with two processors or in the unweighted version, the problem remains strongly NP-hard.</li>
+<li>Extending to three processors in the maximum finishing time scenario also leads to a strongly NP-hard problem.</li>
+</ul>
+<p>Addressing the ST-MR-TA issue involves various strategies:</p>
+<ul>
+<li>One approach involves disregarding the time extension aspect and handling it as an iteration of ST-MR-IA.</li>
+<li>A possible solution is employing a greedy approximation algorithm similar to that used for ST-SR-TA problems, although determining the quality of this approximation is challenging.</li>
+<li>Alternatively, a leader-based mechanism can be used to dynamically create coalitions and develop task schedules, albeit predicting the performance and overhead of this method without detailed implementation information is a complex task.</li>
+</ul>
+<h2 id="mt-sr-ia-mt-sr-ta-multi-task-robots-single-robot-tasks">MT-SR-IA &amp; MT-SR-TA: Multi-task robots, single-robot tasks</h2>
+<p>The MT-SR-IA and MT-SR-TA scenarios are unique as they involve robots capable of carrying out multiple tasks simultaneously. While most current mobile robots lack the necessary actuators to perform multiple tasks concurrently and are mainly limited to changing positions, they can excel in handling sensory and computational tasks that align well with the MT-SR-IA and MT-SR-TA models.</p>
+<h3 id="key-points_1">Key Points:</h3>
+<ul>
+<li><strong>Scenario Description:</strong>MT-SR-IA involves robots executing multiple tasks concurrently, akin to ST-MR-IA but with roles reversed in the SPP formulation. On the other hand, MT-SR-TA mirrors the ST-MR-TA problem.</li>
+<li><strong>Equivalent Problems:</strong>Solving MT-SR-IA is similar to addressing ST-MR-IA, while solving MT-SR-TA is akin to solving ST-MR-TA. Therefore, the analysis and algorithms developed for multi-robot task issues are directly applicable to these multi-task robot challenges.</li>
+</ul>
+<h2 id="mt-mr-ia-multi-task-robots-multirobot-tasks-instantaneous-assignment">MT-MR-IA: Multi-task Robots, Multirobot Tasks, Instantaneous Assignment</h2>
+<p>When dealing with a system that involves both multi-task robots and multi-robot tasks, the scenario presents what is known as the MT-MR-IA problem. For instance, assigning surveillance tasks to a team of robots in an office building where each robot covers a specific area and can detect only a limited number of events due to computational or sensory constraints.</p>
+<ul>
+<li>The problem can be likened to the concept of a set cover in set theory, where a family of subsets covers a set without the subsets needing to be disjoint.</li>
+<li>The MT-MR-IA problem can be mapped to the Set Covering Problem (SCP) in combinatorial optimization, where the goal is to find a minimum-cost set cover for a given finite set and acceptable subsets.</li>
+<li>The SCP involves identifying a minimum-cost collection of subsets that covers the entire set, and in the context of MT-MR-IA, this translates to the robots, feasible coalition-task pairs, and associated costs.</li>
+<li>While somewhat similar to the Set Partitioning Problem (SPP), the SCP is a more complex problem with a less constrained solution space, being strongly NP-hard.</li>
+</ul>
+<p>The researchers introduced a greedy approximation algorithm and another heuristic set covering algorithm for the SCP, each with its own competitive factor and running time considerations. These algorithms perform well when feasible subsets are limited but struggle in scenarios where all subsets are allowed, as seen in the case of the SCP. When considering Multi-Robot Task Allocation (MRTA), these algorithms are more suitable for environments with naturally limited coalition spaces, such as those with heterogeneous or physically distant robots. In contrast, when dealing with equally skilled and collocated robots, these algorithms might run slowly and provide suboptimal solutions.</p>
+<ul>
+<li>Set covering algorithms have not been commonly applied to MRTA problems, leaving open the question of their potential benefits.</li>
+<li>However, a successful adaptation and distribution of an approximation algorithm for multi-agent systems hint at the feasibility of using SCP algorithms for MRTA problems.</li>
+</ul>
+<h2 id="mt-mr-ta-multi-task-robots-multirobot-tasks-time-extended-assignment">MT-MR-TA: Multi-task Robots, Multirobot Tasks, Time-Extended Assignment</h2>
+<p>The MT-MR-TA scenario expands surveillance tasks to include events that don't require immediate or continuous monitoring but follow a set schedule. For instance, ensuring the left wing of a building is checked for open doors every hour. This setup forms a scheduling problem involving multiprocessor tasks and multipurpose machines, representing a complex issue in the realm of robotics:</p>
+<ul>
+<li><strong>Challenging Nature</strong>:<ul>
+<li>The MT-MR-TA problem is identified as strongly NP-hard, making it computationally demanding.</li>
+<li>It encompasses the scheduling problem MPT2 || wjCj, which is also strongly NP-hard.</li>
+</ul>
+</li>
+<li><strong>Algorithmic Limitations</strong>:<ul>
+<li>The researchers highlight the lack of existing heuristic or approximation algorithms tailored to address this intricate problem.</li>
+</ul>
+</li>
+</ul>
+<p>This section introduces a sophisticated challenge in robotics where scheduling tasks for multi-task robots across various time frames pose significant computational complexity and algorithmic limitations, highlighting the need for further research in this domain.</p>
+<h2 id="analysis-of-existing-approaches">Analysis of Existing Approaches</h2>
+<p>In exploring the Single Task-Single Robot-Independent Assignment (ST-SR-IA) problem, researchers have concentrated on this basic MRTA scenario, examining various task allocation approaches. Key points of analysis include:</p>
+<ul>
+<li><strong>Target Problem:</strong>The ST-SR-IA problem has garnered significant attention due to its simplicity in the Multi-Robot Task Allocation (MRTA) domain.</li>
+<li><strong>Research Focus:</strong>The research community has outlined a formal framework for investigating the ST-SR-IA problem, enabling a detailed analysis of task allocation architectures proposed in existing literature.</li>
+<li><strong>Characteristics Studied:</strong>The analysis of the six approaches delves into three primary characteristics, namely:<ol>
+<li><strong>Computation Requirements:</strong>Evaluating the computational complexities associated with each approach.</li>
+<li><strong>Communication Requirements:</strong>Assessing the communication overhead and needs of the different task allocation architectures.</li>
+</ol>
+</li>
+</ul>
+<p>This section scrutinizes existing strategies for the ST-SR-IA problem, emphasizing computational and communication aspects to highlight the strengths and limitations of each approach.</p>
+<h2 id="solution-quality">Solution Quality</h2>
+<p>The theoretical aspects of multi-robot coordination mechanisms play a critical role in studying, comparing, and evaluating these systems. The behavior of large-scale and long-term systems is heavily influenced by the fundamental characteristics of the underlying algorithms. Key points from this section include:</p>
+<ul>
+<li><strong>Methodology:</strong><ul>
+<li>Computational requirements, such as running time, are typically determined by the frequency of a dominant operation.</li>
+<li>In the Multi-Robot Task Allocation (MRTA) domain, where operations often involve utility calculations or comparisons, running time is expressed as a function of the number of robots (m) and tasks (n).</li>
+<li>The analysis assumes even distribution of computational load over robots, with running time stated per robot (e.g., O(n) for task selection based on utility comparisons).</li>
+</ul>
+</li>
+<li><strong>Communication Requirements:</strong><ul>
+<li>Communication requirements are evaluated based on the total number of inter-robot messages sent over the network.</li>
+<li>Message sizes are not considered significant, assuming they are generally small and uniform across different algorithms.</li>
+<li>Assumptions include the use of a perfect shared broadcast communication medium where messages are always broadcast.</li>
+<li>For instance, if each robot needs to broadcast its highest utility value to all other robots, the overhead is O(m) due to each robot making a single broadcast.</li>
+</ul>
+</li>
+<li><strong>Solution Quality:</strong><ul>
+<li>Solution quality is quantified as a competitive factor, constraining an algorithm's performance relative to the optimal solution.</li>
+<li>The competitive factor is established by aligning the task allocation algorithm with the underlying assignment problem.</li>
+<li>Most existing MRTA architectures implement the Greedy algorithm or a close variant, allowing for a lower bound estimation of their performance independent of the specific application domain.</li>
+</ul>
+</li>
+</ul>
+<h2 id="results-discussion">Results &amp; Discussion</h2>
+<p>The section analyzes six Multi-Robot Task Allocation (MRTA) architectures validated on physical or simulated robots, categorizing them into three iterated assignment problem solvers and three online assignment problem solvers. Key points included are:</p>
+<ul>
+<li><strong>Iterated Assignment Architectures:</strong><ul>
+<li><strong>ALLIANCE:</strong>Allocates tasks by considering impatience and acquiescence levels for each robot, forming utility estimates for tasks. Tasks can be reassigned.</li>
+<li><strong>Broadcast of Local Eligibility (BLE):</strong>A distributed version of Subsumption Architecture where robots broadcast utility estimates and use the Greedy algorithm for allocation.</li>
+<li><strong>M+:</strong>Utilizes auctions for task assignment, representing a market-based approach allowing task reassignments.</li>
+</ul>
+</li>
+<li><strong>Online Assignment Architectures:</strong><ul>
+<li><strong>MURDOCH:</strong>Uses a first-price auction for task assignment without reassignment. A Greedy algorithm implementation.</li>
+</ul>
+</li>
+<li><strong>Analysis Comparisons:</strong><ul>
+<li>Tables present results comparing iterated and online assignment architectures, demonstrating similarities in algorithmic characteristics.</li>
+<li>Architecture similarities suggest a common methodology in MRTA approaches, hinting at potential for generalization and wider application.</li>
+</ul>
+</li>
+<li><strong>Methodological Insights:</strong><ul>
+<li>Reveals fundamental similarities across architectures despite varied descriptions and validation domains.</li>
+<li>Highlights the need for deeper discussions on aspects like computational loads for a more comprehensive evaluation.</li>
+</ul>
+</li>
+<li><strong>Economic Inspiration in Architectures:</strong><ul>
+<li>Economically-inspired architectures use task auctions justified by analogies to market efficiency.</li>
+<li>A formal analysis shows how auction-based methods mimic optimal assignments in price-based markets at equilibrium, explaining their practical success.</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-problems">Other Problems</h2>
+<p>The researchers acknowledge that while the taxonomy discussed earlier covers various Multi-Robot Task Allocation (MRTA) domains, there are additional significant problems not addressed. Here are the problem domains that are not included in the taxonomy:</p>
+<ul>
+<li>Specific problem areas within MRTA that were not covered by the taxonomy</li>
+<li>Description of problem domains that fall outside the scope of the taxonomy but are still crucial in MRTA research</li>
+</ul>
+<h2 id="interrelated-utilities">Interrelated Utilities</h2>
+<p>The challenge of assigning target points to a team of exploring robots in an unknown environment involves complexities due to dependencies between target visits. This problem aligns with the multiple traveling salesperson problem (MTSP), especially when new targets can be discovered during exploration, escalating the problem to dynamic MTSP.</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Assigning target points involves considering dependencies where the cost to visit a target can vary based on the previous targets visited.</li>
+<li>The problem shifts into MTSP territory, which remains strongly N P-hard even with one agent, making it computationally complex.</li>
+<li>Researchers address the challenge indirectly by using heuristic approximations like TSP heuristics within a market-based task allocation system.</li>
+</ul>
+<p>The multi-robot exploration problem exemplifies a broader category of problems where a robot's task utility is interconnected with the tasks other robots perform, escalating to broader issues of robot-task utility dependence on overall task allocation among robots.</p>
+<p><strong>Key insights:</strong></p>
+<ul>
+<li>This scenario falls under a class of problems where a robot's task utility depends on other robots' task assignments, entailing a sophisticated understanding of the overall task allocation.</li>
+<li>Factored Partially Observable Markov Decision Processes (POMDPs) can help represent such interrelated utilities if a comprehensive world model is accessible.</li>
+</ul>
+<p>For scenarios like multi-robot resource transportation, where physical interference significantly impacts task performance, a reinforcement learning approach has been developed to enhance decision-making without direct robot communication.</p>
+<p><strong>Key findings:</strong></p>
+<ul>
+<li>The method considers interference effects dynamically by updating and maintaining estimates of utility for available routes based on physical interactions.</li>
+<li>This approach outperforms non-learning approaches, demonstrating superior solutions and efficiency without introducing additional communication overhead.</li>
+</ul>
+<h2 id="task-constraints">Task Constraints</h2>
+<p>The taxonomy in the paper assumes independent tasks, but in reality, tasks may have constraints like sequential or parallel execution. Some key points regarding task constraints are:</p>
+<ul>
+<li>Constraints among tasks can complicate the allocation of tasks to multiple robots.</li>
+<li>The taxonomy presented (e.g., ST-MR-IA) can still be used for larger tasks involving constraints, but the complexity shifts to estimating utilities for multi-robot teams.</li>
+<li>Traditional scheduling literature addresses job constraints, but adding constraints generally makes the problem more challenging.</li>
+<li>Currently, tractable algorithms exist only for simpler types of constraints.</li>
+<li>One potential approach to handling task constraints is using dynamic constraint satisfaction techniques.</li>
+</ul>
+<h2 id="summary">Summary:</h2>
+<p>The field of multi-robot systems has seen significant growth, with researchers now focusing on multi-robot coordination after solving basic single-robot control problems. Despite numerous proposed coordination architectures and examples of coordinated behavior, a theoretical foundation to explain or predict multi-robot system behavior is lacking. The paper aims to provide a framework for studying such systems with a focus on multi-robot task allocation (MRTA) as a key problem.</p>
+<ul>
+<li><strong>Experimental Focus on MRTA</strong>:<ul>
+<li>Historically, research in MRTA has been experimental, involving the construction and validation of MRTA architectures in various application domains.</li>
+<li>Numerous architectures have been proposed and validated to demonstrate successful multi-robot coordination in diverse environments.</li>
+<li>However, general conclusions on MRTA problems or a consistent strategy for achieving task allocation in different multi-robot systems remain elusive.</li>
+</ul>
+</li>
+<li><strong>Organizational Nature of MRTA</strong>:<ul>
+<li>MRTA problems are seen as fundamentally organizational, aiming to efficiently allocate limited resources to accomplish tasks.</li>
+<li>The paper formalizes the study of MRTA problems by drawing from theory in organizational and optimization disciplines like operations research, economics, and combinatorial optimization.</li>
+</ul>
+</li>
+<li><strong>Formal Analysis and Taxonomy</strong>:<ul>
+<li>The paper presents a formal analysis of MRTA problems, categorizing them into a taxonomy and providing optimal algorithms for simpler problems.</li>
+<li>Suggestions for heuristic solutions are offered for more complex problems, aiding further research in multirobot coordination.</li>
+</ul>
+</li>
+<li><strong>General MRTA Formalism</strong>:<ul>
+<li>The MRTA formalism presented is domain-independent, applicable to both multi-agent and multirobot systems.</li>
+<li>While the formalism provides broad characterizations of MRTA problems and solutions, the bounds on existing architectures in terms of computational and communication overhead are relatively loose.</li>
+</ul>
+</li>
+<li><strong>Future Directions for Tightening Bounds</strong>:<ul>
+<li>To improve predictions on algorithmic performance, adding domain-specific information to the formalism is suggested.</li>
+<li>By incorporating models of real MRTA domains and understanding utility landscapes shaped by sensor data, more accurate predictions about algorithm performance can be made, potentially enhancing the efficiency of MRTA solutions.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="1">1. 引言</h2>
+<p>在过去十年中，移动机器人领域已经发生了演变，研究重点从单个机器人问题转向涉及多个机器人的问题。这种转变涵盖了从基础任务（如觅食）到复杂活动（如机器人足球）的各种问题，反映了由于团队规模扩大、机器人类型和任务种类增多而导致的系统复杂性增加。研究人员目前专注于展示更大规模机器人团队在长时间内同时执行多样化任务时的协调行为。</p>
+<p>关键点包括：</p>
+<ul>
+<li>移动机器人研究已从单机器人任务转向多机器人系统。</li>
+<li>复杂任务（如机器人足球）展示了多机器人系统的复杂性增长。</li>
+<li>团队规模的扩大和任务多样性的增加促成了现代多机器人系统的复杂性。</li>
+<li>研究目标是描绘大规模机器人团队在长时间内同时从事多样化任务的情景。</li>
+</ul>
+<h3 id="mrta">多机器人任务分配（MRTA）</h3>
+<p>多机器人协调，特别是在任务分配的背景下，是多机器人系统研究中的一个关键重点领域。任务分配涉及确定哪些机器人应该执行哪些任务，以合作实现系统的整体目标。这里的任务是指实现系统全局目标所需的各个子目标，范围可以从离散的动作（如递送包裹）到连续的任务（如监视建筑入口以防止入侵者）。关键点包括：</p>
+<ul>
+<li>任务独立性的概念至关重要，意味着每个任务可以独立于其他任务进行考虑和分配。</li>
+<li>尽管本研究侧重于通过任务相关通信和协商实现机器人之间的有意合作(intentional cooperation)，但也承认涌现(emergent)方法可以在没有明确合作的情况下导致协调行为。</li>
+<li>关于涌现方法与有意合作方法之间的辩论仍在继续，有意合作通常被认为更适合现实世界任务，因为其可预测性。</li>
+<li>有意合作被认为有利于人类希望机器人执行的任务，使人类能够与机器人系统进行明确的合作。</li>
+<li>研究表明，有意合作可以优化不同机器人团队能力的使用，尤其是在异构团队中。</li>
+<li>虽然在任务分配层面强调了有意合作，但任务的执行方式可以多样化，允许根据具体任务和团队优势量身定制实施方法。</li>
+</ul>
+<h3 id="_1">朝向形式化分析</h3>
+<p>本节强调了在多机器人系统中解决任务分配问题的重要性，尤其是随着系统复杂性的增加。以下是包含的关键点：</p>
+<ul>
+<li>在多机器人系统中，任务分配是一个关键方面，随着系统复杂性的增加而变得更加重要。</li>
+<li>现有的多机器人合作方法大多是临时性的，缺乏形式化分析技术。</li>
+<li>尽管提出了合作架构，但在设计多机器人任务分配（MRTA）系统方面仍缺乏指导。</li>
+<li>对于 MRTA 系统的不同架构，很少有努力进行评估或比较。</li>
+</ul>
+<p>作者引入了一个基于组织理论 (organizational theory) 的分类体系 (taxonomy)，该理论来自运筹学和组合优化等多个领域，以应对 MRTA 挑战：</p>
+<ul>
+<li>该分类体系有助于分析和分类 MRTA 问题，从而能够评估和比较提出的解决方案。</li>
+<li>对于较简单的 MRTA 问题，作者提供了完整的分析和最优算法。</li>
+<li>对于更复杂的问题，他们建议使用在其他领域成功的近似算法。</li>
+<li>在没有良好近似的极其困难的问题中，提供了形式化描述，但没有明确的解决方案策略。</li>
+</ul>
+<p>所提出的方法并不全面，而是作为理解 MRTA 挑战和其他多机器人协调方面的基础框架，表明了进一步探索的起点。</p>
+<h2 id="2">2. 相关工作</h2>
+<p>多机器人系统的研究主要集中在构建和验证操作性系统，而不是提供一般性分析。文献中包含了许多协调架构，但缺乏形式化模型。不同的作者根据团队组织、通信拓扑和团队组成对现有的多机器人系统进行了分类。本文旨在对底层协调问题进行分类，而不是架构，同时讨论关键的解决架构。</p>
+<ul>
+<li>现有的多机器人协调形式化模型通常针对具有简单、同质机器人的中型到大型系统。宏观模型已被探索用于 CEBOTS 等系统，显示出其在描述机器人行为方面的准确性，但在控制机制的设计指导方面存在不足。</li>
+<li>为了应对需要精确控制的复杂任务，研究人员提出了<strong>信息不变式形式化</strong>和<strong>规范控制理论模型</strong>。这些模型为诸如推箱和灵巧操作等任务的协调机制提供了见解。</li>
+<li>在任务分配层面的多机器人协调的形式化建模和比较方面的工作有限。研究比较了行星探测车协调的规划方法，并将通信复杂性理论应用于多机器人算法。</li>
+<li>Petri 网、部分可观测马尔可夫决策过程以及混合系统模型等过程模型已被用于形式化多机器人系统。然而，这些模型分析起来可能较为复杂，通常通过三层架构应用于模拟环境中的单机器人行为。</li>
+<li>本文的目标是通过开发一个基于优化理论的任务和架构无关的分类体系来填补多机器人协调文献中的空白，以有效研究任务分配问题。</li>
+</ul>
+<h2 id="3">3. 效用</h2>
+<p>在任务分配优化的背景下，确定优化什么至关重要。由于在执行过程中直接优化整体系统性能往往具有挑战性，因此需要一个性能估计，如效用。以下是多机器人协调中效用概念的分解：</p>
+<ul>
+<li><strong>效用的定义：</strong><ul>
+<li>效用是经济学、博弈论和运筹学中的一个基本概念，已扩展到多机器人协调领域。</li>
+<li>它围绕个体对其可采取行动的价值或成本的估计展开，根据上下文被称为适应性、估值或成本。</li>
+<li>效用估计是自主任务分配系统的核心，便于在可用选项之间进行比较和选择。</li>
+</ul>
+</li>
+<li><strong>效用估计的因素：</strong><ul>
+<li>每个机器人根据以下因素估计其对任务的适应性：<ul>
+<li>考虑将要使用的方法和设备，预期任务执行的质量。</li>
+<li>考虑任务的时空需求，预期资源成本。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>效用计算：</strong><ul>
+<li>质量（Q）和成本（C）是用于定义机器人执行任务预期结果的标准化尺度，从而得出一个非负的效用度量。</li>
+<li>效用通过比较不同机器人对同一任务的预期结果，有助于实现高效的分配。</li>
+</ul>
+</li>
+<li><strong>灵活性与约束：</strong><ul>
+<li>由于传感器噪声、不确定性以及环境变化，效用估计本质上是不精确的。</li>
+<li>效用被认为是基于可用信息的最优值，这意味着在现有不确定性下可实现的最高整体效用。</li>
+<li>效用估计器必须为任务生成单一标量值，能够容纳各种计算方法，如概率定位、规划和学习。</li>
+</ul>
+</li>
+<li><strong>纳入相关数据：</strong><ul>
+<li>效用计算应包括有关机器人及其环境的所有相关数据，以避免忽略重要信号。</li>
+<li>忽略效用计算中的外部性可能会对整体系统性能产生不利影响。</li>
+</ul>
+</li>
+</ul>
+<p>在多机器人系统中，效用的概念在优化任务分配方面发挥着关键作用，使机器人能够估计任务的价值和成本，从而有助于高效的决策和协调。</p>
+<h2 id="4">4. 组合优化</h2>
+<p>组合优化的引入重点关注任务分配问题和优化概念。以下是关键点的分解：</p>
+<ul>
+<li><strong>子集系统 (Subset System)：</strong><ul>
+<li>在组合优化中，子集系统由一个有限对象集合 E 和一个称为独立集集族的子集集合 F 组成，这些子集保持特定的包含性属性。</li>
+<li>该属性表明，如果一个集合在集合中，那么它的任何子集也在集合中。</li>
+</ul>
+</li>
+<li><strong>子集最大化：</strong><ul>
+<li>在此背景下，效用函数定义在子集系统的元素上，目标是最大化总效用。</li>
+<li>目标是找到集合中最大化该效用函数的一个子集。</li>
+</ul>
+</li>
+<li><strong>预言机验证：</strong><ul>
+<li>通常，子集系统的元素不会直接提供或易于表示。</li>
+<li>假设有一个预言机(oracle)可用，能够判断一个提议的集合 X 是否属于独立集集族 F。</li>
+<li>预言机的作用是验证提议解决方案的可行性，这通常比解决整个优化问题在计算上更容易。</li>
+</ul>
+</li>
+<li><strong>算法：</strong><ul>
+<li>各种算法（如贪心算法）旨在解决子集系统上的最大化问题。</li>
+<li>在这种情况下，贪心算法特别值得关注，因为它能有效应对组合优化挑战。</li>
+</ul>
+</li>
+</ul>
+<p>DEFINITION 1. (<strong>Subset System</strong>) A subset system <span class="arithmatex">\((E, F)\)</span> is a finite set of objects <span class="arithmatex">\(E\)</span> and a non-empty collection <span class="arithmatex">\(F\)</span> of subsets, called independent sets, of <span class="arithmatex">\(E\)</span> that satisfies the property that if <span class="arithmatex">\(X ∈ F\)</span> and <span class="arithmatex">\(Y ⊆ X\)</span> then <span class="arithmatex">\(Y ∈ F\)</span>, i.e. <strong>closed under inclusion</strong>.</p>
+<p>DEFINITION 2. (<strong>Subset Maximization</strong>) Given a subset system <span class="arithmatex">\((E, F)\)</span> and a utility function <span class="arithmatex">\(u : E → R+\)</span>, find an <span class="arithmatex">\(X ∈ F\)</span> that maximizes the total utility:</p>
+<div class="arithmatex">\[u(X)=\sum_{e\in X}u(e).\]</div>
+<h3 id="ahuja-magnanti-and-orlin-1993">算法（贪心算法） (Ahuja, Magnanti, and Orlin 1993)</h3>
+<p>作者将贪心算法描述为两个步骤：</p>
+<ol>
+<li><strong>元素重新排序：</strong><ul>
+<li>将集合 <span class="arithmatex">\(E = \{e1, e2, ..., en\}\)</span> 的元素根据其效用值重新排序：<span class="arithmatex">\(u(e1) ≥ u(e2) ≥ ... ≥ u(en)\)</span>。</li>
+</ul>
+</li>
+<li><strong>集合初始化：</strong><ul>
+<li>将集合 X 初始化为空集：X := ∅。</li>
+</ul>
+</li>
+<li>Take the best valid option:<ul>
+<li>For <span class="arithmatex">\(j = 1\)</span> to <span class="arithmatex">\(n\)</span>: if <span class="arithmatex">\(X ∪ \{ej\} ∈ F\)</span> then <span class="arithmatex">\(X = X ∪ \{ej\}\)</span>.</li>
+</ul>
+</li>
+</ol>
+<p>上述算法以反复选择最佳可用选项来解决问题。尽管贪心算法对某些优化问题非常有效，但在其他问题上可能表现不佳。</p>
+<p>贪心算法与拟阵</p>
+<ul>
+<li>贪心算法：在某些子集系统（特别是拟阵）上效率很高。</li>
+<li>拟阵 (Matroid)：通过从较大集合中添加元素来“扩展”较小的独立集合，贪心算法能够最优地解决相关的最大化问题。<ul>
+<li><a href="https://en.wikipedia.org/wiki/Matroid">Matroid</a></li>
+</ul>
+</li>
+<li>贪心选择属性：拟阵具有此属性，这对于贪心算法实现最优解至关重要。</li>
+<li>拟阵的优化问题：适合贪心算法，因其对贪心解的适应性而受到广泛关注。</li>
+</ul>
+<p>DEFINITION 3. (<strong>Matroid</strong>) A subset system <span class="arithmatex">\((E, F)\)</span> is a matroid if, for each <span class="arithmatex">\(X, Y ∈ F\)</span> with <span class="arithmatex">\(|X| &gt; |Y|\)</span>, there exists an <span class="arithmatex">\(x ∈ X \ Y\)</span> such that <span class="arithmatex">\(Y ∪ \{x\} ∈ F\)</span>.</p>
+<p>贪心算法的竞争性分析</p>
+<ul>
+<li>贪心算法的局限性：并非每个最大化问题都能达到最优，因此需要评估其次优性能。</li>
+<li>竞争因子：用于衡量次优算法的性能，如果一个算法的解的效用总是任何输入的最优效用的至少 <span class="arithmatex">\(1/α\)</span>，则该算法被认为是 <strong>α-竞争的</strong>。</li>
+</ul>
+<p>That is, given two independent sets X and Y , with X largerthan Y , Y can be “grown” by adding to it some element fromX. With respect to the current discussion, an equivalent definition of a matroid is that a subset system (E, F) is a matroid if and only if the Greedy algorithm optimally solves theassociated maximization problem (Korte and Vygen 2000).In the parlance of algorithmic analysis, matroids satisfy theGreedy-choice property, which is a prerequisite for a Greedyalgorithm to produce an optimal solution (Cormen, Leiserson,and Rivest 1997). Matroids are of particular interest preciselybecause their associated optimization problems are amenableto the Greedy solution.</p>
+<p>While the Greedy algorithm does not optimally solve every maximization problem, it is useful to know how poor theGreedy solution can be. For such purposes it is common to report a “competitive factor” for the suboptimal algorithm. Fora maximization problem, an algorithm is called α-competitiveif, for any input, it finds a solution whose total utility is neverless than 1/α of the optimal utility.</p>
+<p>也就是说，给定两个独立集 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span>，且 <span class="arithmatex">\(X\)</span> 的大小大于 <span class="arithmatex">\(Y\)</span>，可以通过从 <span class="arithmatex">\(X\)</span> 中添加某个元素到 <span class="arithmatex">\(Y\)</span> 中，从而“扩展” <span class="arithmatex">\(Y\)</span>。在当前讨论的背景下，拟阵的等价定义是：一个子集系统 <span class="arithmatex">\((E, F)\)</span> 是拟阵当且仅当贪心算法能够最优地解决相关的最大化问题（Korte 和 Vygen，2000）。在算法分析的术语中，拟阵满足贪心选择属性，这是贪心算法能够产生最优解的先决条件（Cormen、Leiserson 和 Rivest，1997）。拟阵之所以特别受到关注，正是因为它们相关的优化问题适合用贪心算法求解。</p>
+<p>尽管贪心算法并不能最优地解决每一个最大化问题，但了解贪心解可能有多差是有用的。为此，通常会报告次优算法的“竞争因子”。对于最大化问题，如果一个算法对任何输入都能找到一个总效用至少为最优效用的 <span class="arithmatex">\(\frac{1}{\alpha}\)</span> 的解，则称该算法为 <span class="arithmatex">\(\alpha\)</span>-竞争的。</p>
+<h2 id="5-mrta">5. 多机器人任务分配（MRTA）问题的分类</h2>
+<p>论文中提出的多机器人任务分配（MRTA）问题的分类旨在根据特定轴对这些挑战进行分类，以在问题空间中定位它们，并将其与组织理论和机器人学文献中的解决方案联系起来。以下是该分类的关键点：</p>
+<ul>
+<li>分类定义了三个轴来描述 MRTA 问题：<ul>
+<li><strong>单任务机器人（ST）与多任务机器人（MT）：</strong><ul>
+<li>ST 表示每个机器人一次只能处理一个任务，而 MT 表示机器人能够同时处理多个任务。</li>
+</ul>
+</li>
+<li><strong>单机器人任务（SR）与多机器人任务（MR）：</strong><ul>
+<li>SR 要求每个任务由一个机器人完成，而 MR 涉及可能需要多个机器人的任务。</li>
+</ul>
+</li>
+<li><strong>即时分配（IA）与时间扩展分配（TA）：</strong><ul>
+<li>IA 涉及根据可用信息即时分配任务，而 TA 允许为未来规划提供更多数据。</li>
+<li>IA means that the available information concerning the robots, the tasks, and the environment permits only an instantaneous allocation of tasks to the robots, with no planning for future allocations;</li>
+<li>TA means that more information is available, such as the set of all tasks that will need to be assigned, or a model of how tasks are expected to arrive over time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>问题通过轴的两字母缩写三元组表示；例如，ST-MR-IA 表示分配给单任务机器人的多机器人任务。</li>
+<li>该分类旨在足够详细以描述实际的 MRTA 问题，但并非穷尽。它便于有意义的问题描述，并且通常根据定义的轴提出解决方案。</li>
+<li>这种分类有助于识别每个轴组合所代表的 MRTA 问题，引导人们走向相关的组织理论和可能的解决方案。论文在第 7 节中进一步讨论了未被该分类涵盖的 MRTA 问题。</li>
+</ul>
+<h3 id="51-st-sr-ia">5.1 ST-SR-IA：单任务机器人、单机器人任务、即时分配</h3>
+<p>ST-SR-IA 问题是其中最简单的，类似于最优分配问题（OAP），最初在博弈论中被研究，后来在运筹学中，特别是在人员分配方面。这个问题在各个学科中反复出现且具有特殊性，可以用不同的方式表述。在多机器人任务分配（MRTA）的背景下，问题通常以工作和工人的方式描述。</p>
+<ul>
+<li>该问题属于最优分配问题（OAP）范畴。</li>
+<li>最初在博弈论中被研究，后来在运筹学中被探索。</li>
+<li>在多个研究领域具有重要意义。</li>
+<li>在 MRTA 的背景下，通常以工作和工人的方式描述。</li>
+</ul>
+<h4 id="_2">定义（最优分配问题）</h4>
+<p>最优分配问题（OAP）涉及根据技能评分和工作优先级将工人分配给工作，以最大化整体预期性能。这可以通过整数线性规划公式化，以找到优化系统效用的最佳工人-工作分配。</p>
+<ul>
+<li>OAP 通常以多种方式表示，例如通过整数线性规划来在满足单个工作岗位和单个工作工人的约束条件下最大化系统效用。</li>
+<li>OAP 可以被表述为 ST-SR-IA 问题，其中 m 个机器人被分配给 n 个优先任务，使用机器人-任务对的效用估计。不同的方法，如集中式线性规划（匈牙利方法）或分布式拍卖方法（拍卖算法），可以用于最优任务分配。</li>
+<li>线性规划对偶性在理解任务分配的经济启发式算法中起着关键作用，其中原问题及其对偶问题是等价的。对偶定理表明，原问题和对偶问题的最优解产生相同的总效用。</li>
+<li>在任务分配中，最优拍卖算法依赖于建立一个基于价格的任务市场，任务由经纪人根据估值出售给机器人。在均衡状态下，每个机器人通过选择提供最高效用的任务来最大化其利润。</li>
+<li>任务市场的均衡确保任务分配是优化的，从而为机器人和经纪人带来最大利润。这种均衡分配解决方案与对偶 OAP 的最优解一致。</li>
+<li>虽然集中式分配算法速度更快，但与分布式方法（如拍卖解决方案）相比，它们会产生更高的通信开销。集中式和分布式方法之间的选择涉及解决方案时间和通信效率之间的权衡。</li>
+<li>在多机器人任务分配（MRTA）场景中，用 ANSI C 实现匈牙利方法以解决 OAP 显示出在解决各种机器人和任务数量的分配问题方面的潜力，使其适用于现实世界的 MRTA 应用。</li>
+</ul>
+<h4 id="511">5.1.1 变体：迭代分配</h4>
+<p>许多多机器人任务分配（MRTA）问题并不遵循一次性分配结构，而是可以被视为重复的最短任务-最短路径-即时分配（ST-SR-IA）方法的实例。例如，合作多目标多机器人跟踪（CMOMMT）问题涉及协调机器人监视多个移动目标，并存在不确定性。在这种情况下，机器人需要根据新的传感器数据和效用估计决定跟踪哪个目标。</p>
+<h5 id="ble-mrta">BLE MRTA 架构：</h5>
+<ul>
+<li><strong>算法：</strong>广播局部资格（BLE）MRTA 架构解决了像 CMOMMT 这样的迭代分配问题。</li>
+<li><strong>解决方案：</strong>BLE 利用特定算法解决 MRTA 场景中迭代分配带来的挑战。</li>
+</ul>
+<p>算法（BLE 分配算法）</p>
+<p>论文中概述的 BLE 分配算法基于贪心算法，遵循以下特定步骤：</p>
+<ul>
+<li>如果还有机器人未被分配任务，算法会找到效用最高的机器人-任务对，并将机器人分配给该任务。</li>
+<li>然后将分配的机器人和任务从考虑范围内移除，算法返回第一步。</li>
+</ul>
+<p>关键点：</p>
+<ul>
+<li>BLE 分配中使用的贪心算法对于在线分配问题（OAP）是 2-竞争的，但并不总是能产生最优解。</li>
+<li>同样的算法已被用于专注于多机器人任务分配（MRTA）中的通信和协调的研究。</li>
+<li>其他架构，如帕克的 L-ALLIANCE，开发了更复杂的分配算法，这些算法从经验中学习，可能优于贪心算法，但不能保证最优。</li>
+<li>在机器人足球场景中，角色可以互换，从而产生迭代分配问题，导致动态角色重新评估。</li>
+<li>不同的策略，如按优先级排序角色并根据效用分配，被用于解决诸如过度角色交换等问题，算法的复杂性各不相同。</li>
+<li>尽管可以使用匈牙利方法等最优算法替代次优算法，但论文讨论了在 MRTA 中实现最优解的成本与收益之间的权衡。</li>
+<li>贪心算法的最坏情况是产生效用仅为最优解一半的解决方案，这引发了关于其在具有结构化效用景观的典型 MRTA 问题上的性能问题。</li>
+</ul>
+<h4 id="512">5.1.2 变体：在线分配</h4>
+<p>在某些多机器人任务分配（MRTA）场景中，任务是逐步揭示的，而不是一次性全部出现。这种情况产生了简单机器人-任务分配问题的变体，即具有不兼容代理的在线分配。关于这个变体的关键点包括：</p>
+<ul>
+<li>在在线分配变体中，已经被分配任务的机器人不能重新分配。</li>
+<li>机器人-任务效用矩阵是逐步揭示的，一次一列（或一行）。</li>
+<li>如果允许重新分配机器人，则问题成为迭代的 SR-ST-IA 实例，可以使用标准分配算法最优解决。</li>
+</ul>
+<p>MURDOCH 系统和分配算法</p>
+<p>MURDOCH 系统由 Gerkey 和 Matarić 于 2002 年开发，解决了任务随机逐步引入系统的 MRTA 问题，这与在线分配问题一致。MURDOCH 分配算法如下所述：</p>
+<ul>
+<li>任务随着时间的推移随机注入系统。</li>
+<li>算法动态适应，将机器人分配给新揭示的任务。</li>
+<li>MURDOCH 系统有效地应对了在线任务分配设置带来的挑战。</li>
+</ul>
+<p>算法（MURDOCH 分配算法）</p>
+<p>MURDOCH 分配算法遵循一种简单而有效的为最合适的可用机器人分配新任务的方法。以下是关键点：</p>
+<ul>
+<li>该算法属于贪心算法类别，并且在网络流的背景下特别被认为是远邻算法。</li>
+<li>在在线分配问题的场景中，像 MURDOCH 这样的贪心算法被证明与可以事后计算的最优离线解相比是 3-竞争的。</li>
+<li>贪心算法在在线分配中实现的性能界限被认为是任何在线分配算法所能达到的最佳性能。</li>
+<li>MURDOCH 的重要性在于其效率，尤其是在没有关于将要引入的任务的先验模型，且没有为已经分配任务的机器人重新分配任务的安排的情况下。这些限制强调了 MURDOCH 作为在这种条件下最优任务分配器的有效性。</li>
+</ul>
+<h3 id="52-st-sr-ta">5.2 ST-SR-TA：单任务机器人、单机器人任务、时间扩展分配</h3>
+<p>当系统中的任务数量多于机器人数量，或者存在已知的任务到达模型时，可以预测任务对机器人的未来效用，从而导致 ST-SR-TA 问题。在这种情况下，目标是为每个机器人创建一个时间扩展的任务时间表，同时最小化总加权成本。</p>
+<ul>
+<li><strong>问题描述：</strong><ul>
+<li>机器人同时执行任务，优化标准是执行成本的加权和（w_j * C_j）。</li>
+<li>这些问题属于调度问题类别，并且由于可能的时间表空间呈指数增长，即使是小规模实例，也阻碍了枚举解决方案。</li>
+</ul>
+</li>
+<li><strong>方法：</strong><ul>
+<li>解决 ST-SR-TA 的一种方法是将其近似为 ST-SR-IA 问题（第 5.1 节），不考虑时间扩展，然后作为在线分配问题（第 5.1.2 节）。</li>
+<li>例如，当有 m 个机器人和 n 个任务且 n &gt; m 时，采用近似算法有效解决该问题。</li>
+</ul>
+</li>
+</ul>
+<p>算法（ST-SR-TA 近似算法）</p>
+<p>ST-SR-TA 近似算法包括以下关键点：</p>
+<ul>
+<li>该算法首先最优地解决初始的 m × n 分配问题。</li>
+<li>然后使用贪心算法以在线方式将剩余任务分配给可用的机器人。</li>
+<li>该算法的性能至少与标准的贪心算法一样好，后者对于在线分配是 3-竞争的。</li>
+<li>当第一步分配更多任务时，性能会提高。随着机器人数量与任务数量之间的差值减小，算法逐渐接近最优解。</li>
+<li>虽然不能保证提供最优解，但这种算法具有实用性，特别是对于具有较短时间范围的 ST-SR-TA 问题。</li>
+</ul>
+<p>其他方法：</p>
+<ul>
+<li>另一种方法涉及迭代任务分配系统，如基于价格的市场，机器人随着时间的推移交换任务以调整它们的时间表。</li>
+<li>一个多机器人探索系统展示了这一想法，但由于缺乏关于机器人之间精确交易标准的知识，很难评估该方法的算法特性，包括解决方案的质量。</li>
+</ul>
+<h4 id="521">5.2.1 变体：联盟效率问题</h4>
+<p>联盟效率问题（AEP）由帕克于 1995 年提出，旨在最小化机器人完成分配给它的任务集所需的最大时间。这个问题属于调度问题类别，记作 R || C_max，已知其计算复杂性很强。帕克通过将 AEP 简化为 NP 完全问题 PARTITION，证明了其 NP 难性。</p>
+<p><strong>关键点：</strong></p>
+<ul>
+<li>AEP 涉及将任务分配给机器人，以最小化机器人完成分配任务所需的最大时间。</li>
+<li>该问题属于记作 R || C_max 的调度问题类别，以其计算复杂性而闻名。</li>
+<li>帕克在 1998 年为 AEP 采用了一种学习方法，机器人通过经验学习效用估计和调度算法。</li>
+<li>基于学习的系统可能超越近似算法，但并不能保证在所有情况下表现更好。</li>
+</ul>
+<h3 id="53-st-mr-ia">5.3 ST-MR-IA：单任务机器人、多机器人任务、即时分配</h3>
+<p>ST-MR-IA 问题涉及需要多个机器人的任务，其中群体效用并不是个体效用的简单总和。以下是本节的关键点：</p>
+<ul>
+<li>在 MRTA 问题中，机器人组可能需要特定的技能或设备，这使得效用的定义复杂且不是个体机器人之间的加性。</li>
+<li>多智能体社区中的联盟形成解决了这一挑战。</li>
+<li>ST-MR-IA 问题类似于将机器人分成特定任务的联盟，类似于数学中的集合划分。</li>
+<li>它与组合优化中的集合划分问题（SPP）有关：<ul>
+<li>SPP 旨在找到一组元素的最大效用划分。</li>
+<li>在 ST-MR-IA 的背景下，机器人构成了集合，可行的联盟-任务对代表子集，每个对的效用估计被计算出来。</li>
+</ul>
+</li>
+<li>尽管 SPP 是强 NP 难问题，但启发式算法，特别是在航空公司机组调度中，提供了解决方案。</li>
+<li>随着机器人计算能力的增加，这些近似算法对 ST-MR-IA 问题的潜在适用性引发了关于并行化的思考。</li>
+<li>为多智能体联盟形成实现并行 SPP 算法是可行的。</li>
+<li>为了有效地将某些 SPP 算法应用于 ST-MR-IA 问题，可能需要修剪可行的联盟-任务集，利用诸如物理距离等指标。</li>
+</ul>
+<h3 id="54-st-mr-ta">5.4 ST-MR-TA：单任务机器人、多机器人任务、时间扩展分配</h3>
+<p>ST-MR-TA 问题类别涉及联盟形成和调度，例如从中央分发点将不同大小的包裹送到不同地点的情景。关键点包括：</p>
+<ul>
+<li>已知的包裹细节（大小和目的地）决定了每个交付所需的机器人数量。</li>
+<li>任务是设计一个交付时间表，确保每个包裹都有适当规模的团队。</li>
+<li>实现最优解需要评估所有可能的联盟时间表，这是一个 NP 难问题。</li>
+</ul>
+<p>在考虑特定实例时：</p>
+<ul>
+<li>如果联盟是预先确定的（每个任务允许一个联盟），则问题与多处理器调度挑战一致。</li>
+<li>即使在有两个处理器或在无权版本中，问题仍然是强 NP 难的。</li>
+<li>扩展到三个处理器的最大完成时间场景也会导致一个强 NP 难问题。</li>
+</ul>
+<p>解决 ST-MR-TA 问题涉及各种策略：</p>
+<ul>
+<li>一种方法是忽略时间扩展方面，并将其视为 ST-MR-IA 的迭代。</li>
+<li>一个可能的解决方案是采用类似于用于 ST-SR-TA 问题的贪心近似算法，尽管确定这种近似的质量是具有挑战性的。</li>
+<li>另一种选择是使用基于领导者的机制来创建动态联盟并开发任务时间表，尽管在没有详细实现信息的情况下，预测这种方法的性能和开销是一项复杂的任务。</li>
+</ul>
+<h3 id="55-mt-sr-ia-mt-sr-ta">5.5 # MT-SR-IA &amp; MT-SR-TA：多任务机器人、单机器人任务</h3>
+<p>MT-SR-IA 和 MT-SR-TA 场景是独特的，因为它们涉及能够同时执行多个任务的机器人。尽管大多数当前的移动机器人缺乏同时执行多个任务所需的执行器，主要限于改变位置，但它们可以在处理与 MT-SR-IA 和 MT-SR-TA 模型非常契合的传感和计算任务方面表现出色。</p>
+<p>关键点：</p>
+<ul>
+<li><strong>场景描述：</strong> MT-SR-IA 涉及机器人同时执行多个任务，类似于 ST-MR-IA，但在集合划分问题（SPP）的表述中角色是相反的。另一方面，MT-SR-TA 类似于 ST-MR-TA 问题。</li>
+<li><strong>等效问题：</strong> 解决 MT-SR-IA 类似于解决 ST-MR-IA，而解决 MT-SR-TA 类似于解决 ST-MR-TA。因此，为多机器人任务问题开发的分析和算法可以直接应用于这些多任务机器人挑战。</li>
+</ul>
+<h3 id="56-mt-mr-ia">5.6 MT-MR-IA：多任务机器人、多机器人任务、即时分配</h3>
+<p>当处理涉及多任务机器人和多机器人任务的系统时，这种情况被称为 MT-MR-IA 问题。例如，在办公大楼中为机器人团队分配监视任务，每个机器人覆盖特定区域，并且由于计算或传感限制，只能检测到有限数量的事件。</p>
+<ul>
+<li>这个问题类似于集合论中的集合覆盖概念，其中一系列子集覆盖一个集合，而这些子集不需要是不相交的。</li>
+<li>MT-MR-IA 问题可以映射到组合优化中的集合覆盖问题（SCP），目标是为给定的有限集合和可接受的子集找到最小成本的集合覆盖。</li>
+<li>SCP 涉及识别一个最小成本的子集集合，以覆盖整个集合，在 MT-MR-IA 的背景下，这转化为机器人、可行的联盟-任务对以及相关成本。</li>
+<li>与集合划分问题（SPP）略有相似，SCP 是一个更复杂的问题，具有更不受限的解空间，是强 NP 难问题。</li>
+</ul>
+<p>研究人员为 SCP 引入了一种贪心近似算法和另一种启发式集合覆盖算法，每种算法都有其自身的竞争因子和运行时间考虑。这些算法在可行子集有限时表现良好，但在所有子集都被允许的情况下，如 SCP 的情况，它们会遇到困难。当考虑多机器人任务分配（MRTA）时，这些算法更适合于自然受限的联盟空间环境，例如具有异构性或物理分散的机器人环境。相比之下，当处理技能相同且位置集中的机器人时，这些算法可能会运行缓慢并提供次优解。</p>
+<ul>
+<li>集合覆盖算法尚未广泛应用于 MRTA 问题，留下了其潜在益处的问题。</li>
+<li>然而，一个多智能体系统中近似算法的成功适应和分布暗示了将 SCP 算法用于 MRTA 问题的可行性。</li>
+</ul>
+<h3 id="57-mt-mr-ta">5.7 MT-MR-TA：多任务机器人、多机器人任务、时间扩展分配</h3>
+<p>MT-MR-TA 场景将监视任务扩展到包括不需要立即或连续监视但遵循固定时间表的事件。例如，确保每小时检查大楼左翼是否有开着的门。这种设置形成了一个涉及多处理器任务和多用途机器的调度问题，在机器人领域中是一个复杂的问题：</p>
+<ul>
+<li><strong>问题的复杂性：</strong><ul>
+<li>MT-MR-TA 问题被识别为强 NP 难问题，使其在计算上具有挑战性。</li>
+<li>它涵盖了同样也是强 NP 难问题的调度问题 MPT2 || w_jC_j。</li>
+</ul>
+</li>
+<li><strong>算法限制：</strong><ul>
+<li>研究人员强调了缺乏针对这一复杂问题的启发式或近似算法。</li>
+</ul>
+</li>
+</ul>
+<p>本节介绍了一个机器人领域中的复杂挑战，其中为多任务机器人在不同时间框架内调度任务带来了显著的计算复杂性和算法限制，突显了在这一领域进行进一步研究的必要性。</p>
+<h2 id="6">6. 现有方法的分析</h2>
+<p>在探索单任务-单机器人-独立分配（ST-SR-IA）问题时，研究人员集中于这一基本的 MRTA 场景，研究各种任务分配方法。分析的关键点包括：</p>
+<ul>
+<li><strong>目标问题：</strong> 由于其在多机器人任务分配（MRTA）领域的简单性，ST-SR-IA 问题受到了广泛关注。</li>
+<li><strong>研究重点：</strong> 研究社区为研究 ST-SR-IA 问题制定了一个形式化框架，使得能够详细分析现有文献中提出的任务分配架构。</li>
+<li>
+<p><strong>研究特征：</strong> 对六种方法的分析深入探讨了三个主要特征，即：</p>
+<ol>
+<li><strong>计算需求：</strong> 评估每种方法相关的计算复杂性。</li>
+<li><strong>通信需求：</strong> 评估不同任务分配架构的通信开销和需求。</li>
+<li><strong>解答质量</strong>.</li>
+</ol>
+</li>
+<li>
+<p>computation requirements;</p>
+</li>
+<li>communication requirements;</li>
+<li>solution quality.</li>
+</ul>
+<p>本节审视了 ST-SR-IA 问题的现有策略，强调计算和通信方面，以突出每种方法的优势和局限性。</p>
+<h3 id="61-methodology">6.1 方法论 Methodology</h3>
+<p>多机器人协调机制的理论方面在研究、比较和评估这些系统中发挥着关键作用。大规模和长期系统的运行行为受到底层算法基本特征的强烈影响。本节的关键点包括：</p>
+<ul>
+<li><strong>方法论：</strong><ul>
+<li>计算需求，如运行时间，通常由主导操作的频率决定。</li>
+<li>在多机器人任务分配（MRTA）领域，操作通常涉及效用计算或比较，运行时间以机器人数量（m）和任务数量（n）的函数表示。</li>
+<li>分析假设计算负载在机器人之间均匀分布，运行时间以每个机器人表示（例如，基于效用比较的任务选择为 O(n)）。</li>
+</ul>
+</li>
+<li><strong>通信需求：</strong><ul>
+<li>通信需求根据网络中发送的机器人间消息总数进行评估。</li>
+<li>消息大小被认为不重要，假设它们通常较小且在不同算法中保持一致。</li>
+<li>假设使用完美的共享广播通信介质，消息始终被广播。</li>
+<li>例如，如果每个机器人需要向所有其他机器人广播其最高效用值，开销为 O(m)，因为每个机器人只进行一次广播。</li>
+</ul>
+</li>
+<li><strong>解决方案质量：</strong><ul>
+<li>解决方案质量以竞争因子量化，限制算法性能相对于最优解的范围。</li>
+<li>竞争因子通过将任务分配算法与底层分配问题对齐来建立。</li>
+<li>大多数现有的 MRTA 架构实现了贪心算法或其变体，允许对其性能进行独立于特定应用领域的下界估计。</li>
+</ul>
+</li>
+</ul>
+<h3 id="62">6.2 结果与讨论</h3>
+<p>本节分析了六种在物理或模拟机器人上验证的多机器人任务分配（MRTA）架构，将其分为三类迭代分配问题求解器和三类在线分配问题求解器。关键点包括：</p>
+<ul>
+<li><strong>迭代分配架构：</strong><ul>
+<li><strong>联盟（ALLIANCE）：</strong> 考虑每个机器人的不耐烦和顺从水平，为任务形成效用估计。任务可以重新分配。</li>
+<li><strong>本地资格广播（BLE）：</strong> 分布式版本的分层架构，机器人广播效用估计，并使用贪心算法进行分配。</li>
+<li><strong>M+：</strong> 使用拍卖进行任务分配，代表一种基于市场的方法，允许任务重新分配。</li>
+</ul>
+</li>
+<li><strong>在线分配架构：</strong><ul>
+<li><strong>MURDOCH：</strong> 使用第一价格拍卖进行任务分配，不重新分配。一种贪心算法的实现。</li>
+</ul>
+</li>
+<li><strong>分析比较：</strong><ul>
+<li>表格展示了迭代和在线分配架构之间的比较结果，展示了算法特征的相似性。</li>
+<li>架构的相似性表明 MRTA 方法存在共同的方法论，暗示了其推广和广泛应用的潜力。</li>
+</ul>
+</li>
+<li><strong>方法论见解：</strong><ul>
+<li>尽管描述和验证领域各不相同，但揭示了架构之间的基本相似性。</li>
+<li>强调了需要就计算负载等方面进行更深入的讨论，以进行更全面的评估。</li>
+</ul>
+</li>
+<li><strong>架构中的经济启发：</strong><ul>
+<li>经济启发式架构使用任务拍卖，理由是市场效率的类比。</li>
+<li>形式化分析表明，基于拍卖的方法在均衡价格市场中模仿最优分配，解释了它们在实践中的成功。</li>
+</ul>
+</li>
+</ul>
+<h2 id="7">7. 其他问题</h2>
+<p>研究人员承认，尽管前面讨论的分类涵盖了各种多机器人任务分配（MRTA）领域，但仍有一些重要的问题未被涵盖。以下是未被分类涵盖的问题领域：</p>
+<ul>
+<li>在 MRTA 中未被分类涵盖的具体问题领域。</li>
+<li>描述那些虽然超出分类范围但在 MRTA 研究中仍然至关重要的问题领域。</li>
+</ul>
+<h3 id="71">7.1 相互关联的效用</h3>
+<p>在未知环境中为一组探索机器人分配目标点的任务涉及由于目标访问之间的依赖性而产生的复杂性。当在探索过程中可以发现新目标时，这个问题与多旅行商问题（MTSP）一致，将问题提升为动态 MTSP。</p>
+<p><strong>关键点：</strong></p>
+<ul>
+<li>分配目标点需要考虑依赖性，其中访问目标的成本可能会根据之前访问的目标而变化。</li>
+<li>该问题进入 MTSP 领域，即使只有一个代理，该问题仍然是强 NP 难问题，使其在计算上具有复杂性。</li>
+<li>研究人员通过使用基于市场的任务分配系统中的 TSP 启发式方法等启发式近似方法间接解决这一挑战。</li>
+</ul>
+<p>多机器人探索问题是一个更广泛类别的问题的示例，其中机器人的任务效用与其他机器人执行的任务相互关联，进一步扩展到机器人任务效用依赖于机器人之间整体任务分配的更广泛问题。</p>
+<p><strong>关键见解：</strong></p>
+<ul>
+<li>这种情况属于一个机器人任务效用依赖于其他机器人任务分配的问题类别，需要对整体任务分配有更深入的理解。</li>
+<li>如果可以访问全面的世界模型，分解的部分可观测马尔可夫决策过程（POMDPs）可以帮助表示这种相互关联的效用。</li>
+</ul>
+<p>对于像多机器人资源运输这样的场景，物理干扰对任务性能有显著影响，开发了一种强化学习方法，以增强决策制定，而无需直接机器人通信。</p>
+<p><strong>关键发现：</strong></p>
+<ul>
+<li>该方法通过根据物理交互动态更新和维护可用路径的效用估计，考虑干扰效应。</li>
+<li>这种方法优于非学习方法，展示了更优的解决方案和效率，而无需引入额外的通信开销。</li>
+</ul>
+<h2 id="_3">任务约束</h2>
+<p>论文中的分类假设任务是独立的，但在现实中，任务可能存在约束，如顺序或并行执行。关于任务约束的一些关键点包括：</p>
+<ul>
+<li>任务之间的约束可能会使将任务分配给多个机器人变得复杂。</li>
+<li>所呈现的分类（例如 ST-MR-IA）仍然可以用于涉及约束的较大任务，但复杂性转移到估计多机器人团队的效用上。</li>
+<li>传统的调度文献涉及工作约束，但添加约束通常会使问题更具挑战性。</li>
+<li>目前，只有针对更简单类型的约束的可行算法。</li>
+<li>处理任务约束的一种潜在方法是使用动态约束满足技术。</li>
+</ul>
+<h2 id="_4">总结：</h2>
+<p>多机器人系统领域已经取得了显著的发展，研究人员在解决基本的单机器人控制问题后，现在专注于多机器人协调。尽管提出了许多协调架构并展示了协调行为的例子，但缺乏一个理论基础来解释或预测多机器人系统的行为。论文旨在提供一个以多机器人任务分配（MRTA）为关键问题的研究框架。</p>
+<ul>
+<li><strong>MRTA 的实验重点：</strong><ul>
+<li>从历史上看，MRTA 的研究是实验性的，涉及在各种应用领域构建和验证 MRTA 架构。</li>
+<li>提出了许多架构并在不同的环境中验证，以展示成功的多机器人协调。</li>
+<li>然而，对于 MRTA 问题的一般性结论或在不同多机器人系统中实现任务分配的一致策略仍然难以捉摸。</li>
+</ul>
+</li>
+<li><strong>MRTA 的组织性质：</strong><ul>
+<li>MRTA 问题被视为本质上是组织性的，旨在高效分配有限资源以完成任务。</li>
+<li>论文通过借鉴运筹学、经济学和组合优化等组织和优化学科的理论，形式化了 MRTA 问题的研究。</li>
+</ul>
+</li>
+<li><strong>形式化分析和分类：</strong><ul>
+<li>论文对 MRTA 问题进行了形式化分析，将其分类为一个分类体系，并为更简单的问题提供了最优算法。</li>
+<li>对于更复杂的问题，提出了启发式解决方案，以促进多机器人协调的进一步研究。</li>
+</ul>
+</li>
+<li><strong>通用 MRTA 形式主义：</strong><ul>
+<li>所呈现的 MRTA 形式主义是领域无关的，适用于多智能体和多机器人系统。</li>
+<li>尽管该形式主义提供了对 MRTA 问题和解决方案的广泛描述，但现有架构在计算和通信开销方面的界限相对宽松。</li>
+</ul>
+</li>
+<li><strong>未来方向以收紧界限：</strong><ul>
+<li>为了改进算法性能的预测，建议在形式主义中添加特定领域的信息。</li>
+<li>通过纳入实际 MRTA 领域的模型并理解由传感器数据塑造的效用景观，可以更准确地预测算法性能，从而可能提高 MRTA 解决方案的效率。</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

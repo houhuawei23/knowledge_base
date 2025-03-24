@@ -1,0 +1,2546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://houhuawei23.github.io/knowledge_base/Researches/MRTA/Survey/2023.11-JIRS-Review-TA-Methods-for-UAVs/">
+      
+      
+        <link rel="prev" href="../2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame/">
+      
+      
+        <link rel="next" href="../../../../SystemOM/PowerShell/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>2023.11-JIRS-Review-TA-Methods-for-UAVs - HHW KnowledgeBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-review-of-task-allocation-methods-for-uavs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="HHW KnowledgeBase" class="md-header__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HHW KnowledgeBase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2023.11-JIRS-Review-TA-Methods-for-UAVs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="HHW KnowledgeBase" class="md-nav__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HHW KnowledgeBase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Notes for nearly Everything
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BookMarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Links Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ConfigExamples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ProgrammingLangs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ProgrammingLangs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Python/PythonLibs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Libs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ProgrammingLangs/Rust/Rust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Readings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Readings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1835-%E9%9D%92%E5%B9%B4%E5%9C%A8%E9%80%89%E6%8B%A9%E8%81%8C%E4%B8%9A%E6%97%B6%E7%9A%84%E8%80%83%E8%99%91-%E9%A9%AC%E5%85%8B%E6%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    青年在选择职业时的考虑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1938-%E8%AE%BA%E9%9D%92%E5%B9%B4%E7%9A%84%E4%BF%AE%E5%85%BB-%E5%BC%A0%E9%97%BB%E5%A4%A9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年的修养-张闻天（1938年4月28日）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1946-%E8%AE%BA%E9%9D%92%E5%B9%B4%E4%BF%AE%E5%85%BB-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年修养-张申府-1946
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/1948-%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AD%A6%E9%A3%8E-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1948 研究与学风-张申府
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Readings/2017.04-%E8%94%A1%E5%85%83%E5%9F%B9%E4%BB%BB%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E9%95%BF%E4%B9%8B%E5%B0%B1%E8%81%8C%E6%BC%94%E8%AF%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017-04 蔡元培任北京大学校长之就职演说
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Researches
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Researches
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note for Scientific Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Robot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MRTA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            MRTA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MRTA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UAV Swarm Task Assignment Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game Based
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Game Based
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game-Based/2024.05-ICRA-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.05-ICRA-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game-Based/2024.10-IROS-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.10-IROS-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Game-Based/2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Survey
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Survey
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2004.09-IJRS-MRTA-Taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2004.09-IJRS-MRTA-Taxonomy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021.09-CSMS-Review-Dynamic-SwarmUAV-TA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021.09-CSMS-Review-Dynamic-SwarmUAV-TA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2023.11-JIRS-Review-TA-Methods-for-UAVs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2023.11-JIRS-Review-TA-Methods-for-UAVs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-a-review-of-task-allocation-methods-for-uavs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of "A Review of Task Allocation Methods for UAVs"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of &#34;A Review of Task Allocation Methods for UAVs&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-task-allocation-applications-of-uavs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Task Allocation Applications of UAVs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication Schemes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-task-allocation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Task Allocation Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acknowledgments-and-author-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgments and Author Contributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      《无人机任务分配方法综述》摘要
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="《无人机任务分配方法综述》摘要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      引言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      无人机任务分配的常见应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      通信方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务分配方法的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      讨论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 基于拍卖的算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 基于拍卖的算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-cbba" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 基于 CBBA 的方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.1 基于 CBBA 的方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbba" class="md-nav__link">
+    <span class="md-ellipsis">
+      CBBA 改进方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      PI 改进方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-cnp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 基于 CNP 的方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 其他基于拍卖的方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 基于博弈论的方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 基于优化的方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 基于优化的方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 基于确定性优化的
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 基于元启发式方法的
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 基于启发式方法的
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 基于强化学习的方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 混合方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 其他方法
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SystemOM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            SystemOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SystemOM/PowerShell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SystemOM/SystemOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System OM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Techs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Techs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/GitBook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitBook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/Lalrpop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lalrpop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/NodeJs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/PersonalWebsite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PersonalWebsite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Techs/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VScode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-a-review-of-task-allocation-methods-for-uavs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of "A Review of Task Allocation Methods for UAVs"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of &#34;A Review of Task Allocation Methods for UAVs&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-task-allocation-applications-of-uavs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Task Allocation Applications of UAVs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication Schemes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-task-allocation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Task Allocation Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acknowledgments-and-author-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgments and Author Contributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      《无人机任务分配方法综述》摘要
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="《无人机任务分配方法综述》摘要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      引言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      无人机任务分配的常见应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      通信方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务分配方法的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      讨论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 基于拍卖的算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 基于拍卖的算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-cbba" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 基于 CBBA 的方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.1 基于 CBBA 的方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbba" class="md-nav__link">
+    <span class="md-ellipsis">
+      CBBA 改进方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      PI 改进方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-cnp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 基于 CNP 的方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 其他基于拍卖的方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 基于博弈论的方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 基于优化的方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 基于优化的方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 基于确定性优化的
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 基于元启发式方法的
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 基于启发式方法的
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 基于强化学习的方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 混合方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 其他方法
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="a-review-of-task-allocation-methods-for-uavs">A Review of Task Allocation Methods for UAVs</h1>
+<ul>
+<li>2023.11</li>
+<li>George Marios Skaltsis1 · Hyo-Sang Shin1 · Antonios Tsourdos1</li>
+<li>School of Aerospace, Transport and Manufacturing, Cranfield University, Cranfield MK43 0AL, UK</li>
+<li>Journal of Intelligent &amp; Robotic Systems (2023)</li>
+<li><a href="https://link.springer.com/article/10.1007/s10846-023-02011-0">link</a></li>
+</ul>
+<p>Unmanned aerial vehicles, can offer solutions to a lot of problems, making it crucial to research more and improve the task allocation methods used. In this survey, the main approaches used for task allocation in applications involving UAVs are presented as well as the most common applications of UAVs that require the application of task allocation methods. They are followed by the categories of the task allocation algorithms used, with the main focus being on more recent works. Our analysis of these methods focuses primarily on their complexity, optimality, and scalability. Additionally, the communication schemes commonly utilized are presented, as well as the impact of uncertainty on task allocation of UAVs. Finally, these methods are compared based on the aforementioned criteria, suggesting the most promising approaches.</p>
+<p>无人机可以为很多问题提供解决方案，因此进行更多研究并改进所使用的任务分配方法至关重要。在本次调查中，介绍了涉及无人机的应用中用于任务分配的主要方法，以及需要应用任务分配方法的无人机最常见的应用。接下来是所使用的任务分配算法的类别，主要关注最近的工作。我们对这些方法的分析主要集中在它们的复杂性、最优性和可扩展性。此外，还介绍了常用的通信方案，以及不确定性对无人机任务分配的影响。最后，根据上述标准对这些方法进行比较，提出最有前途的方法。</p>
+<ul>
+<li>主要方法 常见应用</li>
+<li>算法类别 复杂性 最优性 可扩展性</li>
+<li>通信方案 不确定性的影响</li>
+<li>综上 提出最优前途的方法</li>
+</ul>
+<p>Keywords Task allocation · UAVs · Auction based algorithms · Optimisation · Reinforcement learning · Game theory ·
+Metaheuristics</p>
+<hr />
+<h3 id="summary-of-a-review-of-task-allocation-methods-for-uavs">Summary of "A Review of Task Allocation Methods for UAVs"</h3>
+<h4 id="introduction">Introduction</h4>
+<p>The paper reviews task allocation techniques for Unmanned Aerial Vehicles (UAVs), emphasizing the importance of these methods in various applications such as mobile edge computing (MEC), military operations, search and rescue (SAR), and civilian tasks. The increase in computational power and advancements in UAV technology have led to a surge in UAV usage, necessitating efficient task allocation methods to handle complex, dynamic environments. Task allocation involves dividing labor among agents (UAVs) to achieve optimal system performance, which is often NP-hard. The paper categorizes task allocation methods into static and dynamic, centralized and decentralized, and homogeneous and heterogeneous systems.</p>
+<h4 id="common-task-allocation-applications-of-uavs">Common Task Allocation Applications of UAVs</h4>
+<ol>
+<li><strong>Mobile Edge Computing (MEC)</strong>: UAVs act as mobile base stations, assist in computation offloading, and manage spectrum resources. Research focuses on minimizing energy consumption and computation delays.</li>
+<li><strong>Military Applications</strong>: Includes intelligence, surveillance, reconnaissance (ISR), suppression of enemy air defenses (SEAD), and target attacking. UAVs are used for reconnaissance, surveillance, and cooperative attack missions.</li>
+<li><strong>Search and Rescue (SAR)</strong>: UAVs are used to maximize the number of survivors, minimize mission time, and reduce travel distance. They can have both search and rescue capabilities or be specialized for specific tasks.</li>
+<li><strong>Civilian Applications</strong>: Includes agriculture (crop protection, spraying), monitoring, target tracking, electric grid inspection, logistics, and wildfire management.</li>
+</ol>
+<h4 id="communication-schemes">Communication Schemes</h4>
+<ol>
+<li><strong>Centralized Task Allocation</strong>: A central Agent manages task allocation, which is efficient for small systems but less scalable and robust in dynamic environments.</li>
+<li><strong>Decentralized Task Allocation</strong>: Agents make decisions based on local observations and communicate with each other. This method is more scalable and robust but may only provide suboptimal solutions.</li>
+</ol>
+<h4 id="types-of-task-allocation-methods">Types of Task Allocation Methods</h4>
+<ol>
+<li><strong>Auction-Based Algorithms</strong>: Agents bid on tasks based on utility or cost. Common methods include the Consensus-Based Bundle Algorithm (CBBA) and Contract Net Protocol (CNP). These methods are efficient, scalable, and suitable for dynamic environments.<ul>
+<li><strong>CBBA-Based Methods</strong>: Used in SAR and ISR missions. Improvements include CBBA with task coupling constraints (CBBA-TCC) and CBBA with local replanning (CBBA-LR).</li>
+<li><strong>CNP-Based Methods</strong>: Effective for task reallocation but suffer from message congestion. Improved versions aim to reduce communication overhead.</li>
+<li><strong>Other Auction-Based Methods</strong>: Include market-based approaches and auction mechanisms for heterogeneous UAV swarms.</li>
+</ul>
+</li>
+<li><strong>Game Theory-Based Methods</strong>: Agents act as players in a game, aiming to reach a Nash equilibrium. These methods are used in MEC and cooperative/competitive scenarios.<ul>
+<li><strong>Cooperative Games</strong>: Agents form coalitions to maximize utility.</li>
+<li><strong>Non-Cooperative Games</strong>: Agents act individually to maximize their payoff.</li>
+<li><strong>Examples</strong>: Bayesian coalition games, potential games, and pursuit-evasion games.</li>
+</ul>
+</li>
+<li><strong>Optimization-Based Methods</strong>: These methods aim to find the best solution by minimizing cost or maximizing profit. They can be deterministic or stochastic (metaheuristics).<ul>
+<li><strong>Deterministic Optimization</strong>: Includes linear programming, mixed-integer linear programming (MILP), and the Hungarian algorithm. These methods are computationally expensive but provide optimal solutions.</li>
+<li><strong>Metaheuristics</strong>: Includes genetic algorithms, simulated annealing, and swarm intelligence. These methods are robust and efficient but may provide suboptimal solutions.</li>
+<li><strong>Heuristics</strong>: Provide fast, approximate solutions with low computational cost. Used in MEC applications for energy minimization and task scheduling.</li>
+</ul>
+</li>
+<li><strong>Reinforcement Learning (RL)</strong>: Agents learn to act in dynamic environments by optimizing a reward function. RL methods are effective in handling uncertainties and real-time decision-making.<ul>
+<li><strong>Applications</strong>: MEC, ISR, and attack missions. Methods include Q-learning, deep Q-networks (DQN), and multi-Agent deep deterministic policy gradient (MADDPG).</li>
+</ul>
+</li>
+<li><strong>Hybrid Methods</strong>: Combine two or more techniques to improve efficiency and reduce computational cost. Examples include combining CBBA with ant colony optimization (ACS) for SAR missions.</li>
+<li><strong>Other Approaches</strong>: Include block information sharing, clustering-based algorithms, and fuzzy logic-based task allocation.</li>
+</ol>
+<h4 id="discussion">Discussion</h4>
+<ol>
+<li>
+<p><strong>Complexity, Optimality, and Scalability</strong>: The computational cost of task allocation depends on the algorithm's complexity, frequency of use, and communication scheme. Optimality refers to the solution's ability to maximize system utility, while scalability is crucial for large systems.</p>
+<ul>
+<li><strong>Auction-Based Methods</strong>: CBBA and CNP-based methods are efficient but can be computationally expensive.</li>
+<li><strong>Game Theory-Based Methods</strong>: Provide suboptimal solutions with varying complexity, from linear to exponential.</li>
+<li><strong>Optimization-Based Methods</strong>: Deterministic methods are computationally expensive, while metaheuristics and heuristics offer lower computational cost with good scalability.</li>
+<li><strong>Reinforcement Learning</strong>: High efficiency and adaptability but can be computationally intensive.</li>
+<li><strong>Hybrid Methods</strong>: Aim to combine the strengths of different methods, often resulting in improved efficiency and reduced cost.</li>
+</ul>
+</li>
+<li>
+<p><strong>Communication</strong>: Effective communication is crucial for task allocation. Methods can be explicit (direct communication) or implicit (indirect communication through environmental perception). Auction-based methods often use explicit communication, while metaheuristics and RL methods may use implicit communication.</p>
+</li>
+<li>
+<p><strong>Uncertainty</strong>: Many task allocation methods do not account for uncertainties, which can arise from sensor inaccuracies, Agent failures, or environmental disturbances. Robustness is essential for time-critical applications like SAR and military missions. Some methods, like robust CBBA and Bayesian coalition games, incorporate uncertainty to improve performance.</p>
+</li>
+</ol>
+<h4 id="conclusion">Conclusion</h4>
+<p>The paper concludes that task allocation methods for UAVs vary in complexity, optimality, and scalability. Auction-based and deterministic optimization methods are efficient but computationally expensive, making them less suitable for large-scale systems. Heuristic and metaheuristic approaches provide fast solutions with moderate efficiency and are scalable. Game theory and reinforcement learning methods offer good efficiency and scalability, with RL being particularly effective in dynamic environments. Hybrid methods, combining different techniques, show promise for improving efficiency and reducing computational cost. The paper highlights the need for further research into robust, real-time task allocation methods that can handle uncertainties and complex environments.</p>
+<h4 id="acknowledgments-and-author-contributions">Acknowledgments and Author Contributions</h4>
+<p>The authors acknowledge support from the Air Force Office of Scientific Research. All authors contributed to the study, with George Marios Skaltsis writing the first draft and all authors commenting on and approving the final manuscript.</p>
+<h4 id="references">References</h4>
+<p>The paper includes a comprehensive list of references, covering various task allocation methods, communication schemes, and applications in UAV systems.</p>
+<hr />
+<h3 id="_1">《无人机任务分配方法综述》摘要</h3>
+<h4 id="_2">引言</h4>
+<p>本文综述了无人机（UAV）任务分配技术，强调了这些方法在移动边缘计算（MEC）、军事行动、搜救（SAR）和民用任务等多种应用中的重要性。随着计算能力的提升和无人机技术的进步，无人机的使用大幅增加，因此需要高效的任务分配方法来处理复杂、动态的环境。任务分配涉及在多个 Agent（无人机）之间分配任务，以实现系统的最优性能，这通常是一个 NP 难问题。本文将任务分配方法分为静态与动态、集中式与分布式，以及同质与异质系统。</p>
+<h4 id="_3">无人机任务分配的常见应用</h4>
+<ol>
+<li><strong>移动边缘计算（MEC）</strong>：无人机作为移动基站，协助计算卸载和管理频谱资源。研究重点在于最小化能耗和计算延迟。</li>
+<li><strong>军事应用</strong>：包括情报、监视、侦察（ISR）、压制敌方防空系统（SEAD）和攻击目标。无人机用于侦察、监视和协同攻击任务。</li>
+<li><strong>搜救（SAR-Search and Rescue）</strong>：无人机用于最大化幸存者数量、最小化任务时间并减少飞行距离。无人机可以同时具备搜索和救援能力，或专门执行特定任务。</li>
+<li><strong>民用应用</strong>：包括农业（作物保护、喷洒）、监控、目标跟踪、电网检查、物流和野火管理。</li>
+</ol>
+<h4 id="_4">通信方案</h4>
+<ol>
+<li><strong>集中式任务分配</strong>：由中央 Agent 管理任务分配，适用于小型系统，但在动态环境中可扩展性和鲁棒性较差。<ol>
+<li>中心 Agent 接收来自其他 Agent 的信息和观察，根据全局效用，将任务分配给其他 Agent</li>
+<li>中心 Agent 计算需求高，通信负担大，可扩展性较低</li>
+<li>中心 Agent 一旦故障，将导致全局故障，不能适应高动态环境，缺乏鲁棒性</li>
+<li>有助于避免任务分配中的冲突，得到的解更接近全局最优解</li>
+<li>常用于静态任务分配的场景</li>
+</ol>
+</li>
+<li><strong>分布式任务分配</strong>：Agent 基于本地观察做出决策并相互通信。这种方法更具可扩展性和鲁棒性，但可能只能提供次优解。<ol>
+<li>可能需要共识算法（consensus alg），以解决本地/局部任务分配可能产生的冲突</li>
+</ol>
+</li>
+</ol>
+<h4 id="_5">任务分配方法的类型</h4>
+<ol>
+<li>
+<p><strong>基于拍卖的算法</strong>：Agent 根据效用或成本对任务进行竞价。常见方法包括<strong>基于共识的捆绑算法（CBBA）</strong>和<strong>合同网协议（CNP）</strong>。这些方法高效、可扩展，适用于动态环境。</p>
+<ul>
+<li><strong>基于 CBBA 的方法</strong>：用于 SAR 和 ISR 任务。改进版本包括带任务耦合约束的 CBBA（CBBA-TCC）和带本地重规划的 CBBA（CBBA-LR）。<ul>
+<li>consensus based bundle algorithm 基于共识的捆绑算法（CBBA）</li>
+</ul>
+</li>
+<li><strong>基于 CNP 的方法</strong>：适用于任务重新分配，但存在消息拥塞问题。改进版本旨在减少通信开销。</li>
+<li><strong>其他基于拍卖的方法</strong>：包括市场基础方法和用于异构无人机群的拍卖机制。</li>
+</ul>
+</li>
+<li>
+<p><strong>基于博弈论的方法</strong>：Agent 作为博弈中的玩家，旨在达到纳什均衡。这些方法用于 MEC 和合作/竞争场景。</p>
+<ul>
+<li><strong>合作博弈</strong>：Agent 形成联盟以最大化效用。</li>
+<li><strong>非合作博弈</strong>：Agent 独立行动以最大化自身收益。</li>
+<li><strong>示例</strong>：贝叶斯联盟博弈、势博弈和追逃博弈。</li>
+</ul>
+</li>
+<li>
+<p><strong>基于优化的方法</strong>：这些方法通过最小化成本或最大化利润来寻找最佳解决方案。可以是确定性或随机性（元启发式）。</p>
+<ul>
+<li><strong>确定性优化</strong>：包括线性规划、混合整数线性规划（MILP）和匈牙利算法。这些方法计算成本高，但提供最优解。</li>
+<li><strong>元启发式</strong>：包括遗传算法、模拟退火和群体智能。这些方法鲁棒且高效，但可能提供次优解。</li>
+<li><strong>启发式</strong>：提供快速、近似的解决方案，计算成本低。用于 MEC 应用中的能耗最小化和任务调度。</li>
+</ul>
+</li>
+<li>
+<p><strong>强化学习（RL）</strong>：Agent 通过优化奖励函数来学习在动态环境中行动。RL 方法在处理不确定性和实时决策方面非常有效。</p>
+<ul>
+<li><strong>应用</strong>：MEC、ISR 和攻击任务。方法包括 Q 学习、深度 Q 网络（DQN）和多 Agent 深度确定性策略梯度（MADDPG）。</li>
+</ul>
+</li>
+<li>
+<p><strong>混合方法</strong>：结合两种或多种技术以提高效率并降低计算成本。例如，将 CBBA 与蚁群优化（ACS）结合用于 SAR 任务。</p>
+</li>
+<li>
+<p><strong>其他方法</strong>：包括块信息共享、基于聚类的算法和基于模糊逻辑的任务分配。</p>
+</li>
+</ol>
+<h4 id="_6">讨论</h4>
+<ol>
+<li>
+<p><strong>复杂性、最优性和可扩展性</strong>：任务分配的计算成本取决于算法的复杂性、使用频率和通信方案。最优性指解决方案最大化系统效用的能力，而可扩展性对于大型系统至关重要。</p>
+<ul>
+<li><strong>基于拍卖的方法</strong>：CBBA 和 CNP 方法高效，但计算成本较高。</li>
+<li><strong>基于博弈论的方法</strong>：提供次优解，复杂性从线性到指数不等。</li>
+<li><strong>基于优化的方法</strong>：确定性方法计算成本高，而元启发式和启发式方法提供较低的计算成本和良好的可扩展性。</li>
+<li><strong>强化学习</strong>：高效且适应性强，但计算密集。</li>
+<li><strong>混合方法</strong>：旨在结合不同方法的优势，通常能提高效率并降低成本。</li>
+</ul>
+</li>
+<li>
+<p><strong>通信</strong>：有效的通信对任务分配至关重要。方法可以是显式的（直接通信）或隐式的（通过环境感知间接通信）。基于拍卖的方法通常使用显式通信，而元启发式和 RL 方法可能使用隐式通信。</p>
+</li>
+<li>
+<p><strong>不确定性</strong>：许多任务分配方法未考虑不确定性，这些不确定性可能来自传感器不准确、Agent 故障或环境干扰。鲁棒性对于 SAR 和军事任务等时间关键型应用至关重要。一些方法，如鲁棒 CBBA 和贝叶斯联盟博弈，结合了不确定性以提高性能。</p>
+</li>
+</ol>
+<h4 id="_7">结论</h4>
+<p>本文总结指出，无人机任务分配方法在复杂性、最优性和可扩展性方面各不相同。</p>
+<p>Table 8 Comparison of the main task allocation methods</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm category</th>
+<th>Efficiency</th>
+<th>Scalabilty</th>
+<th>DTA</th>
+<th>Computational cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CBBA Based</td>
+<td>★★★</td>
+<td>★★</td>
+<td>★★</td>
+<td>★★★★</td>
+</tr>
+<tr>
+<td>Game Theory</td>
+<td>★★★★</td>
+<td>★★★</td>
+<td>★★★</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>Optimisation</td>
+<td>★★★★★</td>
+<td>★</td>
+<td>★★</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>Heuristics</td>
+<td>★★★</td>
+<td>★★★★</td>
+<td>★★</td>
+<td>★</td>
+</tr>
+<tr>
+<td>Metaheuristics</td>
+<td>★★★★</td>
+<td>★★★★</td>
+<td>★★★</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>Learning</td>
+<td>★★★★</td>
+<td>★★★</td>
+<td>★★★★</td>
+<td>★★★</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>基于拍卖和确定性优化的方法高效但计算成本高，不适合大规模系统。</li>
+<li>启发式和元启发式方法提供快速解决方案，具有中等效率和可扩展性。</li>
+<li>博弈论和强化学习方法提供良好的效率和可扩展性，其中 RL 在动态环境中尤为有效。</li>
+<li>混合方法结合了不同技术，显示出提高效率和降低计算成本的潜力。</li>
+</ul>
+<p>本文强调需要进一步研究能够处理不确定性和复杂环境的鲁棒、实时任务分配方法。</p>
+<hr />
+<h3 id="31">3.1 基于拍卖的算法</h3>
+<p>在无人机任务分配中常用的一组算法是基于拍卖的算法。这些方法依赖于经济原理，Agent 利用一个谈判协议，在拍卖中根据他们对环境的局部感知来竞标任务。因此，这些方法通常被称为市场导向的。Agent 们根据计算的任务效用或成本进行投标，以实现所分配任务的最大效用或最低成本。考虑到 Agent 们的本地效用函数，可以优化全局目标函数。根据算法是否集中化，拍卖师可以是或不是中央协调员，又或者拍卖可以通过其他 Agent 人的分散方式进行。这些可能涉及一个或多个任务的拍卖，可能需要多轮 [7、63、67、68]。</p>
+<p>基于拍卖的算法具有众多优点，包括高解决方案效率，尽管它们可能只提供次优解，并且具有良好的鲁棒性。这是因为它们结合了集中式和分散式方法的元素。此外，由于其计算和通信成本适中，因此是可扩展的。对于动态任务分配特别适合，因为新的任务可以添加或从拍卖程序中删除[1]。</p>
+<h4 id="311-cbba">3.1.1 基于 CBBA 的方法</h4>
+<p>基于共识的捆绑算法 (CBBA) [69] 是一种分布式技术，用于解决 UAVs 中的多目标优化问题。它使 Agent 能够获得解决方案，而不管其态势感知是否不一致。每个 Agent 感知到的用于执行捆绑任务的效用作为成本函数，该算法在第一阶段采用贪婪启发式的拍卖来选择任务，并在第二阶段解决任何重叠 overlapping 的任务。尽管 CBBA 算法为单机器人任务分配问题 [2] 提供了次优解，但由于其多项式时间竞标，该算法具有高度可扩展性，非常适合动态任务分配应用。[69，70]。</p>
+<p>下面介绍的方法可以分为两大类，一类是对 CBBA 算法的增强，另一类是性能影响（Performance Impact - PI）算法。PI 算法是一种在所有 Agent 上运行的分布式方法，然而，与 CBBA 不同的是，它使用性能影响度量来评估和安排任务包。[53]</p>
+<blockquote>
+<p>捆绑方法 [42] – [45] 已被开发出来，它们将共同任务分组为捆绑包，允许 Agent 对组而非单个任务进行投标。通过将相似任务分组，这类算法比顺序算法收敛更快，且在分配价值上可能有所提升，因为它们能逻辑性地将具有共性的任务组合在一起。\
+-- Choi, H.L., Brunet, L., How, J.P.: Consensus-based decentralized auctions for robust task allocation. IEEE Trans. Rob. 25(4), 912–926 (2009).</p>
+</blockquote>
+<h5 id="cbba">CBBA 改进方法</h5>
+<p>使用基于 CBBA 的任务分配方法的非常常见的无人机应用是 SAR 任务。在 [52] 中，作者关注于优先分配离每个 Agent 更近的任务，提出了一种簇优先的策略结合基于 CBBA 的算法，以改进基于 CBBA 的任务分配。在 [50] 中，作者提出了具有任务耦合约束的基于共识的捆绑算法 (CBBA-TCC)。这是一个两阶段的方法，最初由异构 Agent 在列表上定义他们可以执行的任务。与基线 CBBA 相比，基于协商的算法和混合拍卖算法具有更高的效率和可靠性，但计算成本也更高。针对动态任务重规划问题，在文献 [49] 中提出了一种局部重规划算法 (CBBA-LR)，该算法比其他基线重规划方法具有更好的性能。当我们陈述 “更好的性能” 时，这意味着该方法在性能标准方面优于其他方法，例如论文中使用的总效用价值。所提算法考虑了可用的时间窗口来选择要重新分配的任务，重置的任务更少，从而降低了计算成本。</p>
+<p>此外，基于 CBBA 的方法用于 ISR 应用程序，例如，[32]，其中基于 CBBA 的任务分配方法以及称为包容架构 (SA) 的基于行为的系统。针对任务执行，提出了基于边界共识的捆绑算法 (BCBBA)，其收敛速度比基线 CBBA 快。一种考虑任务不确定性的方法是 [71]，其中提出了一种基于 MDP 的鲁棒 CBBA 方案，并与基线 CBBA，鲁棒 CBBA[72] 和成本效益贪婪算法进行了比较。基于 MDP 的方法比所有基线具有更强的分配和更好的任务分配，比基线鲁棒的 CBBA 具有更低的计算成本，但它仍然不适用于大规模问题，具有比基线 CBBA 和 CB 贪婪算法更多的计算成本。此外，在 [34] 中，提出了一种改进的 CBBA 变量用于 SEAD 应用。它使用动态任务生成机制，将复杂任务分解为指定给单个 UAVs 的更简单的子任务。在 [73] 中，他们研究了在协作任务中使用多个 UAVs 的任务分配问题，提出了一种改进的基于共识的分组算法 (CBGA)，即每个任务捆绑包的修订。选择更好的候选 UAVs。尽管所提方法在任务数量较少的情况下性能与基线 CBGA 相似，但在任务数量较多时仍能获得更好的任务分配，获得更高质量的解。</p>
+<h5 id="pi">PI 改进方法</h5>
+<p>此外，有很多基于 PI 的方法用于 SAR 应用，例如在 [53] 中，研究了分布式多 Agent 任务分配算法的鲁棒性模块。这个模型是使用性能指数 (PI) 算法开发的。在大多数情况下，平均任务时间比传统的 PI 快，但可扩展性较低，运行时间较长。在 [66] 中，他们研究了 st-sr-ta 问题中的任务分配问题 (单任务单机器人时间延长)，并提出了 PI 算法的改进版本，它可以处理动态任务分配 (在线重新计划)，并且具有更广泛的解决方案区域，因为它可以逃避局部最小即。所提出的方法适用于动态任务分配，因为经典的 PI 通常用于静态任务分配。与基线 PI 和 CBBA 相比，它还通过扩大搜索空间和逃避局部极小值来提高解决方案的适应性，但计算时间更高，特别是对于大规模系统。在 [44] 中，作者关注 ISR 和攻击应用程序的关键任务，提出了一个优先分配关键任务的算法。他们提出了带有关键任务的扩展 PI 算法 (EPIAC)，它是 PI 的变体。与基准 PI 和 CBBA 相比，所提出的方法在增加 UAVs 数量、容量和关键任务数量时具有更好的性能。然而，这种方法有更多的计算成本，需要更多的迭代才能收敛。</p>
+<h4 id="312-cnp">3.1.2 基于 CNP 的方法</h4>
+<p>合同网协议（CNP）是最初应用于任务分配问题的谈判平台，并为各种任务分配算法奠定了基础。它是一种标准化协议，将任务分配给最合适的 Agent，并在必要时允许重新分配任务 [75] 。然而，CNP 容易受到消息拥塞的影响，这可能会破坏 Agent 之间的协商过程。与其他方法相比，如基于信息素的技术，CNP 高度依赖于基于消息的通信，增加了算法的计算成本并降低了通信效率和系统性能 [76] 。</p>
+<p>在文献 [29] 中，作者研究了战场环境下多无人机侦察任务实时分配问题，提出了一种改进的合同网络算法。该方法比基准合同网络具有更高的效率和更少的拍卖轮数。</p>
+<h4 id="313">3.1.3 其他基于拍卖的方法</h4>
+<p>此外，除了基于 CBBA 和 CNP 的方法外，还有其他拍卖方法，例如在[54]中，在野外搜索和救援任务中的任务分配问题，使用基于市场机制的异构无人机和无人车协同调度方法，该算法在仿真结果中证明了其计算效率。在 [77] 中，作者研究了具有不同需求的任务分配问题，并提出了一种拍卖机制任务分配（AMTA）算法，他们将该算法与闭环 CBBA 进行了比较。提出的算法在总奖励、总路径长度、完成时间和能耗方面都优于基准线。</p>
+<p>表 1 总结了一些典型拍卖方法的主要特征。</p>
+<p>Table 1 Characteristics of auction based approaches</p>
+<table>
+<thead>
+<tr>
+<th>Ref.</th>
+<th>Application</th>
+<th>Algorithm</th>
+<th>Metric</th>
+<th></th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[52]</td>
+<td>SAR</td>
+<td>improved CBBA</td>
+<td>baseline without clustering</td>
+<td></td>
+<td>higher efficiency, faster convergence</td>
+</tr>
+<tr>
+<td>[34]</td>
+<td>SEAD</td>
+<td>improved CBBA</td>
+<td>simulation</td>
+<td></td>
+<td>efficiency under time constraints</td>
+</tr>
+<tr>
+<td>[49]</td>
+<td>SAR</td>
+<td>CBBA-LR</td>
+<td>baseline replanning methods</td>
+<td></td>
+<td>better performance, lower computational cost</td>
+</tr>
+<tr>
+<td>[32]</td>
+<td>ISR</td>
+<td>BCBBA</td>
+<td>baseline CBBA</td>
+<td></td>
+<td>faster convergence</td>
+</tr>
+<tr>
+<td>[50]</td>
+<td>SAR</td>
+<td>CBBA-TCC</td>
+<td>baseline CBBA, negotia-</td>
+<td></td>
+<td>better efficiency and reliability, higher</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>tion based, hybrid auction</td>
+<td></td>
+<td>computational cost</td>
+</tr>
+<tr>
+<td>[71]</td>
+<td>ISR</td>
+<td>MDP-based</td>
+<td>baseline robust</td>
+<td>CBBA,</td>
+<td>better performance, unsuitable for large scale</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>robust CBBA</td>
+<td>CBBA, CB-Greedy</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[53]</td>
+<td>SAR</td>
+<td>improved PI</td>
+<td>PI</td>
+<td></td>
+<td>faster task time, worse scalability, compu-</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>tational time</td>
+</tr>
+<tr>
+<td>[44]</td>
+<td>ISR and attack</td>
+<td>EPIAC</td>
+<td>PI, CBBA</td>
+<td></td>
+<td>better performance, more computational</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>time and iterations</td>
+</tr>
+<tr>
+<td>[66]</td>
+<td>urban SAR</td>
+<td>improved PI</td>
+<td>PI, CBBA</td>
+<td></td>
+<td>dynamic task allocation, improved solutionfitness, higher computational timehigher efficiency for large number of UAVs</td>
+</tr>
+<tr>
+<td>[73]</td>
+<td>collaborative tasks</td>
+<td>improved CBGA</td>
+<td>CBGA</td>
+<td></td>
+<td>dynamic task allocation, improved solutionfitness, higher computational timehigher efficiency for large number of UAVs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 基于博弈论的方法</h3>
+<p>基于博弈论的方法假设 Agent 是根据特定策略选择其行为的玩家，这基本上就是将要应用的任务分配概念。在博弈结束后，他们所获得的奖励取决于他们的选择行动，决定了他们的策略。这些方法的目标是达到纳什均衡，在这种情况下，玩家已经选择了最佳策略，并且不会想要改变它，因为这是可以实现的最佳结果[78]。</p>
+<p>博弈可以分为两大基本类别，合作和非合作。在合作博弈中，Agent 人在采取行动之前进行协作或形成联盟，这会影响他们的整体策略和效用。一个例子是联盟形成博弈。在非合作博弈中，Agent 人单独行动，并根据自身利益选择自己的策略，以实现最高的回报。非合作博弈的例子包括贝叶斯博弈，非合作差分博弈和次模态博弈等。</p>
+<p>一些博弈论的方法被用于像 [28] 这样的 MEC 应用，其中研究了无人机辅助移动边缘计算中的连续卸载问题。无人机可以决定在本地计算的任务的百分比以及在云中卸载的任务的百分比。他们提出了一种基于博弈论的潜在方法，导致去中心化卸载算法。与全局最优的分散粒子群模拟退火算法 (PSO-SA) 相比，所提方法具有相同的性能，但计算成本更低。此外，在文献 [81] 中，使用贝叶斯联盟博弈方法研究了 UAVs MEC 系统中的<strong>不确定任务分配问题</strong>。该方法基于可能的环境，其中包含信念更新方案，用于获取与任务不确定性相关的环境概率。联盟结构在保持稳定性的同时，实现了效用的最大化。同时，由于环境分割的复杂度和规模的增加，使得联盟结构更好，但计算成本更高。在 [82] 中，研究了在有限通信和部分信息的情况下，城市地图应用的任务分配问题。他们提出了一种合作博弈算法和另一种竞争博弈论算法。尽管竞争算法具有更高的社会效用，这意味着它花费的资源较少，但合作方法具有更高的任务完成率，因此具有更好的整体性能。竞争算法通信负担较小，并且由于效用较高，适用于资源有限的应用。在 [80] 中，作者研究了一个他们简化的追求逃避问题，提出了一种动态分治策略，该策略利用 Apollonius 圆来帮助捕获者分配资源并以最短时间捕获逃逸者。 该算法具有良好的可扩展性，因此适用于大规模系统。</p>
+<p>表 2 总结了一些典型博弈论方法的主要特征。</p>
+<p>Table 2 Characteristics of game theory based approaches</p>
+<table>
+<thead>
+<tr>
+<th>Ref.</th>
+<th>Application</th>
+<th>Algorithm</th>
+<th>Metric</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[80]</td>
+<td>NA</td>
+<td>AAPC</td>
+<td>simulation</td>
+<td>good scalability, suitable for large scale systems</td>
+</tr>
+<tr>
+<td>[28]</td>
+<td>MEC</td>
+<td>potential game theory based</td>
+<td>PSO-SA</td>
+<td>lower computational cost</td>
+</tr>
+<tr>
+<td>[81]</td>
+<td>MEC</td>
+<td>Bayesian coalition game</td>
+<td>simulation</td>
+<td>better performance, high computational cost</td>
+</tr>
+<tr>
+<td>[82]</td>
+<td>area mapping</td>
+<td>cooperative and competitive derivative</td>
+<td>simulation</td>
+<td>cooperative has better overall performance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 基于优化的方法</h3>
+<p>优化是指应用数学原理，通过从一组潜在的解决方案中选择最佳选项，为给定的问题找到最合适的解决方案。通过最小化目标函数的成本或最大化目标函数的利润，同时遵守某些约束。目标函数的选择决定了系统的目标 [1，83]。优化技术可以是确定性的，也可以是基于所使用的特定算法的随机的。</p>
+<ul>
+<li>确定性方法不涉及随机性，只要使用相同的起点，就可以为问题生成相同的解决方案。确定性技术的例子有图解法、基于图的方法、顺序规划、线性规划和混合整数线性规划 (MILP)。</li>
+<li>另一方面，随机技术或元启发式涉及计算中的随机性，包括进化算法，群体智能和模拟退火。</li>
+<li>另一种方法是启发式算法，用于获得具有挑战性的优化问题的快速和高质量的解决方案，其中使用确定性优化方法将导致不成比例的计算成本。</li>
+</ul>
+<p>然而，这些方法的缺点是它们提供了近似的、次优的解决方案 [84]。</p>
+<h4 id="331">3.3.1 基于确定性优化的</h4>
+<p>匈牙利算法[85]是一种常用的优化算法，有时作为开发新任务分配算法的基础。它将任务分配问题视为组合优化问题，并使用图论在多项式时间内解决它。<br />
+通过估计每个 Agent 的效用，该算法最大化整体效用。然而，在系统中存在重大不确定性时，这种方法可能计算成本高且价值较低。因此，已经提出了对该算法的许多改进措施 [86]。</p>
+<p>一些基于匈牙利的方法包括 [56]，其中在区域监控应用中研究了多无人机协作和目标分配问题，重点是最小化无人机的电池消耗。他们提出了一种基于匈牙利方法的算法，称为<strong>多无人机协作目标分配算法 (MCTA)</strong>。提出的方法比随机和贪婪基线导数表现出更好的性能。在 [14] 中，他们研究了无人机辅助物联网网络的任务分配问题，同时考虑了平衡任务。有限的信道资源和信号干扰，旨在最小化总传输功率。他们将这个 MINLP 分解为三个子问题，并使用改进的 K 均值聚类算法来平衡任务。基于匹配理论的改进匈牙利语动态多多匹配 (HD4M) 用于信道分配和 UAVs 功率控制的另一种迭代方法。该方法比具有随机分配和固定高度的基准测试方法具有更好的效率。</p>
+<p>在基于确定性优化的任务分配技术中，有很大一部分是关于 MEC 应用，主要关注能耗最小化，就像在 [17] 中一样。本文通过联合研究服务放置、无人机轨迹、任务调度和计算资源分配等问题，研究了基于无人机的 MEC 网络的能耗最小化问题。具有任务延迟和网络资源限制。使用了带有 BnB 和 SCA 技术的交替优化算法，以及同一类别的另一种算法，但复杂度较低。与随机和贪婪基线相比，这两种算法的总体能耗都较低，但复杂度更高的算法的总体能耗比复杂度更低的算法更低。在 [22] 中，作者研究了多无人机辅助的 MEC 系统中的设备关联、任务分配和计算资源分配问题，再次关注降低能耗的无人机，具有任务完成死线、无人机的最大能耗以及可用计算资源等约束。他们通过使用迭代块坐标下降 (BCD) 算法将其分解为凸子问题来解决这个 MINLP 问题。所提出的方法比随机关联和卸载基线具有更好的性能。此外，在 [19] 中，他们研究了多无人机 MEC 系统中的动态任务分配问题，遵循分层方法处理任务调度和位分配以及无人机轨迹规划。目标是最小化总能耗，同时无人机轨迹满足特定的安全约束，有助于无人机冲突解决。该算法是一种动态规划投标方法，结合交替方向乘法器法 (ADMM)。与贪婪策略和随机策略相比，所提方法具有更低的能耗和满意的冲突解决效果。在 [27] 中，研究了无人机辅助的 MEC 网络中的任务卸载、资源分配和安全保障等挑战。介绍了一种基于松弛-舍入法和拉格朗日法的迭代算法，称为 lbo 算法。根据这项研究，在任务处理比例和延迟方面，lbo 算法明显优于其他算法。在 [18] 中，他们研究了多无人机辅助多机通信系统的联合资源分配和轨迹优化问题，方法是同时优化比特分配、发射功率、CPU 频率。带宽分配和无人机轨迹，主要侧重于最小化无人机和用户的加权能耗。所提算法基于序列凸近似 (SCA) 技术和备选优化，与固定轨迹、固定带宽分配和单一接入方案相比，表现出更好的效率。在 [87] 中，作者研究了具有序列依赖任务的协作无人机的任务分配问题。他们提出了一种空间早午餐限制算法 (SBLA) 来解决这个 MINLP 问题，该问题具有任务分配约束，带宽和无人机的能耗约束，以及，时间相关任务的时间限制。与蚁群算法 (ACA) 和模拟退火算法 (SAA) 相比，该算法具有更高的求解质量和更少的能耗。另一种方法专注于最大化物联网设备的数量并遵循一定的截止日期是 [8]，其中研究了多无人机启用的 MEC 中的资源分配和计算卸载问题。他们通过将 MINLP 问题分解为资源分配和轨迹优化的子问题，并联合使用变化优化和连续凸近似 (SCA) 来解决这个 MINLP 问题。导致基于时间窗口 (m-tsptw) 的多个旅行推销员问题。这就是所提方法的性能优于贪婪、静态和局部计算基线。</p>
+<p>其他基于优化的方法包括 [88]，研究基于无人机优先级的资源协调问题，重点是在基站控制的无人机网络中的可靠通信。为了控制信道分配，他们提出了一种使用平滑和交替优化的混合整数规划方法。这种方法比基线随机信道分配方法更有效。在 [59] 中，他们研究了使用 UAVs 进行物流的问题，特别是将产品从仓库转移到客户。他们使用一种动态分配算法，假设该问题是一种车辆路径问题，并考虑了负载、续航和空域限制。在 [89] 中，作者研究了多个 UAVs 辅助 MEC 网络中的能量效率和利润最大化问题。他们使用 Lyapunov 优化方法，提出了 UAVs 部署和资源分配的联合优化算法 (JOAoDR)。与贪婪算法相比，所提方法具有更好的长期性能。</p>
+<p>表 3 总结了一些典型确定性优化方法的主要特征。</p>
+<h4 id="332">3.3.2 基于元启发式方法的</h4>
+<p>元启发式包括各种方法，例如遗传算法、模拟退火和群体智能。群体智能是一种受生物启发的算法，在多智能体系统的任务分配中得到广泛应用。它从具有社会行为的动物中汲取灵感，包括昆虫群落、鱼群和群鸟等 [90]。这些动物表现出有效的劳动分工，专门的成员为殖民地的整体效率做出了贡献。尽管个体 Agent 可能不复杂，但它们可以通过合作集体执行复杂的任务，从而产生强大、高效且不需要计算昂贵的解决方案。然而，这些算法有时可能会将不需要的任务分配给 Agent，导致冲突，并且对环境变化表现出缓慢的全局响应。元启发式方法的两个主要类别是<strong>基于阈值的方法</strong>和<strong>概率方法</strong>。</p>
+<p>基于阈值的方法，如响应阈值方法 [93]，根据一些监控的值和固定或可变的阈值来确定 Agent 的行为。Agent 可能对这些值只有局部或全局的信息。在概率方法中，任务是通过利用从环境观察或历史数据导出的概率分布随机改变。此外，在这种类型的方法中，可以使用环境刺激，其中刺激值是选择特定任务的标准 [94]。</p>
+<p>大多数基于元启发式的技术都集中在 ISR 与目标攻击应用程序相结合的问题上，[95] 其中他们研究了在攻击和侦察应用程序中合作无人机之间的任务分配问题。它们将甲虫触角搜索 (BAS) 与遗传算法结合使用，从而提高了遗传算法的多样性和搜索能力。新算法被证明比基线遗传算法和基于 PSO 的基线变体具有更快的收敛速度和更好的性能。此外，在文献 [43] 中研究了多 UAVs 侦察和攻击应用中的任务分配问题，提出了一种改进的模拟退火融合遗传算法 (ISAFGA)。与模拟退火相比，它改进了溶液的接受标准。该算法比基线模拟退火算法具有更低的求解时间和更高的效率。在 [42] 中，作者研究了多 UAVs 的协同搜索-攻击联合任务规划问题，提出了一种动态离散鸽群优化 (D2PIO) 算法。仿真结果表明了该算法的有效性，算法性能优于 PSO、PIO、DPSO 和 MPSO。在文献 [40] 中，研究了多 UAVs 侦察和攻击应用中的任务分配问题，提出了一种基于增强随机分形搜索的混沌狼群算法 (MSFS- CWPA)。与基线狼群算法 (WPA) 和另外两种改进的狼群算法 (QWPA 和 TLWPA 方法) 相比，所提出的方法总体上表现出更好的全局搜索和性能。在 [96] 中，他们研究了 ISR 和攻击应用中的多无人机任务分配和路径规划，利用 Dubins 曲线，提出了一种改进的 PSO 算法。改进后的算法比基线 PSO 具有更好的收敛性和更好的解。在 [46] 中，他们研究了一群无人机在 ISR 和攻击应用程序中的动态任务分配，用于军事目的，使用分布式，自下而上，动态蚁群的劳动分工 (DACLD) 方法。与 WPA 算法相比，所提方法具有更好的任务分配、更快的威胁响应、鲁棒性和灵活性。</p>
+<p>此外，有很多针对多个 UAVs 应用程序的 ISR 或攻击，例如 [33] 研究了多个 UAVs 的任务分配问题，关注任务分配过程中 UAVs 信号的低截获概率。他们提出了一种基于拦截的低概率任务分配 (LPI-TA) 算法，使用标准的粒子群优化方法。仿真结果证明了该算法的有效性。[30] 研究了多无人机侦察任务分配问题，根据目标的地理特征对其进行划分。他们提出了基于蚁群算法的分组蚁群优化 (GACO) 算法，该算法比基线蚁群和 OGA-DEMMO 算法具有更好的探索能力和更低的成本。至于仅攻击应用，在 [38] 中涵盖了多个 UAVs 协同作战任务的任务规划问题。将任务分配问题分解为多约束多目标耦合整数优化问题和资源分配问题。
+是一个线性整数优化问题。基于遗传算法和模拟退火算法分别用于解决这两个问题。进行了仿真以验证算法的有效性，这些算法被证明能够实现快速的任务分配，使其适用于复杂的受限环境。在 [36] 中，他们研究了多个 UAVs 攻击地面目标的任务分配和航迹规划问题。他们开发了一种新的蚁群优化算法，基于自适应参数调整和双向搜索 (BSAP-ACO) 针对移动目标问题，提出了一种基于制导机制的改进粒子群优化算法 (GMPSO)，用于合作路径规划。将所提出的算法与基线蚁群优化 (ACO) 算法、动态反馈蚁群优化算法 (DFACO) 、遗传算法、PSO 算法与多目标粒子群优化 (MOPSO) 算法分别证明了所提方法的有效性。在 [37] 中，作者研究了具有资源约束和优先约束的多无人机协同作战应用 (如目标攻击) 的任务分配问题。他们提出了完全自适应的交叉熵算法 (人脸)，并与交叉熵方法 (CE) 和粒子群优化 (PSO) 算法进行了比较。所提出的技术仅在较大规模的问题上比 PSO 和 CE 具有更好的性能和更快的收敛速度，而在小规模应用中收敛速度比 CE 稍慢。</p>
+<p>其他应用包括，[97] 其中作者通过同时处理传感器分配，任务分配和无碰撞路径规划来研究异构无人机的任务规划问题。他们使用一种元启发式算法，即两级自适应可变邻域搜索 (TLAVNS) 算法，其中第一级用于传感器分配计划，第二级用于路径规划。所提出的算法比非自适应变体具有更好的性能，但计算成本稍高一些。在 [48] 中，作者研究了多个 UAVs 的动态任务分配问题，使用基于免疫多智能体网络框架的分布式免疫多智能体算法 (dima)。模拟结果表明，该算法分布式收敛快，通信损失小，鲁棒性强，但静态任务分配收敛速度慢。在 [97] 中，使用 K-均值方法和遗传算法研究了电网检查过程中无人机和运营车辆的任务分配问题。仿真实验证明了该算法的有效性和实用性。在 [98] 中，他们研究了战场应用中的多无人机合作任务分配问题，提出了一种改进的量子遗传算法，采用了混合蛙跳算法的分组优化策略，并模拟退火。与多粒度遗传算法和增量学习算法相比，该方法具有更好的局部最优解和更高的多样性，但存在计算复杂度高的缺点。在 [55] 中，作者研究了 UAVs 在农业活动中的使用，重点关注 UAVs 与任务之间的距离以及所承载的资源。他们提出了能力值敏感收集路径蚁群优化方法 (CVS-CPACO)，与 CPACO 和 modCPACO 相比，该方法有更好的解决方案和更少的资源浪费。此外，提出的方法的距离比基准测试还要差一些。在 [57] 中，他们研究了在复杂的化工厂和城市环境中执行任务的无人机任务分配问题，这些环境具有密集的建筑物和不可忽略的环境风。他们提出了一种基于孪生排斥机制、层次结构目标支配算子和分段基因编码 (nsga-iii-TEHOD) 的技术。这是对非支配排序遗传算法 III (nsga-iii) 的改进。该方法比 NSGA-III 方法具有更好的效率和收敛性。</p>
+<p>表 4 总结了一些典型元启发式方法的主要特征。</p>
+<h4 id="333">3.3.3 基于启发式方法的</h4>
+<p>在大多数启发式方法中，作者经常使用 MEC 应用程序。在 [16] 中，他们研究了无人机辅助的 MEC 网络中的任务分配问题，重点关注能量消耗和延迟最小化。他们提出了一种基于启发式的方法，使用差分进化 (反) 辅助算法和非支配排序过程。与 PSO 和 NSGA-II 相比，所提方法具有更低的能耗和更好的解，但 PSO 具有更快的收敛速度。在 [23] 中，他们研究了在基于 MEC 的无人机通信系统中最小化无人机的传输能量和基站的计算能量的问题。他们将这个问题分为分配优化和组合无人机分组优化，使用梯度下降法和基于模拟退火的启发式方法。与 FDMA 技术相比，所提方法具有更低的能耗。在 [10] 中，作者研究了无人机-机电网络中的联合计算卸载、频谱资源分配、计算资源分配和无人机部署 (联合帽) 问题。他们提出了一种 (1 e) 近似算法 (AA-CAP) 来解决所提出的联合问题，该问题产生的解与最优解的偏差是有界的。所提出的方法降低了对最小上限和 S-MBS 基线的成本。另一种方法是 [39]，其中作者研究了多个 UAVs 作战行动中的协作技术规划问题，使用分层设置和 <span class="arithmatex">\(A^*\)</span> 算法。仿真结果证明了所提方法的有效性。</p>
+<p>表 4 基于元启发式方法的特征</p>
+<h3 id="34">3.4 基于强化学习的方法</h3>
+<p>大多数现实世界的任务分配场景涉及高度动态的环境，其行为无法通过明确的数学模型来描述。因此，在这种环境中预测 Agent 可能遇到的未来干扰是非常具有挑战性的。Agent 处理此类干扰的一种方法是考虑他们以前的行为以及其他 Agent 的行为，从而提高系统的整体效率 [99, 100]。</p>
+<p>强化学习是一种常用的机器学习方法，它允许 Agent 根据其经验在环境的各种状态中学习如何行动。在这种技术中，Agent 优化成本或奖励函数以从通常建模为马尔可夫决策过程（MDP）的环境中学习。Q-学习是常用无模型 RL 方法之一，有助于 Agent 在 MDPs 中找到最优解[99, 100]。强化学习提供了几个好处，包括处理环境不确定性、实时实施（对于训练有素的网络）和灵活地处理不同任务的能力 [41]。然而，在大型复杂系统中，大多数 RL 算法通常需要大量的计算能力 [101]。</p>
+<p>关于基于强化学习的方法的大多数应用都集中在 MEC 应用上，例如在 [102] 中，作者研究了计算卸载的问题，在紧急情况下，边缘物联网 (EIoT) 设备的策略和资源分配使用多个无人机作为空中基站形成网络。他们提出了一个名为 CCORA-DRL 的 DDPG 学习框架。该框架的效率比 DQN、A3C 和贪婪基线更高。在 [103] 中，他们研究支持无人机的边缘计算 (UEC) 问题，其中无人机可以从地面本地设备和其他邻近的无人机上执行计算任务。他们提出了一个基于深度 Q 网络方法的 DRL 框架，用于集中式和分布式网络拓扑结构的协作卸载和资源分配过程。中央化和分布式合作 DRL 方法在效用方面表现优异，流行的非合作基线，中心的方法实现了最高的效用。在 [21] 中，作者研究了移动边缘计算 (MEC) 的问题，使用 UAVs 从用户设备中执行任务卸载。他们提出了一种基于凸优化的方法，称为轨迹控制算法 (CAT) 和第二种基于深度强化学习的轨迹控制算法 (RAT)，用于实时决策。这些方法被与本地执行、随机移动和集群移动等基线进行了比较。与猫和最糟糕的基线相比，大鼠方法具有最佳的能量性能。在文献 [25] 中，使用基于强化学习 DQN 的方法研究了海事网络中基于无人机的移动边缘计算 (MEC) 网络的联合资源分配问题。仿真实验验证了所提方法的收敛性和性能。在 [9] 中，作者研究了通信负载高峰时蜂窝网络中无人机单元的覆盖和导航 (资源分配) 问题，使用多智能体强化学习集中方法 (MARL) 和增强的联合行动选择算法 (增强的爬山搜索)。与经典爬山相比，所提出的方法表现出更好的性能。</p>
+<p>在 [24] 中，作者研究了天地一体化电力物联网 (SAG-PIoT) 网络中的任务卸载和资源分配问题。使用 Lya-punov 优化来分解联合优化问题。特别是对于任务卸载，提出了一种基于 DRL 参与者批评的方法，能够处理维数灾难，同时考虑到队列信息。是动态任务分配的理想选择。与基线 DAC 和 EMM 算法相比，该算法具有更好的性能、收敛速度和更低的能耗。在 [13] 中他们研究了基于多无人机的物联网边缘网络的动态任务卸载和资源分配问题，提出了一种 MADRL 方法。他们利用 MADDPG 算法，将上述问题形成为随机博弈，并专注于能耗和计算延迟最小化。与单一 Agent DDPG 和贪心方法相比，该方法表现出更好的性能和更低的成本。在 [41] 中研究了不同的应用，其中作者使用强化学习方法研究了 ISR 和具有不确定性的攻击问题。将任务分配问题转化为 MDP 问题，利用神经网络近似思想，提出了一种基于 Q 学习的快速任务分配算法。该算法是实时可实现的。与离散粒子-模拟退火算法 (DPSO-GT-SA) 相比，该算法在不确定条件下具有更好的性能。此外，具有优先经验重放的算法比具有随机经验重放的算法收敛速度更快。</p>
+<p>表 5 总结了一些典型的学习方法的主要特征。</p>
+<h3 id="35">3.5 混合方法</h3>
+<p>除了上述解决任务分配问题的方法外，还存在一些混合方法，这些方法是上述部分方法的结合。</p>
+<p>作者在[47]中研究了 SAR 任务的分配问题，并提出了一种基于 CBBA 的方法。他们将这种方法与蚁群系统（ACS）算法和基于贪婪策略相结合，以增强 CBBA 的包含阶段。该方法具有更低的工期、旅行距离和交换消息的数量，相比基准方法如匈牙利算法（HA）、分散式贪婪算法（DGA）、重复拍卖算法（RAA）和空间</p>
+<p>基于队列的算法 (SQA)。另一方面，这种方法提供了次优 (接近最佳) 与萤火虫算法-量子人工蜂群-多机器人任务分配 (fa-qabc-MRTA) 相比，解决方案具有更多的交换消息数量，尽管它有较低的完工时间和行驶距离。在 [31] 中，他们提出了一种基于市场经济的拍卖系统和生物启发的信息素地图的框架，用于解决区域探索、连通性管理和任务分配的问题。同时，用于 ISR 应用上的多个 UAVs。与随机浏览器算法相比，他们的方法具有良好的覆盖性能，更好的效率，连接性和区域覆盖之间呈现正相关，但连接维护机制减少了无人机覆盖的区域，使用前需要进行校准阶段。</p>
+<h3 id="36">3.6 其他方法</h3>
+<p>还有一些其他方法不适合上述类别。在 [60] 中，他们研究了空中机器人结构装配中分散动态任务分配的块信息共享方法。这种方法基于一对一的策略，在相邻的 Agent 之间共享信息，帮助他们重新分配任务。在某些情况下，他们的方法收敛到最优解，但是对于 Agent 的块大小，还没有最佳的计算方法，在平衡收敛时间和鲁棒性方面发挥着关键作用。对于大尺寸块，可能成本高昂，并可能导致效率和容错性的降低。在 [104] 中，作者研究了具有有限数量区域的异构 UAVs 的覆盖路径规划问题。他们提出了一种新的基于聚类的算法，该算法基于相对距离对区域进行分类，称为时空聚类算法 (STCA)。这种方法提供了次优的解决方案，但可以保证在特定假设下覆盖所有地区。在 [45] 中，他们使用 Mamdani 型模糊推理系统研究了多目标任务分配问题，以应对 ISR 和 UAVs 的攻击。在 [51] 中，作者研究了 SAR 应用中的任务分配问题，提出了一种改进载波感知多路访问的冲突避免通信协议 (CSMA/CA)。协议以分布式方式实现任务分配。仿真和现场实验验证了该方法的有效性。</p>
+<hr />
+<ul>
+<li>Choi, H.L., Brunet, L., How, J.P.: Consensus-based decentralized auctions for robust task allocation. IEEE Trans. Rob. 25(4), 912–926(2009). https://doi.org/10.1109/TRO.2009.2022423</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

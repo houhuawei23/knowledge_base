@@ -1,0 +1,2964 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://houhuawei23.github.io/knowledge_base/Researches/MRTA/MRTA/">
+      
+      
+        <link rel="prev" href="../../Robot/">
+      
+      
+        <link rel="next" href="../Game-Based/2024.05-ICRA-LiwangZhang/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>UAV Swarm Task Assignment Problem - HHW KnowledgeBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uav-swarm-task-assignment-problem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="HHW KnowledgeBase" class="md-header__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HHW KnowledgeBase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UAV Swarm Task Assignment Problem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="HHW KnowledgeBase" class="md-nav__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HHW KnowledgeBase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Notes for nearly Everything
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BookMarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Links Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ConfigExamples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ProgrammingLangs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ProgrammingLangs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ProgrammingLangs/Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ProgrammingLangs/Python/PythonLibs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Libs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ProgrammingLangs/Rust/Rust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Readings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Readings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Readings/1835-%E9%9D%92%E5%B9%B4%E5%9C%A8%E9%80%89%E6%8B%A9%E8%81%8C%E4%B8%9A%E6%97%B6%E7%9A%84%E8%80%83%E8%99%91-%E9%A9%AC%E5%85%8B%E6%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    青年在选择职业时的考虑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Readings/1938-%E8%AE%BA%E9%9D%92%E5%B9%B4%E7%9A%84%E4%BF%AE%E5%85%BB-%E5%BC%A0%E9%97%BB%E5%A4%A9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年的修养-张闻天（1938年4月28日）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Readings/1946-%E8%AE%BA%E9%9D%92%E5%B9%B4%E4%BF%AE%E5%85%BB-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年修养-张申府-1946
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Readings/1948-%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AD%A6%E9%A3%8E-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1948 研究与学风-张申府
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Readings/2017.04-%E8%94%A1%E5%85%83%E5%9F%B9%E4%BB%BB%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E9%95%BF%E4%B9%8B%E5%B0%B1%E8%81%8C%E6%BC%94%E8%AF%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017-04 蔡元培任北京大学校长之就职演说
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Researches
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Researches
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note for Scientific Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Robot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MRTA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            MRTA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UAV Swarm Task Assignment Problem
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UAV Swarm Task Assignment Problem
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#development-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us" class="md-nav__link">
+    <span class="md-ellipsis">
+      US
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cn" class="md-nav__link">
+    <span class="md-ellipsis">
+      CN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      异构无人机集群与任务集合的数学描述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="异构无人机集群与任务集合的数学描述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无人机建模：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务建模：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      联盟形成博弈数学模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="联盟形成博弈数学模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 联盟形成博弈模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 联盟划分问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 无人机收益
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 无人机收益">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 资源贡献
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 路径成本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 威胁代价
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 任务收益
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 联盟效用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 无人机效用函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      异构无人机集群任务分配问题在不同数学模型中的基本数学形式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-tsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 旅行商问题 (TSP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 网络流优化 (NFO) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 车辆路由问题 (VRP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cmtap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 协同多任务分配问题 (CMTAP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-milp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 混合整数线性规划 (MILP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 基于马尔可夫决策过程 (MDP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solving-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solving Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      集中式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="集中式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      启发式方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="启发式方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      遗传算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      粒子群优化算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      重分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      异构系统
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      数学问题的模型与常见求解算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数学问题的模型与常见求解算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tsp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 旅行商问题（TSP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nfo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 网络流优化（NFO）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vrp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 车辆路由问题（VRP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cmtap_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 协同多任务分配问题（CMTAP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-milp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 混合整数线性规划（MILP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mdp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 基于马尔可夫决策过程（MDP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结对比表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game Based
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Game Based
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Game-Based/2024.05-ICRA-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.05-ICRA-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Game-Based/2024.10-IROS-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.10-IROS-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Game-Based/2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Survey
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Survey
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Survey/2004.09-IJRS-MRTA-Taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2004.09-IJRS-MRTA-Taxonomy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Survey/2021.09-CSMS-Review-Dynamic-SwarmUAV-TA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021.09-CSMS-Review-Dynamic-SwarmUAV-TA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Survey/2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Survey/2023.11-JIRS-Review-TA-Methods-for-UAVs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023.11-JIRS-Review-TA-Methods-for-UAVs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SystemOM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            SystemOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SystemOM/PowerShell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SystemOM/SystemOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System OM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Techs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Techs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/GitBook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitBook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/Lalrpop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lalrpop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/NodeJs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/PersonalWebsite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PersonalWebsite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Techs/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VScode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#development-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us" class="md-nav__link">
+    <span class="md-ellipsis">
+      US
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cn" class="md-nav__link">
+    <span class="md-ellipsis">
+      CN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      异构无人机集群与任务集合的数学描述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="异构无人机集群与任务集合的数学描述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无人机建模：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      任务建模：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      联盟形成博弈数学模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="联盟形成博弈数学模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 联盟形成博弈模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 联盟划分问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 无人机收益
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 无人机收益">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 资源贡献
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 路径成本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 威胁代价
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 任务收益
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 联盟效用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 无人机效用函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      异构无人机集群任务分配问题在不同数学模型中的基本数学形式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-tsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 旅行商问题 (TSP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 网络流优化 (NFO) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 车辆路由问题 (VRP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cmtap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 协同多任务分配问题 (CMTAP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-milp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 混合整数线性规划 (MILP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 基于马尔可夫决策过程 (MDP) 模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solving-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solving Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solving Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      集中式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="集中式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      启发式方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="启发式方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      遗传算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      粒子群优化算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      重分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      异构系统
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      数学问题的模型与常见求解算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数学问题的模型与常见求解算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tsp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 旅行商问题（TSP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nfo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 网络流优化（NFO）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vrp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 车辆路由问题（VRP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cmtap_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 协同多任务分配问题（CMTAP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-milp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 混合整数线性规划（MILP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mdp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 基于马尔可夫决策过程（MDP）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结对比表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="uav-swarm-task-assignment-problem">UAV Swarm Task Assignment Problem</h1>
+<ul>
+<li><a href="https://www.sys-ele.com/article/2024/1001-506X/20240318.shtml">无人机集群任务分配技术研究综述 系统工程与电子技术, 2024, 46(3): 922-934 </a></li>
+</ul>
+<h2 id="development-status">Development Status</h2>
+<h3 id="us">US</h3>
+<p>Small unmanned aircraft systems (SUAS) flight plan</p>
+<ul>
+<li>OTTO R P. Small unmanned aircraft systems (SUAS) flight plan: 2016-2036[R]. Washington, DC: United States Air Force, 2016.</li>
+<li>2016 年 5 月, 美国空军发布的小型无人机系统发展路线图《2016-2036 年小型无人机系统飞行规划》</li>
+<li>为确保战争的制胜能力与强军事对抗环境下的非对称优势, 应重点研究更具成本效益和作战威力的集群式无人机作战样式。</li>
+<li>详细阐述了“无人机蜂群”的概念, 并计划在 2036 年建成横跨航空、太空、网空三大作战领域的无人机集群作战系统。</li>
+</ul>
+<p>Unmanned systems integrated roadmap 2017-2042</p>
+<ul>
+<li>FACHEY K M, MILLER M J. Unmanned systems integrated roadmap 2017-2042[R]. Arlington Country: Office of the Secretary of Defense, 2018.</li>
+<li>2018 年 8 月, 美国国防部发布的《无人系统综合路线图 2017-2042》</li>
+<li>指出了 19 项近、远期需要重点发展的面向军事作战需求、能大幅提升无人机集群作战效能的关键技术, 包括开放式体系架构、机器学习、人工智能等。</li>
+</ul>
+<p>美国海军研究生院</p>
+<ul>
+<li>GIAMMARCO K, HUNT S, WHITCOMB C. An instructional design reference mission for search and rescue operations[R]. Monterey, California: Naval Postgraduate School, 2015.</li>
+<li>GILES C K. A framework for integrating the development of swarm unmanned aerial system doctrine and design[R]. Monterey, California: Department of Systems Engineering Naval Postgraduate School, 2017.</li>
+<li>提出了一种面向无人集群作战体系设计的一体化框架, 该框架针对未来无人机集群作战的去中心化、自组网、扁平化结构等特点, 构建了无人机集群“使命-战术-行动-算法-数据”五层任务框架, 并以无人机集群执行情报、监视、侦察和空战任务为例分析了无人机集群在每层中的具体任务, 给出了具体的军事概念模型。</li>
+</ul>
+<h3 id="cn">CN</h3>
+<p>2017-07《新一代人工智能发展规划》</p>
+<ul>
+<li>多次提及“群体感知、协同与演化”“群体集成智能”“自主无人系统”等概念, 同时明确指出应将人工智能与无人机集群紧密融合, 借助人工智能重点突破无人系统相关核心技术, 实现无人机集群相关技术的跨越式发展。</li>
+</ul>
+<p>PLA</p>
+<p>解放军报 2019 年 10 月发表《加速推进军事智能化》文章, 将智能集群作战协同技术列为智能化战争的基石;</p>
+<h2 id="modeling">Modeling</h2>
+<p>无人机集群任务分配的数学描述模型可概括性地表述为:</p>
+<p>异构无人机平台(Who)在特定位置(Where)上, 为完成某种集群任务而按照一定的约束条件/作战规则(Why)执行自身分配到的任务(How)并产生与消耗作战资源(What), 即无人机集群任务分配“4W1H”关系。</p>
+<p>组合优化问题模型</p>
+<ul>
+<li>旅行商问题 (traveling salesman problem, TSP) 模型</li>
+<li>网络流优化 (network flow optimization, NFO) 模型</li>
+<li>车辆路由问题 (vehicle routing problem, VRP) 模型</li>
+<li>协同多任务分配问题 (cooperative multi-tasks assignment problem, CMTAP) 模型</li>
+<li>混合整数线性规划 (mixed integer linear programming, MILP) 模型</li>
+<li>基于马尔可夫决策过程 (Markov decision process, MDP) 模型</li>
+</ul>
+<p>优劣</p>
+<ul>
+<li>TSP 和 VRP 模型主要用于求解单一任务的分配问题, 而对多任务情况适用性较差;</li>
+<li>NFO 模型较早运用于弹药较少的广域搜索弹药任务分配问题上;</li>
+<li>MILP 模型描述简洁, 很容易表示涉及到数值的全局约束, 将任务规划问题描述为一个组合优化问题, 实用性较强, 但计算成本会随问题规模增大而呈指数型增长;</li>
+<li>而基于 NFO 和 MILP 模型提出的 CMTAP 模型考虑多无人机编队完成探测识别、打击、毁伤评估等一系列时序任务, 通过优化完成任务的总时间或者飞行的总距离来实现任务分配, 更适用于复杂任务分配问题建模, 但可扩展性低;</li>
+<li>
+<p>在考虑系统存在不确定因素和多智能体协同系统时, 可分别通过部分可观测的 MDP(partially observable MDP, POMDP) 及多智能体的 MDP(multi-agent MDP, MMDP)对协同任务分配问题进行建模, 但上述模型均存在通用性较差的缺点。</p>
+</li>
+<li>
+<p>Response threshold model based UAV search planning and task allocation [J]. Journal of Intelligent &amp; Robotic Systems, 2014</p>
+</li>
+</ul>
+<hr />
+<h3 id="_1">异构无人机集群与任务集合的数学描述</h3>
+<h4 id="_2">无人机建模：</h4>
+<ul>
+<li><span class="arithmatex">\(n\)</span> 个无人机集合: <span class="arithmatex">\(\boldsymbol{U}=\left\{u_{1}, u_{2}, \ldots, u_{n}\right\}\)</span></li>
+<li>利用四元组来描绘无人机状态信息 UIN:<ul>
+<li><span class="arithmatex">\(U I N\langle\text { Res, position, value, } \mathrm{v}\rangle\)</span></li>
+<li><span class="arithmatex">\(U I N=\left\{U I N_{u_{i}} \mid i=1,2, \ldots, n\right\}\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(l\)</span> 种资源类型, <span class="arithmatex">\(R e_{u_{i}}^{k}\)</span> 为无人机携带第 k 种资源的数目<ul>
+<li>无人机 <span class="arithmatex">\(u_i\)</span> 的性能描述为: <span class="arithmatex">\(\operatorname{Res}_{u_{i}}=\left\{R e_{u_{i}}^{1}, ~ R e_{u_{i}}^{2}, \ldots, R e_{u_{i}}^{l}\right\}\)</span></li>
+</ul>
+</li>
+<li>无人机价值信息 <span class="arithmatex">\(value _{u_{\mathrm{i}}}\)</span></li>
+<li>无人机速度约束:<ul>
+<li><span class="arithmatex">\(v_{u_{i}} \leqslant v_{u_{i}}^{\max }, \forall u_{i} \in U\)</span></li>
+<li><span class="arithmatex">\(v_{u_{i}}^{\max}\)</span> 为常数，表示各无人机最大速度约束</li>
+</ul>
+</li>
+</ul>
+<p>则无人机 <span class="arithmatex">\(u_i\)</span> 的状态信息如下:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+U I N_{u_{i}} &amp; =\left\langle\operatorname{Res}_{u_{i}}, \text { position }_{\mathrm{u}_{\mathrm{i}}}, \text { value }_{\mathrm{u}_{\mathrm{i}}}, \mathrm{v}_{\mathrm{u}_{\mathrm{i}}}\right\rangle
+\\&amp; =\left\langle\left\{\operatorname{Re}_{u_{i}}^{1}, \ldots, \operatorname{Re}_{u_{i}}^{l}\right\},\left(x_{u_{i}}, y_{u_{i}}, z_{u_{i}}\right), \text { value }_{\mathrm{u}_{\mathrm{i}}}, \mathrm{v}_{\mathrm{u}_{\mathrm{i}}}\right\rangle
+\end{aligned}
+\]</div>
+<h4 id="_3">任务建模：</h4>
+<ul>
+<li><span class="arithmatex">\(m\)</span> 个任务的任务集合, <span class="arithmatex">\(\boldsymbol{T}=\left\{t_{1}, t_{2}, \ldots, t_{m}\right\}\)</span></li>
+<li>任务状态信息 <span class="arithmatex">\(TIN\)</span> 描述如下<ul>
+<li><span class="arithmatex">\(\operatorname{TIN}\langle\text { Res, position, TW, a }\rangle\)</span></li>
+<li><span class="arithmatex">\(\operatorname{TIN}=\left\{\operatorname{TIN}_{t_{j}} \mid j=1,2, \ldots, m\right\}\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\operatorname{Res}_{t_{j}}=\left\{R e_{t_{j}}^{1}, R e_{t_{j}}^{2}, \ldots, R e_{t_{j}}^{l}\right\}\)</span> 是任务所需的资源类型及数目，</li>
+<li><span class="arithmatex">\(R e_{t_{j}}^{k}\)</span> 是任务所需要的第 k 种资源的数目。</li>
+<li>任务 <span class="arithmatex">\(t_{j}\)</span> 的位置信息记为 <span class="arithmatex">\(\operatorname{position}_{\mathrm{t}_{\mathrm{j}}}\)</span> 。</li>
+<li><span class="arithmatex">\(TW\)</span> 是任务的硬时间窗口信息，指对无人机到达任务时间范围提出硬性要求，若晚于某个时间节点，任务失败。<ul>
+<li><span class="arithmatex">\(\mathrm{TW}=\left[t^{\text {minstart }}, t^{\text {maxstart }}\right]\)</span></li>
+</ul>
+</li>
+<li>威胁指数 <span class="arithmatex">\(a_{t_{j}}\)</span><ul>
+<li>当无人机执行不同任务时，任务本身可能对无人机有一定的破坏能力，因此在建模中引入威胁指数 <span class="arithmatex">\(a_{t_{j}}\)</span> ，表示任务 <span class="arithmatex">\(t_{j}\)</span> 对无人机的威胁系数。</li>
+</ul>
+</li>
+</ul>
+<p>则任务 <span class="arithmatex">\(t_j\)</span> 的状态信息描述 <span class="arithmatex">\(TIN_{t_j}\)</span> 如下:</p>
+<div class="arithmatex">\[
+\begin{array}{l}\operatorname{TIN}_{t_{j}}=\left\langle\text { Res }_{t_{j}}, \text { position }_{\mathrm{t}_{\mathrm{j}}}, \mathrm{TW}_{\mathrm{t}_{\mathrm{j}}}, \mathrm{a}_{\mathrm{t}_{\mathrm{j}}}\right\rangle \\=\left\langle\left\{\operatorname{Re}_{t_{j}}^{1}, \ldots, \text { Re }_{t_{j}}^{l}\right\},\left(x_{t_{j}}, y_{t_{j}}, z_{t_{j}}\right),\left[t_{t_{j}}^{\text {minstart }}, t_{t_{j}}^{\text {maxstart }}\right], a_{t_{j}}\right\rangle .\end{array}
+\]</div>
+<h4 id="_4">联盟形成博弈数学模型</h4>
+<ul>
+<li>通过将无人机集群任务分配问题建模为联盟形成博弈，证明了该博弈模型可以构造为势博弈。</li>
+<li>势博弈的性质保证了纳什均衡解的存在性，并且可以通过最小化或最大化势函数 <span class="arithmatex">\(S R\)</span> 来求解。</li>
+<li>基于此理论，可以设计合理的联盟形成博弈算法，实现最终的任务分配。</li>
+</ul>
+<h5 id="1">1. 联盟形成博弈模型</h5>
+<p>将无人机集群任务分配问题建模为联盟形成博弈模型，定义如下：</p>
+<ul>
+<li>博弈模型：<span class="arithmatex">\(\boldsymbol{G}=(\boldsymbol{U}, \boldsymbol{E}, \varepsilon, \boldsymbol{R})\)</span><ul>
+<li><span class="arithmatex">\(\boldsymbol{U}\)</span>：无人机集合。</li>
+<li><span class="arithmatex">\(\boldsymbol{E}=\left[e_{u_{1}}, e_{u_{2}}, \ldots, e_{u_{n}}\right]\)</span>：无人机选择的任务集合，等价于任务集合 <span class="arithmatex">\(\boldsymbol{T}\)</span>，即 <span class="arithmatex">\(\boldsymbol{E}_{U}=\boldsymbol{T}\)</span>。</li>
+<li><span class="arithmatex">\(\varepsilon\)</span>：评估无人机收益的效用函数。</li>
+<li><span class="arithmatex">\(\boldsymbol{R}\)</span>：评估各个联盟效用的函数。</li>
+</ul>
+</li>
+</ul>
+<h5 id="2">2. 联盟划分问题</h5>
+<p>原问题转化为联盟划分问题，无人机选择策略后形成 <span class="arithmatex">\((m+1)\)</span> 个任务联盟。博弈目标是无人机集合选择合适策略，得到稳定的联盟结构 <span class="arithmatex">\(\boldsymbol{C S}\)</span>：</p>
+<ul>
+<li>联盟结构：<span class="arithmatex">\(\boldsymbol{C S}=\left\{\boldsymbol{c}_{t_{0}}, \boldsymbol{c}_{t_{1}}, \boldsymbol{c}_{t_{2}}, \ldots, \boldsymbol{c}_{t_{m}}\right\}\)</span><ul>
+<li><span class="arithmatex">\(\boldsymbol{c}_{t_{0}}\)</span>：未分配任务的无人机联盟集合。</li>
+<li><span class="arithmatex">\(\boldsymbol{c}_{t_{j}}\)</span>：执行任务 <span class="arithmatex">\(t_{j}\)</span> 的无人机联盟集合。</li>
+</ul>
+</li>
+</ul>
+<h5 id="3">3. 无人机收益</h5>
+<p>无人机 <span class="arithmatex">\(u_{i}\)</span> 加入联盟 <span class="arithmatex">\(c_{t_{j}}\)</span> 时，收益 <span class="arithmatex">\(r_{u_{i}}\left(t_{j}\right)\)</span> 包含三部分：</p>
+<ul>
+<li>资源贡献：<span class="arithmatex">\(\operatorname{val}\left(u_{i}, t_{j}\right)\)</span></li>
+<li>路径成本：<span class="arithmatex">\(\operatorname{cost}\left(u_{i}, t_{j}\right)\)</span></li>
+<li>威胁代价：<span class="arithmatex">\(\operatorname{risk}\left(u_{i}, t_{j}\right)\)</span></li>
+</ul>
+<h6 id="31">3.1 资源贡献</h6>
+<p>资源贡献 <span class="arithmatex">\(\operatorname{val}\left(u_{i}, t_{j}\right)\)</span> 定义为：</p>
+<div class="arithmatex">\[
+\operatorname{val}\left(u_{i}, t_{j}\right)=\left\{\begin{array}{ll}
+\boldsymbol{K}(j,:) \boldsymbol{I}-P O, &amp; \text { if } \boldsymbol{K}(j,:) \boldsymbol{I}-P O&gt;0 \\
+0, &amp; \text { otherwise }
+\end{array}\right.
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\boldsymbol{K}\)</span>：权重矩阵，权衡资源在价值收益中的比重。</li>
+<li><span class="arithmatex">\(\boldsymbol{K}(j,:)=\left\{k_{j 1}, k_{j 2}, \ldots, k_{j l}\right\}\)</span>：任务 <span class="arithmatex">\(t_{j}\)</span> 各异构资源的重要程度。</li>
+<li><span class="arithmatex">\(\boldsymbol{I}=\left\{i_{1}, i_{2}, \ldots, i_{l}\right\}\)</span>：无人机可利用的每类资源的数目。</li>
+<li><span class="arithmatex">\(O\)</span>：无人机未利用的总资源数目。</li>
+</ul>
+<h6 id="32">3.2 路径成本</h6>
+<p>路径成本 <span class="arithmatex">\(\operatorname{cost}\left(u_{i}, t_{j}\right)\)</span> 定义为：</p>
+<div class="arithmatex">\[
+\operatorname{cost}\left(u_{i}, t_{j}\right)=\left\{\begin{array}{ll}
+1-\boldsymbol{d}\left(u_{i}, t_{j}\right) / \sqrt{x^{2}+y^{2}}, &amp; \operatorname{val}\left(u_{i}, t_{j}\right)&gt;0 \\
+\mu, &amp; \text { otherwise }
+\end{array}\right.
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\boldsymbol{d}\)</span>：无人机与任务之间的欧氏距离。</li>
+<li><span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span>：任务环境区域大小。</li>
+<li><span class="arithmatex">\(\mu\)</span>：小于 0 的常数。<ul>
+<li>当 <span class="arithmatex">\(\operatorname{val}\left(u_{i}, t_{j}\right)\)</span> 为 0 时，设计 <span class="arithmatex">\(r_{u_{i}}\left(t_{j}\right)\)</span> 小于 0 。含义是当无人机 <span class="arithmatex">\(u_{i}\)</span> 加入任务 <span class="arithmatex">\(t_{j}\)</span> 联盟无法贡献资源时，加入该联盟的收益小于在 <span class="arithmatex">\(c_{t_{0}}\)</span> 中的收益。</li>
+</ul>
+</li>
+</ul>
+<h6 id="33">3.3 威胁代价</h6>
+<p>威胁代价 <span class="arithmatex">\(\operatorname{risk}\left(u_{i}, t_{j}\right)\)</span> 定义为：</p>
+<div class="arithmatex">\[
+\operatorname{risk}\left(u_{i}, t_{j}\right)=\text { value }_{\mathrm{u}_{\mathrm{i}}} \mathrm{a}_{\mathrm{t}_{\mathrm{j}}}
+\]</div>
+<ul>
+<li>表示任务的探测雷达和攻击能力等因素对无人机造成的威胁代价评估。</li>
+</ul>
+<h5 id="4">4. 任务收益</h5>
+<p>任务收益 <span class="arithmatex">\(r_{u_{i}}\left(t_{j}\right)\)</span> 定义为：</p>
+<div class="arithmatex">\[
+r_{u_{i}}\left(t_{j}\right)=\alpha \mathbf{v a l}\left(u_{i}, t_{j}\right)+\beta \operatorname{cost}\left(u_{i}, t_{j}\right)-\gamma \operatorname{risk}\left(u_{i}, t_{j}\right)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\alpha, ~ \beta, ~ \gamma\)</span>：常数权重值，分别决定资源重叠度、路径成本和威胁代价在收益中的比重。</li>
+</ul>
+<h5 id="5">5. 联盟效用</h5>
+<p>任务 <span class="arithmatex">\(t_{j}\)</span> 的联盟效用 <span class="arithmatex">\(\boldsymbol{R}\left(c_{t_{j}}\right)\)</span> 定义为：</p>
+<div class="arithmatex">\[
+\boldsymbol{R}\left(c_{t_{j}}\right)=\sum_{u_{i} \in c_{t_{j}}} r_{u_{i}}\left(t_{j}\right)
+\]</div>
+<p>任务分配问题的总收益 <span class="arithmatex">\(S R\)</span> 定义为：</p>
+<div class="arithmatex">\[
+S R=\sum_{c_{t_{j}} \in C S} \boldsymbol{R}\left(c_{t_{j}}\right)
+\]</div>
+<h5 id="6">6. 无人机效用函数</h5>
+<p>无人机效用函数 <span class="arithmatex">\(\varepsilon_{u_{i}}\left(e_{u_{i}}, \boldsymbol{E}_{-u_{i}}\right)\)</span> 定义为：</p>
+<div class="arithmatex">\[
+\varepsilon_{u_{i}}\left(e_{u_{i}}, \boldsymbol{E}_{-u_{i}}\right)=\boldsymbol{R}\left(c_{u_{i}}\right)-\boldsymbol{R}\left(c_{u_{i}} \mid u_{i}\right)
+\]</div>
+<ul>
+<li><span class="arithmatex">\(c_{u_{i}}\)</span>：无人机 <span class="arithmatex">\(u_{i}\)</span> 选择策略 <span class="arithmatex">\(e_{u_{i}}\)</span> 时加入的任务联盟。</li>
+<li><span class="arithmatex">\(\boldsymbol{R}\left(c_{u_{i}} \mid u_{i}\right)\)</span>：将 <span class="arithmatex">\(u_{i}\)</span> 从原所属联盟中删除后的剩余联盟效用。</li>
+</ul>
+<hr />
+<h3 id="_5">异构无人机集群任务分配问题在不同数学模型中的基本数学形式</h3>
+<p>以下是异构无人机集群任务分配问题在不同数学模型中的基本数学形式：</p>
+<hr />
+<h3 id="1-tsp"><strong>1. 旅行商问题 (TSP) 模型</strong></h3>
+<p><strong>目标</strong>：为每个无人机规划访问其分配任务的顺序，最小化总路径成本（时间或距离）。<br />
+<strong>变量</strong>：</p>
+<ul>
+<li><span class="arithmatex">\(x_{ijk} \in \{0,1\}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>是否从任务<span class="arithmatex">\(t_j\)</span>移动到<span class="arithmatex">\(t_k\)</span>。</li>
+<li><span class="arithmatex">\(s_{ij}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>到达任务<span class="arithmatex">\(t_j\)</span>的时间。</li>
+</ul>
+<p><strong>目标函数</strong>：</p>
+<div class="arithmatex">\[
+\min \sum_{i=1}^n \sum_{j=0}^m \sum_{k=0}^m d_{jk} \cdot x_{ijk}
+\]</div>
+<p>（其中<span class="arithmatex">\(d_{jk}\)</span>是任务<span class="arithmatex">\(t_j\)</span>到<span class="arithmatex">\(t_k\)</span>的距离，<span class="arithmatex">\(j=0\)</span>或<span class="arithmatex">\(k=0\)</span>表示无人机起点）</p>
+<p><strong>约束</strong>：</p>
+<ol>
+<li><strong>任务覆盖</strong>：每个任务被访问一次：
+    $$
+     \sum_{i=1}^n \sum_{k=0}^m x_{ikj} = 1, \quad \forall t_j \in T.
+    $$</li>
+<li><strong>路径连续性</strong>：无人机路径形成闭合回路：
+    $$
+     \sum_{j=0}^m x_{ijk} = \sum_{j=0}^m x_{ikj}, \quad \forall u_i \in U, t_k \in T.
+    $$</li>
+<li><strong>资源约束</strong>：
+    $$
+     \sum_{t_j \in T} \text{Re}<em l="0">{t_j}^k \cdot \sum</em>^k, \quad \forall u_i \in U, k=1,\ldots,l.
+    $$}^m x_{ilj} \leq \text{Re}_{u_i</li>
+<li><strong>时间窗口</strong>：
+    $$
+     t_{t_j}^{\text{minstart}} \leq s_{ij} \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } x_{ijk}=1.
+    $$</li>
+</ol>
+<hr />
+<h3 id="2-nfo"><strong>2. 网络流优化 (NFO) 模型</strong></h3>
+<p><strong>目标</strong>：将任务分配建模为多商品流问题，优化资源与时间约束下的流量分配。<br />
+<strong>变量</strong>：</p>
+<ul>
+<li><span class="arithmatex">\(f_{i,jk} \in \{0,1\}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>是否经过边<span class="arithmatex">\((t_j, t_k)\)</span>。</li>
+</ul>
+<p><strong>目标函数</strong>：</p>
+<div class="arithmatex">\[
+\min \sum_{i=1}^n \sum_{j=0}^m \sum_{k=0}^m d_{jk} \cdot f_{i,jk}
+\]</div>
+<p><strong>约束</strong>：</p>
+<ol>
+<li><strong>流量守恒</strong>：
+    $$
+     \sum_{k=0}^m f_{i,jk} = \sum_{k=0}^m f_{i,kj}, \quad \forall u_i \in U, t_j \in T.
+    $$</li>
+<li><strong>资源容量</strong>：
+    $$
+     \sum_{u_i \in U} \text{Re}<em j="0">{u_i}^k \cdot \sum</em>^k, \quad \forall t \in T, k=1,\ldots,l.
+    $$}^m f_{i,jt} \geq \text{Re}_{t</li>
+<li><strong>时间窗口</strong>：通过时间扩展网络建模。</li>
+</ol>
+<hr />
+<h3 id="3-vrp"><strong>3. 车辆路由问题 (VRP) 模型</strong></h3>
+<p><strong>目标</strong>：为异构无人机规划路径，满足资源、时间窗口约束，最小化总成本。<br />
+<strong>变量</strong>：</p>
+<ul>
+<li><span class="arithmatex">\(x_{ij} \in \{0,1\}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>是否分配至任务<span class="arithmatex">\(t_j\)</span>。</li>
+<li><span class="arithmatex">\(y_{ijk} \in \{0,1\}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>从<span class="arithmatex">\(t_j\)</span>移动到<span class="arithmatex">\(t_k\)</span>。</li>
+</ul>
+<p><strong>目标函数</strong>：</p>
+<div class="arithmatex">\[
+\min \sum_{i=1}^n \sum_{j=0}^m \sum_{k=0}^m d_{jk} \cdot y_{ijk}
+\]</div>
+<p><strong>约束</strong>：</p>
+<ol>
+<li><strong>任务分配唯一性</strong>：
+    $$
+     \sum_{i=1}^n x_{ij} = 1, \quad \forall t_j \in T.
+    $$</li>
+<li><strong>资源约束</strong>：
+    $$
+     \sum_{t_j \in T} \text{Re}<em ij="ij">{t_j}^k \cdot x</em>^k, \quad \forall u_i \in U, k=1,\ldots,l.
+    $$} \leq \text{Re}_{u_i</li>
+<li><strong>时间协调</strong>：
+    $$
+     s_{ik} \geq s_{ij} + \frac{d_{jk}}{v_{u_i}}, \quad \text{if } y_{ijk}=1.
+    $$</li>
+</ol>
+<hr />
+<h3 id="4-cmtap"><strong>4. 协同多任务分配问题 (CMTAP) 模型</strong></h3>
+<p><strong>目标</strong>：多无人机协同完成任务，优化任务完成率与威胁代价。<br />
+<strong>变量</strong>：</p>
+<ul>
+<li><span class="arithmatex">\(z_{ij} \in \{0,1\}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>是否参与任务<span class="arithmatex">\(t_j\)</span>。</li>
+</ul>
+<p><strong>目标函数</strong>：</p>
+<div class="arithmatex">\[
+\max \sum_{t_j \in T} \left( \prod_{k=1}^l \mathbf{1}_{\left\{\sum_{i=1}^n \text{Re}_{u_i}^k \cdot z_{ij} \geq \text{Re}_{t_j}^k\right\}} \right) - \sum_{i=1}^n \sum_{j=1}^m a_{t_j} \cdot z_{ij}
+\]</div>
+<p><strong>约束</strong>：</p>
+<ol>
+<li><strong>资源协同</strong>：
+    $$
+     \sum_{i=1}^n \text{Re}<em ij="ij">{u_i}^k \cdot z</em>^k, \quad \forall t_j \in T, k=1,\ldots,l.
+    $$} \geq \text{Re}_{t_j</li>
+<li><strong>时间协同</strong>：
+    $$
+     \max_{u_i \in U} \left( \frac{| \text{position}<em t_j="t_j">{u_i} - \text{position}</em>=1.
+    $$} |}{v_{u_i}} \right) \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } z_{ij</li>
+</ol>
+<hr />
+<h3 id="5-milp"><strong>5. 混合整数线性规划 (MILP) 模型</strong></h3>
+<p><strong>目标</strong>：通过线性约束建模任务分配、路径规划与资源协同。<br />
+<strong>变量</strong>：</p>
+<ul>
+<li><span class="arithmatex">\(x_{ij} \in \{0,1\}\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>分配至任务<span class="arithmatex">\(t_j\)</span>。</li>
+<li><span class="arithmatex">\(s_{ij} \geq 0\)</span>: 无人机<span class="arithmatex">\(u_i\)</span>开始执行任务<span class="arithmatex">\(t_j\)</span>的时间。</li>
+</ul>
+<p><strong>目标函数</strong>：</p>
+<div class="arithmatex">\[
+\min \sum_{i=1}^n \sum_{j=1}^m a_{t_j} \cdot x_{ij} + \sum_{i=1}^n \sum_{j=1}^m \frac{\| \text{position}_{u_i} - \text{position}_{t_j} \|}{v_{u_i}} \cdot x_{ij}
+\]</div>
+<p><strong>约束</strong>：</p>
+<ol>
+<li><strong>资源约束</strong>：
+    $$
+     \sum_{j=1}^m \text{Re}<em ij="ij">{t_j}^k \cdot x</em>^k, \quad \forall u_i \in U, k=1,\ldots,l.
+    $$} \leq \text{Re}_{u_i</li>
+<li><strong>时间窗口</strong>：
+    $$
+     t_{t_j}^{\text{minstart}} \leq s_{ij} \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } x_{ij}=1.
+    $$</li>
+</ol>
+<hr />
+<h3 id="6-mdp"><strong>6. 基于马尔可夫决策过程 (MDP) 模型</strong></h3>
+<p><strong>五元组</strong>：<span class="arithmatex">\(\langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle\)</span></p>
+<ul>
+<li><strong>状态空间<span class="arithmatex">\(\mathcal{S}\)</span></strong>：无人机位置、资源、时间；任务时间窗口、完成状态。</li>
+<li><strong>动作空间<span class="arithmatex">\(\mathcal{A}\)</span></strong>：为无人机分配任务或路径点。</li>
+<li><strong>转移函数<span class="arithmatex">\(P(s' \mid s, a)\)</span></strong>：移动时间、资源消耗与任务完成状态更新。</li>
+<li><strong>奖励函数<span class="arithmatex">\(R(s, a)\)</span></strong>：
+    $$
+     R = \sum_{t_j \in T} r_j^{\text{complete}} - \sum_{u_i \in U} \sum_{t_j \in T} a_{t_j} \cdot \mathbf{1}_{{u_i \text{ 参与 } t_j}}.
+    $$</li>
+<li><strong>策略<span class="arithmatex">\(\pi: \mathcal{S} \to \mathcal{A}\)</span></strong>：最大化期望累积奖励<span class="arithmatex">\(\mathbb{E}[\sum_{t=0}^\infty \gamma^t R_t]\)</span>。</li>
+</ul>
+<hr />
+<p>以上模型均基于无人机和任务的状态信息<span class="arithmatex">\(\text{UIN}\)</span>和<span class="arithmatex">\(\text{TIN}\)</span>，结合问题特性与约束条件构建。</p>
+<h2 id="solving-algorithm">Solving Algorithm</h2>
+<ul>
+<li>集中式 vs 分布式</li>
+<li>预分配 vs 重分配</li>
+<li>同构 vs 异构</li>
+<li>中小规模 vs 大规模</li>
+<li>考虑的约束条件: 资源 通信 任务时序...</li>
+<li>静态 vs 动态: 能否在线处理<ul>
+<li>静态: agent 在执行前就知晓所有待分配任务的信息</li>
+<li>动态: 在执行过程中出现新的任务 or 参与任务的机器人遭到破坏而必须将其任务序列中待完成的任务进行重新分配</li>
+</ul>
+</li>
+</ul>
+<h3 id="_6">集中式</h3>
+<ul>
+<li>最优化方法<ul>
+<li>穷举法、分支定界、整数规划、动态规划等</li>
+<li>NP 难问题, 计算量随规模指数增加; 难以求解大规模问题</li>
+<li>不能处理真实环境中的随机性和动态性</li>
+</ul>
+</li>
+<li>启发式方法<ul>
+<li>可行解 次优解</li>
+<li>遗传算法、禁忌搜索算法、粒子群优化算法、模拟退火算法等</li>
+<li>灰狼算法 仿生狼群无人机群任务分配方法</li>
+</ul>
+</li>
+</ul>
+<h4 id="_7">启发式方法</h4>
+<h5 id="_8">遗传算法</h5>
+<h5 id="_9">粒子群优化算法</h5>
+<h3 id="_10">分布式</h3>
+<ul>
+<li>自顶向下<ul>
+<li>利用分层递阶求解的思路, 将复杂任务协同分配问题逐层分解为若干个更简单的子任务分配问题, 各无人机通过协商与合作实现问题求解</li>
+<li>分布式 MDP(decentralized MDP, Dec-MDP)方法</li>
+<li>基于市场机制的方法</li>
+<li>动态分布式约束优化问题 (dynamic distributed constraint optimization problem, DDCOP) 方法</li>
+</ul>
+</li>
+<li>自下而上<ul>
+<li>通过研究无人机个体的局部感知和动态反应, 设计基于反应和行为的协同优化策略, 实现多无人机整体自组织任务分配</li>
+<li>自组织算法(self-organized algorithm, SOA)</li>
+<li>阈值响应法</li>
+<li>蚁群优化(ant colony optimization, ACO)算法</li>
+</ul>
+</li>
+</ul>
+<h3 id="_11">重分配</h3>
+<p>随着战场对抗不断升级, 无人机集群在任务执行过程中遇到突发事件时, 任务重分配算法需要通过各无人机平台之间的信息交互对战场态势和动态任务快速做出反应, 在有限时间内完成任务的重构与优化, 并达成无冲突的任务重分配方案。</p>
+<ul>
+<li>基于市场机制的算法</li>
+<li>基于博弈的算法</li>
+<li>其他</li>
+</ul>
+<h3 id="_12">异构系统</h3>
+<h2 id="misc">Misc</h2>
+<h2 id="_13">数学问题的模型与常见求解算法</h2>
+<ol>
+<li>
+<p><strong>TSP 模型</strong>：基本形式是寻找最短回路，访问所有城市一次。变量通常是二元变量表示边是否被选中。约束包括每个节点进出一次，子回路消除等。解法可能包括精确算法（分支定界）、启发式（最近邻）和元启发式（遗传算法）。</p>
+</li>
+<li>
+<p><strong>网络流优化（NFO）</strong>：核心是流量守恒、容量限制，目标是最小化或最大化流量相关成本。常见模型如最小费用流，求解方法包括单纯形法、消圈算法等。</p>
+</li>
+<li>
+<p><strong>VRP 模型</strong>：类似于 TSP 但多车辆，有容量约束。变量包括分配和路径变量。解法包括启发式（节约算法）、元启发式（模拟退火）和精确方法。</p>
+</li>
+<li>
+<p><strong>CMTAP 模型</strong>：需要多智能体协同，资源匹配，可能涉及组合优化。目标函数可能最大化任务完成数，约束包括资源和时间。解法有拍卖算法、分布式优化等。</p>
+</li>
+<li>
+<p><strong>MILP 模型</strong>：包含连续和整数变量，线性目标函数和约束。求解方法包括分支定界、割平面，以及启发式。</p>
+</li>
+<li>
+<p><strong>MDP 模型</strong>：基于状态、动作、转移概率和奖励，策略优化。解法包括值迭代、策略迭代、Q 学习等强化学习方法。</p>
+</li>
+</ol>
+<p>以下是六种数学模型的一般数学形式及其常见求解方法的系统总结：</p>
+<hr />
+<h3 id="1-tsp_1">1. <strong>旅行商问题（TSP）模型</strong></h3>
+<p><strong>一般数学形式</strong>：</p>
+<ul>
+<li><strong>目标</strong>：在完全图中找到访问所有节点且总距离最短的哈密顿回路。<ul>
+<li>寻找一条最短的路径，使得旅行商能够访问每个城市恰好一次，并最终返回起点。</li>
+</ul>
+</li>
+<li><strong>变量</strong>：<span class="arithmatex">\(x_{ij} \in \{0,1\}\)</span>，表示边 <span class="arithmatex">\((i,j)\)</span> 是否被选中。</li>
+<li><strong>目标函数</strong>：
+    $$
+    \min \sum_{i=1}^n \sum_{j \neq i} d_{ij} x_{ij}
+    $$</li>
+<li><strong>约束</strong>：
+    $$
+    \begin{cases}
+    \sum_{i=1}^n x_{ij} = 1, &amp; \forall j \ (\text{每个节点入度=1}) \
+    \sum_{j=1}^n x_{ij} = 1, &amp; \forall i \ (\text{每个节点出度=1}) \
+    \sum_{i \in S, j \notin S} x_{ij} \geq 1, &amp; \forall S \subset {1,\ldots,n}, S \neq \emptyset \ (\text{消除子回路})
+    \end{cases}
+    $$</li>
+</ul>
+<p><strong>常见求解方法</strong>：</p>
+<ul>
+<li><strong>精确算法</strong>：分支定界、动态规划（Held-Karp 算法）。</li>
+<li><strong>启发式算法</strong>：最近邻法、插入法。</li>
+<li><strong>元启发式算法</strong>：遗传算法、蚁群优化、模拟退火。</li>
+<li><strong>近似算法</strong>：Christofides 算法（保证 1.5 倍最优解）。</li>
+</ul>
+<hr />
+<h3 id="2-nfo_1">2. <strong>网络流优化（NFO）模型</strong></h3>
+<p><strong>一般数学形式</strong>：</p>
+<ul>
+<li><strong>目标</strong>：在带容量的网络中优化流量分配，如最小成本流、最大流。<ul>
+<li>在图中找到从源到汇的最大流，同时满足容量约束。</li>
+</ul>
+</li>
+<li><strong>变量</strong>：<span class="arithmatex">\(f_{ij} \geq 0\)</span>，表示边 <span class="arithmatex">\((i,j)\)</span> 上的流量。</li>
+<li><strong>目标函数</strong>（以最小费用流为例）：
+    $$
+    \min \sum_{(i,j)} c_{ij} f_{ij}
+    $$</li>
+<li><strong>约束</strong>：
+    $$
+    \begin{cases}
+    \sum_j f_{ij} - \sum_j f_{ji} = b_i, &amp; \forall i \ (\text{流量守恒}) \
+    l_{ij} \leq f_{ij} \leq u_{ij}, &amp; \forall (i,j) \ (\text{容量约束})
+    \end{cases}
+    $$
+    其中 <span class="arithmatex">\(b_i\)</span> 为节点的供给/需求（<span class="arithmatex">\(\sum b_i = 0\)</span>）。</li>
+</ul>
+<p><strong>常见求解方法</strong>：</p>
+<ul>
+<li><strong>单纯形法</strong>：针对线性网络流问题。</li>
+<li><strong>消圈算法（Cycle Canceling）</strong>：消除负费用环。</li>
+<li><strong>最短增广路算法</strong>（如 Successive Shortest Path）。</li>
+<li><strong>预流推进算法</strong>：用于最大流问题。</li>
+</ul>
+<hr />
+<h3 id="3-vrp_1">3. <strong>车辆路由问题（VRP）模型</strong></h3>
+<p><strong>一般数学形式</strong>：</p>
+<ul>
+<li><strong>目标</strong>：多车辆服务所有客户，最小化总成本（距离、时间等）。</li>
+<li><strong>变量</strong>：<ul>
+<li><span class="arithmatex">\(x_{ijk} \in \{0,1\}\)</span>，车辆 <span class="arithmatex">\(k\)</span> 是否从 <span class="arithmatex">\(i\)</span> 到 <span class="arithmatex">\(j\)</span>。</li>
+<li><span class="arithmatex">\(q_k \leq Q_k\)</span>，车辆 <span class="arithmatex">\(k\)</span> 的载重约束。</li>
+</ul>
+</li>
+<li><strong>目标函数</strong>：
+    $$
+    \min \sum_{k=1}^K \sum_{i,j} d_{ij} x_{ijk}
+    $$</li>
+<li><strong>约束</strong>：
+    $$
+    \begin{cases}
+    \sum_{k} \sum_j x_{ijk} = 1, &amp; \forall i \ (\text{客户被服务}) \
+    \sum_{i} d_i \sum_j x_{ijk} \leq Q_k, &amp; \forall k \ (\text{容量约束}) \
+    \text{路径连续性约束} &amp; (\text{类似TSP})
+    \end{cases}
+    $$</li>
+</ul>
+<p><strong>常见求解方法</strong>：</p>
+<ul>
+<li><strong>精确算法</strong>：分支定价（Branch-and-Price）。</li>
+<li><strong>启发式算法</strong>：Clarke-Wright 节约算法、扫描算法。</li>
+<li><strong>元启发式算法</strong>：禁忌搜索、大规模邻域搜索（LNS）。</li>
+<li><strong>强化学习</strong>：基于神经网络的端到端求解。</li>
+</ul>
+<hr />
+<h3 id="4-cmtap_1">4. <strong>协同多任务分配问题（CMTAP）模型</strong></h3>
+<p><strong>一般数学形式</strong>：</p>
+<ul>
+<li><strong>目标</strong>：多智能体协同完成任务，最大化任务完成率或最小化代价。</li>
+<li><strong>变量</strong>：<span class="arithmatex">\(z_{ik} \in \{0,1\}\)</span>，智能体 <span class="arithmatex">\(i\)</span> 是否执行任务 <span class="arithmatex">\(k\)</span>。</li>
+<li><strong>目标函数</strong>（以最小化威胁代价为例）：
+    $$
+    \min \sum_{i,k} a_k z_{ik} + \sum_{k} \lambda \cdot \mathbf{1}<em ik="ik">{{\sum_i z</em>
+    $$} &lt; R_k}</li>
+<li><strong>约束</strong>：
+    $$
+    \begin{cases}
+    \sum_i z_{ik} \geq R_k, &amp; \forall k \ (\text{资源需求}) \
+    \sum_k z_{ik} \leq C_i, &amp; \forall i \ (\text{智能体能力限制})
+    \end{cases}
+    $$
+    其中 <span class="arithmatex">\(R_k\)</span> 为任务 <span class="arithmatex">\(k\)</span> 所需智能体数，<span class="arithmatex">\(a_k\)</span> 为威胁系数。</li>
+</ul>
+<p><strong>常见求解方法</strong>：</p>
+<ul>
+<li><strong>集中式优化</strong>：整数规划求解器（如 CPLEX、Gurobi）。</li>
+<li><strong>分布式算法</strong>：合同网协议（Contract Net）、拍卖算法。</li>
+<li><strong>群智能算法</strong>：粒子群优化（PSO）、蜂群算法。</li>
+<li><strong>博弈论方法</strong>：Nash 均衡求解。</li>
+</ul>
+<hr />
+<h3 id="5-milp_1">5. <strong>混合整数线性规划（MILP）模型</strong></h3>
+<p><strong>一般数学形式</strong>：</p>
+<ul>
+<li><strong>目标</strong>：线性目标函数，含连续和整数变量。</li>
+<li><strong>标准形式</strong>：
+    $$
+    \begin{aligned}
+    \min \quad &amp; c^T x + d^T y \
+    \text{s.t.} \quad &amp; A x + B y \leq b \
+    &amp; x \in \mathbb{Z}^p, \ y \in \mathbb{R}^q
+    \end{aligned}
+    $$
+    其中 <span class="arithmatex">\(x\)</span> 为整数变量，<span class="arithmatex">\(y\)</span> 为连续变量。</li>
+</ul>
+<p><strong>常见求解方法</strong>：</p>
+<ul>
+<li><strong>精确算法</strong>：<ul>
+<li>分支定界（Branch-and-Bound）。</li>
+<li>分支切割（Branch-and-Cut）。</li>
+</ul>
+</li>
+<li><strong>启发式算法</strong>：<ul>
+<li>松弛固定法（Fix-and-Relax）。</li>
+<li>大邻域搜索（Large Neighborhood Search）。</li>
+</ul>
+</li>
+<li><strong>分解算法</strong>：Benders 分解、列生成（Column Generation）。</li>
+</ul>
+<hr />
+<h3 id="6-mdp_1">6. <strong>基于马尔可夫决策过程（MDP）模型</strong></h3>
+<p><strong>一般数学形式</strong>：</p>
+<ul>
+<li><strong>五元组</strong>：<span class="arithmatex">\(\langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle\)</span><ul>
+<li><strong>状态空间</strong> <span class="arithmatex">\(\mathcal{S}\)</span>：系统所有可能状态。</li>
+<li><strong>动作空间</strong> <span class="arithmatex">\(\mathcal{A}\)</span>：智能体可选动作。</li>
+<li><strong>转移函数</strong> <span class="arithmatex">\(P(s'|s,a)\)</span>：状态转移概率。</li>
+<li><strong>奖励函数</strong> <span class="arithmatex">\(R(s,a)\)</span>：即时奖励。</li>
+<li><strong>折扣因子</strong> <span class="arithmatex">\(\gamma \in [0,1]\)</span>。</li>
+</ul>
+</li>
+<li><strong>目标</strong>：找到策略 <span class="arithmatex">\(\pi: \mathcal{S} \to \mathcal{A}\)</span>，最大化期望累积奖励：
+    $$
+    \max_\pi \mathbb{E}\left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t) \right]
+    $$</li>
+</ul>
+<p><strong>常见求解方法</strong>：</p>
+<ul>
+<li><strong>动态规划</strong>：<ul>
+<li>值迭代（Value Iteration）。</li>
+<li>策略迭代（Policy Iteration）。</li>
+</ul>
+</li>
+<li><strong>蒙特卡洛方法</strong>：基于采样的策略评估。</li>
+<li><strong>时序差分学习</strong>：Q 学习、SARSA。</li>
+<li><strong>深度强化学习</strong>：DQN、PPO、A3C。</li>
+<li><strong>逆向强化学习</strong>：从专家演示中学习奖励函数。</li>
+</ul>
+<hr />
+<h3 id="_14">总结对比表</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>核心变量类型</th>
+<th>典型约束类型</th>
+<th>求解方法特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TSP</strong></td>
+<td>二元边选择变量</td>
+<td>路径闭合、子回路消除</td>
+<td>精确算法+启发式组合</td>
+</tr>
+<tr>
+<td><strong>NFO</strong></td>
+<td>连续/整数流量变量</td>
+<td>流量守恒、容量限制</td>
+<td>基于图论的优化算法</td>
+</tr>
+<tr>
+<td><strong>VRP</strong></td>
+<td>路径与分配变量</td>
+<td>容量、时间窗口</td>
+<td>分层优化（先分配后路由）</td>
+</tr>
+<tr>
+<td><strong>CMTAP</strong></td>
+<td>任务-智能体分配变量</td>
+<td>资源协同、时间协同</td>
+<td>分布式或群智能优化</td>
+</tr>
+<tr>
+<td><strong>MILP</strong></td>
+<td>混合整数变量</td>
+<td>线性不等式</td>
+<td>分支定界框架+割平面增强</td>
+</tr>
+<tr>
+<td><strong>MDP</strong></td>
+<td>状态-动作策略映射</td>
+<td>贝尔曼方程</td>
+<td>基于值函数或策略梯度的迭代优化</td>
+</tr>
+</tbody>
+</table>
+<p>每种模型的求解方法选择需结合问题规模、实时性要求和资源约束。实际应用中常采用<strong>混合策略</strong>（如 MILP+启发式初始化）以平衡效率与精度。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.follow", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

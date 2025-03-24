@@ -1,0 +1,1818 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://houhuawei23.github.io/knowledge_base/Researches/Robot/">
+      
+      
+        <link rel="prev" href="../Basis/">
+      
+      
+        <link rel="next" href="../MRTA/MRTA/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Robot - HHW KnowledgeBase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#robot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HHW KnowledgeBase" class="md-header__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HHW KnowledgeBase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Robot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HHW KnowledgeBase" class="md-nav__button md-logo" aria-label="HHW KnowledgeBase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HHW KnowledgeBase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Notes for nearly Everything
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BookMarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Links Collection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConfigExamples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ProgrammingLangs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ProgrammingLangs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProgrammingLangs/Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProgrammingLangs/Python/PythonLibs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Libs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProgrammingLangs/Rust/Rust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Readings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Readings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Readings/1835-%E9%9D%92%E5%B9%B4%E5%9C%A8%E9%80%89%E6%8B%A9%E8%81%8C%E4%B8%9A%E6%97%B6%E7%9A%84%E8%80%83%E8%99%91-%E9%A9%AC%E5%85%8B%E6%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    青年在选择职业时的考虑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Readings/1938-%E8%AE%BA%E9%9D%92%E5%B9%B4%E7%9A%84%E4%BF%AE%E5%85%BB-%E5%BC%A0%E9%97%BB%E5%A4%A9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年的修养-张闻天（1938年4月28日）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Readings/1946-%E8%AE%BA%E9%9D%92%E5%B9%B4%E4%BF%AE%E5%85%BB-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    论青年修养-张申府-1946
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Readings/1948-%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AD%A6%E9%A3%8E-%E5%BC%A0%E7%94%B3%E5%BA%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1948 研究与学风-张申府
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Readings/2017.04-%E8%94%A1%E5%85%83%E5%9F%B9%E4%BB%BB%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E9%95%BF%E4%B9%8B%E5%B0%B1%E8%81%8C%E6%BC%94%E8%AF%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017-04 蔡元培任北京大学校长之就职演说
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Researches
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Researches
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note for Scientific Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Robot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Robot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conference 会议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#journal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journal 期刊
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Journal 期刊">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robotics-and-computer-integrated-manufacturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robotics and Computer-Integrated Manufacturing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehicular-communications-engineering-automotive-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicular Communications (Engineering: Automotive Engineering)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-transactions-on-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEEE Transactions on Robotics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MRTA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            MRTA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/MRTA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UAV Swarm Task Assignment Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game Based
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Game Based
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Game-Based/2024.05-ICRA-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.05-ICRA-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Game-Based/2024.10-IROS-LiwangZhang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.10-IROS-LiwangZhang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Game-Based/2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024.11-SSI-Distributed-TA-for-Heterogeneous-SwarmUAV-on-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_3" id="__nav_6_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Survey
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Survey
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Survey/2004.09-IJRS-MRTA-Taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2004.09-IJRS-MRTA-Taxonomy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Survey/2021.09-CSMS-Review-Dynamic-SwarmUAV-TA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021.09-CSMS-Review-Dynamic-SwarmUAV-TA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Survey/2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022.10-IJSIR-Survey-SwarmUAV-TA-CFGame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MRTA/Survey/2023.11-JIRS-Review-TA-Methods-for-UAVs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023.11-JIRS-Review-TA-Methods-for-UAVs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SystemOM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            SystemOM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SystemOM/PowerShell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SystemOM/SystemOM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System OM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Techs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Techs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/GitBook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitBook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/Lalrpop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lalrpop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/NodeJs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/PersonalWebsite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PersonalWebsite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Techs/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VScode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conference 会议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#journal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journal 期刊
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Journal 期刊">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robotics-and-computer-integrated-manufacturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robotics and Computer-Integrated Manufacturing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehicular-communications-engineering-automotive-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicular Communications (Engineering: Automotive Engineering)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-transactions-on-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEEE Transactions on Robotics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="robot">Robot</h1>
+<h2 id="labs">Labs</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/647982110">机器人研究团队</a></li>
+<li>
+<p><a href="https://github.com/malintha/multi_uav_simulator">multi_uav_simulator</a></p>
+</li>
+<li>
+<p><a href="https://www.kumarrobotics.org/">UPenn GRASP kumarrobotics</a></p>
+<ul>
+<li>宾夕法尼亚大学工程系 General Robotics, Automation, Sensing and Perception (GRASP) Laboratory</li>
+<li>Vijay Kumar 维杰·库马尔</li>
+<li>致力于创建自主地面和空中机器人、设计集体行为的仿生算法以及机器人群</li>
+</ul>
+</li>
+<li><a href="https://uav.hkust.edu.hk/">HKUST Aerial Robotics</a><ul>
+<li>香港科技大学 空中机器人研究组</li>
+<li><a href="https://github.com/HKUST-Aerial-Robotics">github</a></li>
+<li><a href="https://seng.hkust.edu.hk/about/people/faculty/shaojie-shen">沈劭劼</a></li>
+<li>状态估计、传感器融合、定位和地图绘制以及复杂环境中的自主导航</li>
+<li>VINS-MONO, Fiesta, FAST-planner</li>
+</ul>
+</li>
+<li><a href="https://sysu-star.com/">SUSTech SmarT Autonomous Robotics Group</a><ul>
+<li><a href="https://github.com/SYSU-STAR">github</a></li>
+<li>南方科技大学（SUSTech）</li>
+<li>周博宇 助理教授（副研究员）</li>
+</ul>
+</li>
+<li><a href="http://zju-fast.com/">ZJU FAST Lab</a><ul>
+<li>浙江大学 无人系统与自主计算实验室</li>
+<li>高飞 许超</li>
+<li>无人机运动规划</li>
+<li><a href="https://github.com/ZJU-FAST-Lab">github</a><ul>
+<li><a href="https://github.com/ZJU-FAST-Lab/Fast-Drone-250">Fast-Drone-250</a></li>
+<li><a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-planner-swarm</a></li>
+<li><a href="https://github.com/ZJU-FAST-Lab/ego-planner">ego-planner</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://iwin-fins.com/">IWIN</a><ul>
+<li>Center for Intelligent Wireless Networks and Cooperative Control (IWIN Center)</li>
+<li>上海交通大学自动化系 智能无线网络与协同控制中心</li>
+<li><a href="https://automation.sjtu.edu.cn/JPHE">何建平</a></li>
+</ul>
+</li>
+<li><a href="https://asl.ethz.ch/">ETH-Z ASL</a><ul>
+<li>苏黎世联邦理工大学自主系统实验室</li>
+<li>Roland Siegwart</li>
+<li>Rotors_simulator，Next best view planner</li>
+<li>运动规划、建图、微型无人机、全向飞行器、太阳能无人机、无人机编队飞行</li>
+</ul>
+</li>
+<li><a href="https://rpg.ifi.uzh.ch/index.html">ETH RPG</a><ul>
+<li>苏黎世联邦理工大学自主系统实验室</li>
+<li>视觉无人机自主导航（无 GPS、激光雷达）、多机协同、运动规划、控制策略、敏捷飞行、侧重于环境感知等</li>
+</ul>
+</li>
+<li><a href="https://rpg.ifi.uzh.ch/">UZH-RPG</a><ul>
+<li>苏黎世大学机器人与感知研究组</li>
+<li>Scaramuzza 主持的实验室，</li>
+<li>实验室工作包括 SVO，事件相机，基于学习的一系列无人机自主飞行与竞速等工作，Flightmare 无人机仿平台。</li>
+</ul>
+</li>
+<li><a href="https://acl.mit.edu/">MIT-ACL</a><ul>
+<li>麻省理工大学空间控制实验室</li>
+<li>Jonathan How 教授主持的实验室，实验室在多机路径规划，多智能体强化学习，主动感知运动规划等领域有很好的工作</li>
+</ul>
+</li>
+<li>多伦多大学飞行系统与控制实验室（<a href="https://www.flight.utias.utoronto.ca/fsc/">UofT FSC</a>）<ul>
+<li>Hugh liu 教授主持的实验室。</li>
+<li>实验室这几年工作集中在无人机绳系负载控制，多机协作绳系负载控制，多机运动规划等领域。有一批相当好的工作。对控制感兴趣的朋友可以关注此实验室。</li>
+</ul>
+</li>
+<li>卡耐基梅隆大学机器人学院（<a href="https://theairlab.org/">Air Lab</a>）<ul>
+<li>研究方向为多旋翼飞行器自主导航系统、移动平台无人机自主降落等。</li>
+</ul>
+</li>
+<li><a href="https://rislab.org/">rislab</a><ul>
+<li>Resilient Intelligent Systems Lab (RISLab)</li>
+<li>Carnegie Mellon University’s Robotics Institute</li>
+</ul>
+</li>
+</ul>
+<h2 id="conference">Conference 会议</h2>
+<ul>
+<li>IEEE International Conference on Robotics and Automation (<strong>ICRA</strong>)<ul>
+<li><a href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra">icra</a></li>
+<li><a href="https://ieeexplore.ieee.org/xpl/conhome/1000639/all-proceedings">all-proceedings</a></li>
+<li>H-Index 222</li>
+<li>CCF: b CORE: b QUALIS: a1</li>
+<li>Paper Submission Opens 15 July 2024</li>
+<li>Paper Submission Deadline 15 September 2024</li>
+<li>Notification of paper acceptance/rejection 31 January 2025</li>
+<li>7.15 sub open ~ 9.15 sub ddl ~ 1.31 acc/rej ~ 5.19 conf</li>
+<li><a href="https://github.com/ryanbgriffiths/ICRA2024PaperList">ICRA2024PaperList</a></li>
+</ul>
+</li>
+<li>IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS</strong>)<ul>
+<li><a href="https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/iros">iros</a></li>
+<li>H-Index 65</li>
+<li>CCF: c CORE: a QUALIS: a1</li>
+<li>2025.03.01 sub ddl ~ 06.30 acc/rej ~ 2025.10.19 conf</li>
+</ul>
+</li>
+<li>Robotic: Science and Systems (<strong>RSS</strong>)<ul>
+<li><a href="https://roboticsconference.org/">rss</a></li>
+<li>CORE: a</li>
+<li>H-Index 72</li>
+<li>1.31 sub ddl ~ 4.10 acc/rej ~ 3.21 conf</li>
+</ul>
+</li>
+<li>Conference on Robot Learning (<strong>CoRL</strong>)<ul>
+<li><a href="https://www.corl.org/">corl</a></li>
+<li>4.30 sub ddl ~ 8.1 acc/rej ~ 9.27 conf</li>
+</ul>
+</li>
+</ul>
+<h2 id="journal">Journal 期刊</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/457055314">zhihu: 机器人领域主要期刊及国际会议汇总 2021</a></li>
+<li><a href="https://blog.csdn.net/weixin_41598607/article/details/121084397">机器人领域主要国际会议与期刊列表</a></li>
+</ul>
+<p><br></p>
+<ul>
+<li><em>Science Robotics</em><ul>
+<li>26.1 Q1 1Q</li>
+<li><a href="https://www.science.org/journal/scirobotics">science</a></li>
+</ul>
+</li>
+<li><em>IEEE Transactions on Robotics (<strong>TRO</strong>)</em><ul>
+<li>IF 9.4, JCR Q1, CAS Q1</li>
+<li>Computer Science Applications, Control and Systems Engineering, Electrical and Electronic Engineering</li>
+<li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8860">ieee</a></li>
+<li>机器人领域的老牌顶刊</li>
+</ul>
+</li>
+<li><em>International Journal of Robotics Research (<strong>IJRR</strong>)</em><ul>
+<li>7.5 Q1 Q2</li>
+<li><a href="https://journals.sagepub.com/home/ijr">sagepub</a></li>
+<li>机器人领域的老牌顶刊</li>
+</ul>
+</li>
+<li><em>Drones</em><ul>
+<li>IF 4.4, JCR Q1 (Remote Sensing), CAS Q2</li>
+<li><a href="https://www.mdpi.com/journal/drones">mdpi</a></li>
+<li>UAV, UAS, RPAS</li>
+</ul>
+</li>
+<li><em>Aerospace Science and Technology</em><ul>
+<li>IF 5 JCR Q1, CAS Q1</li>
+<li><a href="https://www.sciencedirect.com/journal/aerospace-science-and-technology">sciencedirect</a></li>
+</ul>
+</li>
+<li><em>Soft Robotics</em><ul>
+<li>Q1</li>
+</ul>
+</li>
+<li><em>Robotics and Computer-Integrated Manufacturing</em><ul>
+<li>9.1 Q1 1 区</li>
+<li>注重计算机科学和机械制造系统的结合</li>
+</ul>
+</li>
+<li><em>Vehicular Communications</em> (Engineering: Automotive Engineering)<ul>
+<li>IF 5.8, JCR Q1, CAS Q2</li>
+<li><a href="https://www.sciencedirect.com/journal/vehicular-communications">sciencedirect</a></li>
+</ul>
+</li>
+<li>IEEE Transactions on Parallel and Distributed Systems (<strong>TPDS</strong>)<ul>
+<li>ccf a, IF 5.6</li>
+<li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71">ieee</a></li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<ol>
+<li>Science Robotics：认可度高，如果有比较好的科研工作，肯定是要冲一下投稿这个期刊的</li>
+<li>TRO (IEEE Transactions on Robotics) 和 IJRR (The International Journal of Robotics Research) 这两个属于比较硬核的期刊，也非常好</li>
+<li>JFR (Journal of Field Robotics) 比较侧重于野外实验，但后面重组了，变化比较大</li>
+<li>RAL (IEEE Robotics &amp; Automation Letters) 通常来说如果一个工作比较完整，也超过了一般的 conference 的会议的，稍有点程度的话，也可以投 RAL，这个也是一个很专业很好的期刊</li>
+</ol>
+<h3 id="robotics-and-computer-integrated-manufacturing"><em>Robotics and Computer-Integrated Manufacturing</em></h3>
+<p>The emphasis of the journal Robotics and Computer-Integrated Manufacturing is on disseminating the application of research to the development of new or improved industrially-relevant robotics, manufacturing technologies, and innovative manufacturing strategies. Preference is given to papers describing original research that includes both theory and experimental validation. Comprehensive review papers on topical issues related to robotics and manufacturing will also be considered. Papers on conventional machining processes, modelling and simulation, supply chain management, and resource optimisation, will generally be considered out of scope, as there are other more appropriate journals in these areas. Overly theoretical or mathematical papers will be directed to other more appropriate journals as well. Original papers are welcomed in the areas of industrial robotics, human-robot collaborative manufacturing, cloud-based manufacturing, cyber-physical production systems, big data analytics in manufacturing, smart mechatronics, machine learning, adaptive and sustainable manufacturing, and other fields involving unique manufacturing technologies.</p>
+<p>《机器人与计算机集成制造》杂志的重点是传播研究在新型或改进的工业相关机器人、制造技术和创新制造策略的开发中的应用。优先考虑描述原创研究的论文，包括理论和实验验证。还将考虑与机器人和制造相关的热门问题的综合评论论文。关于传统加工工艺、建模和仿真、供应链管理和资源优化的论文通常被认为超出范围，因为这些领域还有其他更合适的期刊。过于理论或数学的论文也将被定向到其他更合适的期刊。工业机器人、人机协同制造、云制造、网络物理生产系统、制造大数据分析、智能机电一体化、机器学习、自适应和可持续制造以及其他涉及独特领域的原创论文受到欢迎制造技术。</p>
+<h3 id="vehicular-communications-engineering-automotive-engineering"><em>Vehicular Communications</em> (Engineering: Automotive Engineering)</h3>
+<p>types of communications involving vehicles, including <strong>vehicle–to–vehicle</strong> and <strong>vehicle–to–infrastructure</strong>. The scope includes (but not limited to) the following topics related to <strong>vehicular communications</strong>:</p>
+<p>该期刊的目标是发表<strong>车辆通信</strong>领域的高质量同行评审论文。范围涵盖涉及车辆的所有类型的通信，包括<strong>车辆对车辆</strong>和<strong>车辆对基础设施</strong>。范围包括（但不限于）以下与<strong>车辆通信</strong>相关的主题：</p>
+<ul>
+<li><strong>Vehicle to vehicle</strong> and <strong>vehicle to infrastructure communications</strong> <strong>车辆到车辆</strong>和<strong>车辆到基础设施通信</strong></li>
+<li>Channel modelling, modulating and coding 信道建模、调制和编码</li>
+<li><strong>Congestion Control</strong> and scalability issues <strong>拥塞控制</strong>和可扩展性问题</li>
+<li>Protocol design, testing and verification 协议设计、测试和验证</li>
+<li>Routing in <strong>vehicular networks</strong> <strong>车载网络</strong>中的路由</li>
+<li>Security issues and countermeasures 安全问题及对策</li>
+<li>Deployment and field testing 部署和现场测试</li>
+<li>Reducing energy consumption and enhancing safety of vehicles 降低能源消耗并提高车辆安全性</li>
+<li>Wireless <strong>in–car networks</strong> 无线<strong>车载网络</strong></li>
+<li>Data collection and dissemination methods 数据收集和传播方法</li>
+<li>Mobility and handover issues 移动性和移交问题</li>
+<li>Safety and <strong>driver assistance applications</strong> 安全和<strong>驾驶员辅助应用</strong></li>
+<li>UAV 无人机</li>
+<li>Underwater communications 水下通讯</li>
+<li>Autonomous cooperative driving 自动协同驾驶</li>
+<li>Social networks 社交网络</li>
+<li>Internet of vehicles 车联网</li>
+<li>Standardization of protocols 协议标准化</li>
+</ul>
+<h3 id="drones"><em>Drones</em></h3>
+<ul>
+<li><a href="https://www.scimagojr.com/journalsearch.php?q=21101017244&amp;tip=sid&amp;clean=0#google_vignette">scimagojr</a></li>
+</ul>
+<p>Drones (ISSN 2504-446X) is an international, peer-reviewed, open access journal published monthly online. The journal focuses on design and applications of drones, including unmanned aerial vehicle (UAV), Unmanned Aircraft Systems (UAS), and Remotely Piloted Aircraft Systems (RPAS), etc. Likewise, contributions based on unmanned water/underwater drones and unmanned ground vehicles are also welcomed.</p>
+<p>《无人机》（ISSN 2504-446X）是一份国际同行评审、开放获取期刊，每月在线出版。该杂志重点关注无人机的设计和应用，包括无人机（UAV）、无人机系统（UAS）和遥控驾驶飞机系统（RPAS）等。同样，基于无人水上/水下无人机和无人地面车辆的贡献也受到欢迎。</p>
+<h3 id="ieee-transactions-on-robotics"><em>IEEE Transactions on Robotics</em></h3>
+<p>The IEEE Transactions on Robotics (T-RO) publishes fundamental papers on all aspects of Robotics, featuring interdisciplinary approaches from computer science, control systems, electrical engineering, mathematics, mechanical engineering, and other fields. Robots and intelligent machines and systems are critical in areas such as industrial applications; service and personal assistants; surgical operations; space, underwater, and remote exploration; entertainment; safety, search, and rescue; military applications; agriculture applications; and intelligent vehicles. Special emphasis in the T-RO is placed on intelligent machines and systems for unstructured environments, where a significant portion of the environment is unknown and cannot be directly sensed or controlled.</p>
+<p>IEEE 机器人学汇刊 (T-RO) 发表机器人学各个方面的基础论文，涵盖计算机科学、控制系统、电气工程、数学、机械工程和其他领域的跨学科方法。机器人、智能机器和系统在工业应用等领域至关重要；服务和私人助理；外科手术；太空、水下和远程探索；娱乐;安全、搜索和救援；军事应用；农业应用；和智能汽车。 T-RO 特别强调非结构化环境中的智能机器和系统，其中环境的很大一部分是未知的，无法直接感知或控制。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
