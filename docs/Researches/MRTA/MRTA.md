@@ -1,6 +1,6 @@
 # UAV Swarm Task Assignment Problem
 
-- [无人机集群任务分配技术研究综述 系统工程与电子技术, 2024, 46(3): 922-934 ](https://www.sys-ele.com/article/2024/1001-506X/20240318.shtml)
+-   [无人机集群任务分配技术研究综述 系统工程与电子技术, 2024, 46(3): 922-934 ](https://www.sys-ele.com/article/2024/1001-506X/20240318.shtml)
 
 ## Development Status
 
@@ -8,28 +8,28 @@
 
 Small unmanned aircraft systems (SUAS) flight plan
 
-- OTTO R P. Small unmanned aircraft systems (SUAS) flight plan: 2016-2036[R]. Washington, DC: United States Air Force, 2016.
-- 2016 年 5 月, 美国空军发布的小型无人机系统发展路线图《2016-2036 年小型无人机系统飞行规划》
-- 为确保战争的制胜能力与强军事对抗环境下的非对称优势, 应重点研究更具成本效益和作战威力的集群式无人机作战样式。
-- 详细阐述了“无人机蜂群”的概念, 并计划在 2036 年建成横跨航空、太空、网空三大作战领域的无人机集群作战系统。
+-   OTTO R P. Small unmanned aircraft systems (SUAS) flight plan: 2016-2036[R]. Washington, DC: United States Air Force, 2016.
+-   2016 年 5 月, 美国空军发布的小型无人机系统发展路线图《2016-2036 年小型无人机系统飞行规划》
+-   为确保战争的制胜能力与强军事对抗环境下的非对称优势, 应重点研究更具成本效益和作战威力的集群式无人机作战样式。
+-   详细阐述了“无人机蜂群”的概念, 并计划在 2036 年建成横跨航空、太空、网空三大作战领域的无人机集群作战系统。
 
 Unmanned systems integrated roadmap 2017-2042
 
-- FACHEY K M, MILLER M J. Unmanned systems integrated roadmap 2017-2042[R]. Arlington Country: Office of the Secretary of Defense, 2018.
-- 2018 年 8 月, 美国国防部发布的《无人系统综合路线图 2017-2042》
-- 指出了 19 项近、远期需要重点发展的面向军事作战需求、能大幅提升无人机集群作战效能的关键技术, 包括开放式体系架构、机器学习、人工智能等。
+-   FACHEY K M, MILLER M J. Unmanned systems integrated roadmap 2017-2042[R]. Arlington Country: Office of the Secretary of Defense, 2018.
+-   2018 年 8 月, 美国国防部发布的《无人系统综合路线图 2017-2042》
+-   指出了 19 项近、远期需要重点发展的面向军事作战需求、能大幅提升无人机集群作战效能的关键技术, 包括开放式体系架构、机器学习、人工智能等。
 
 美国海军研究生院
 
-- GIAMMARCO K, HUNT S, WHITCOMB C. An instructional design reference mission for search and rescue operations[R]. Monterey, California: Naval Postgraduate School, 2015.
-- GILES C K. A framework for integrating the development of swarm unmanned aerial system doctrine and design[R]. Monterey, California: Department of Systems Engineering Naval Postgraduate School, 2017.
-- 提出了一种面向无人集群作战体系设计的一体化框架, 该框架针对未来无人机集群作战的去中心化、自组网、扁平化结构等特点, 构建了无人机集群“使命-战术-行动-算法-数据”五层任务框架, 并以无人机集群执行情报、监视、侦察和空战任务为例分析了无人机集群在每层中的具体任务, 给出了具体的军事概念模型。
+-   GIAMMARCO K, HUNT S, WHITCOMB C. An instructional design reference mission for search and rescue operations[R]. Monterey, California: Naval Postgraduate School, 2015.
+-   GILES C K. A framework for integrating the development of swarm unmanned aerial system doctrine and design[R]. Monterey, California: Department of Systems Engineering Naval Postgraduate School, 2017.
+-   提出了一种面向无人集群作战体系设计的一体化框架, 该框架针对未来无人机集群作战的去中心化、自组网、扁平化结构等特点, 构建了无人机集群“使命-战术-行动-算法-数据”五层任务框架, 并以无人机集群执行情报、监视、侦察和空战任务为例分析了无人机集群在每层中的具体任务, 给出了具体的军事概念模型。
 
 ### CN
 
 2017-07《新一代人工智能发展规划》
 
-- 多次提及“群体感知、协同与演化”“群体集成智能”“自主无人系统”等概念, 同时明确指出应将人工智能与无人机集群紧密融合, 借助人工智能重点突破无人系统相关核心技术, 实现无人机集群相关技术的跨越式发展。
+-   多次提及“群体感知、协同与演化”“群体集成智能”“自主无人系统”等概念, 同时明确指出应将人工智能与无人机集群紧密融合, 借助人工智能重点突破无人系统相关核心技术, 实现无人机集群相关技术的跨越式发展。
 
 PLA
 
@@ -43,22 +43,22 @@ PLA
 
 组合优化问题模型
 
-- 旅行商问题 (traveling salesman problem, TSP) 模型
-- 网络流优化 (network flow optimization, NFO) 模型
-- 车辆路由问题 (vehicle routing problem, VRP) 模型
-- 协同多任务分配问题 (cooperative multi-tasks assignment problem, CMTAP) 模型
-- 混合整数线性规划 (mixed integer linear programming, MILP) 模型
-- 基于马尔可夫决策过程 (Markov decision process, MDP) 模型
+-   旅行商问题 (traveling salesman problem, TSP) 模型
+-   网络流优化 (network flow optimization, NFO) 模型
+-   车辆路由问题 (vehicle routing problem, VRP) 模型
+-   协同多任务分配问题 (cooperative multi-tasks assignment problem, CMTAP) 模型
+-   混合整数线性规划 (mixed integer linear programming, MILP) 模型
+-   基于马尔可夫决策过程 (Markov decision process, MDP) 模型
 
 优劣
 
-- TSP 和 VRP 模型主要用于求解单一任务的分配问题, 而对多任务情况适用性较差;
-- NFO 模型较早运用于弹药较少的广域搜索弹药任务分配问题上;
-- MILP 模型描述简洁, 很容易表示涉及到数值的全局约束, 将任务规划问题描述为一个组合优化问题, 实用性较强, 但计算成本会随问题规模增大而呈指数型增长;
-- 而基于 NFO 和 MILP 模型提出的 CMTAP 模型考虑多无人机编队完成探测识别、打击、毁伤评估等一系列时序任务, 通过优化完成任务的总时间或者飞行的总距离来实现任务分配, 更适用于复杂任务分配问题建模, 但可扩展性低;
-- 在考虑系统存在不确定因素和多智能体协同系统时, 可分别通过部分可观测的 MDP(partially observable MDP, POMDP) 及多智能体的 MDP(multi-agent MDP, MMDP)对协同任务分配问题进行建模, 但上述模型均存在通用性较差的缺点。
+-   TSP 和 VRP 模型主要用于求解单一任务的分配问题, 而对多任务情况适用性较差;
+-   NFO 模型较早运用于弹药较少的广域搜索弹药任务分配问题上;
+-   MILP 模型描述简洁, 很容易表示涉及到数值的全局约束, 将任务规划问题描述为一个组合优化问题, 实用性较强, 但计算成本会随问题规模增大而呈指数型增长;
+-   而基于 NFO 和 MILP 模型提出的 CMTAP 模型考虑多无人机编队完成探测识别、打击、毁伤评估等一系列时序任务, 通过优化完成任务的总时间或者飞行的总距离来实现任务分配, 更适用于复杂任务分配问题建模, 但可扩展性低;
+-   在考虑系统存在不确定因素和多智能体协同系统时, 可分别通过部分可观测的 MDP(partially observable MDP, POMDP) 及多智能体的 MDP(multi-agent MDP, MMDP)对协同任务分配问题进行建模, 但上述模型均存在通用性较差的缺点。
 
-- Response threshold model based UAV search planning and task allocation [J]. Journal of Intelligent & Robotic Systems, 2014
+-   Response threshold model based UAV search planning and task allocation [J]. Journal of Intelligent & Robotic Systems, 2014
 
 ---
 
@@ -66,16 +66,16 @@ PLA
 
 #### 无人机建模：
 
-- $n$ 个无人机集合: $\boldsymbol{U}=\left\{u_{1}, u_{2}, \ldots, u_{n}\right\}$
-- 利用四元组来描绘无人机状态信息 UIN:
-  - $U I N\langle\text { Res, position, value, } \mathrm{v}\rangle$
-  - $U I N=\left\{U I N_{u_{i}} \mid i=1,2, \ldots, n\right\}$
-- $l$ 种资源类型, $R e_{u_{i}}^{k}$ 为无人机携带第 k 种资源的数目
-  - 无人机 $u_i$ 的性能描述为: $\operatorname{Res}_{u_{i}}=\left\{R e_{u_{i}}^{1}, ~ R e_{u_{i}}^{2}, \ldots, R e_{u_{i}}^{l}\right\}$
-- 无人机价值信息 $value _{u_{\mathrm{i}}}$
-- 无人机速度约束:
-  - $v_{u_{i}} \leqslant v_{u_{i}}^{\max }, \forall u_{i} \in U$
-  - $v_{u_{i}}^{\max}$ 为常数，表示各无人机最大速度约束
+-   $n$ 个无人机集合: $\boldsymbol{U}=\left\{u_{1}, u_{2}, \ldots, u_{n}\right\}$
+-   利用四元组来描绘无人机状态信息 UIN:
+    -   $U I N\langle\text { Res, position, value, } \mathrm{v}\rangle$
+    -   $U I N=\left\{U I N_{u_{i}} \mid i=1,2, \ldots, n\right\}$
+-   $l$ 种资源类型, $R e_{u_{i}}^{k}$ 为无人机携带第 k 种资源的数目
+    -   无人机 $u_i$ 的性能描述为: $\operatorname{Res}_{u_{i}}=\left\{R e_{u_{i}}^{1}, ~ R e_{u_{i}}^{2}, \ldots, R e_{u_{i}}^{l}\right\}$
+-   无人机价值信息 $value _{u_{\mathrm{i}}}$
+-   无人机速度约束:
+    -   $v_{u_{i}} \leqslant v_{u_{i}}^{\max }, \forall u_{i} \in U$
+    -   $v_{u_{i}}^{\max}$ 为常数，表示各无人机最大速度约束
 
 则无人机 $u_i$ 的状态信息如下:
 
@@ -88,17 +88,17 @@ $$
 
 #### 任务建模：
 
-- $m$ 个任务的任务集合, $\boldsymbol{T}=\left\{t_{1}, t_{2}, \ldots, t_{m}\right\}$
-- 任务状态信息 $TIN$ 描述如下
-  - $\operatorname{TIN}\langle\text { Res, position, TW, a }\rangle$
-  - $\operatorname{TIN}=\left\{\operatorname{TIN}_{t_{j}} \mid j=1,2, \ldots, m\right\}$
-- $\operatorname{Res}_{t_{j}}=\left\{R e_{t_{j}}^{1}, R e_{t_{j}}^{2}, \ldots, R e_{t_{j}}^{l}\right\}$ 是任务所需的资源类型及数目，
-- $R e_{t_{j}}^{k}$ 是任务所需要的第 k 种资源的数目。
-- 任务 $t_{j}$ 的位置信息记为 $\operatorname{position}_{\mathrm{t}_{\mathrm{j}}}$ 。
-- $TW$ 是任务的硬时间窗口信息，指对无人机到达任务时间范围提出硬性要求，若晚于某个时间节点，任务失败。
-  - $\mathrm{TW}=\left[t^{\text {minstart }}, t^{\text {maxstart }}\right]$
-- 威胁指数 $a_{t_{j}}$
-  - 当无人机执行不同任务时，任务本身可能对无人机有一定的破坏能力，因此在建模中引入威胁指数 $a_{t_{j}}$ ，表示任务 $t_{j}$ 对无人机的威胁系数。
+-   $m$ 个任务的任务集合, $\boldsymbol{T}=\left\{t_{1}, t_{2}, \ldots, t_{m}\right\}$
+-   任务状态信息 $TIN$ 描述如下
+    -   $\operatorname{TIN}\langle\text { Res, position, TW, a }\rangle$
+    -   $\operatorname{TIN}=\left\{\operatorname{TIN}_{t_{j}} \mid j=1,2, \ldots, m\right\}$
+-   $\operatorname{Res}_{t_{j}}=\left\{R e_{t_{j}}^{1}, R e_{t_{j}}^{2}, \ldots, R e_{t_{j}}^{l}\right\}$ 是任务所需的资源类型及数目，
+-   $R e_{t_{j}}^{k}$ 是任务所需要的第 k 种资源的数目。
+-   任务 $t_{j}$ 的位置信息记为 $\operatorname{position}_{\mathrm{t}_{\mathrm{j}}}$ 。
+-   $TW$ 是任务的硬时间窗口信息，指对无人机到达任务时间范围提出硬性要求，若晚于某个时间节点，任务失败。
+    -   $\mathrm{TW}=\left[t^{\text {minstart }}, t^{\text {maxstart }}\right]$
+-   威胁指数 $a_{t_{j}}$
+    -   当无人机执行不同任务时，任务本身可能对无人机有一定的破坏能力，因此在建模中引入威胁指数 $a_{t_{j}}$ ，表示任务 $t_{j}$ 对无人机的威胁系数。
 
 则任务 $t_j$ 的状态信息描述 $TIN_{t_j}$ 如下:
 
@@ -108,35 +108,35 @@ $$
 
 #### 联盟形成博弈数学模型
 
-- 通过将无人机集群任务分配问题建模为联盟形成博弈，证明了该博弈模型可以构造为势博弈。
-- 势博弈的性质保证了纳什均衡解的存在性，并且可以通过最小化或最大化势函数 $S R$ 来求解。
-- 基于此理论，可以设计合理的联盟形成博弈算法，实现最终的任务分配。
+-   通过将无人机集群任务分配问题建模为联盟形成博弈，证明了该博弈模型可以构造为势博弈。
+-   势博弈的性质保证了纳什均衡解的存在性，并且可以通过最小化或最大化势函数 $S R$ 来求解。
+-   基于此理论，可以设计合理的联盟形成博弈算法，实现最终的任务分配。
 
 ##### 1. 联盟形成博弈模型
 
 将无人机集群任务分配问题建模为联盟形成博弈模型，定义如下：
 
-- 博弈模型：$\boldsymbol{G}=(\boldsymbol{U}, \boldsymbol{E}, \varepsilon, \boldsymbol{R})$
-  - $\boldsymbol{U}$：无人机集合。
-  - $\boldsymbol{E}=\left[e_{u_{1}}, e_{u_{2}}, \ldots, e_{u_{n}}\right]$：无人机选择的任务集合，等价于任务集合 $\boldsymbol{T}$，即 $\boldsymbol{E}_{U}=\boldsymbol{T}$。
-  - $\varepsilon$：评估无人机收益的效用函数。
-  - $\boldsymbol{R}$：评估各个联盟效用的函数。
+-   博弈模型：$\boldsymbol{G}=(\boldsymbol{U}, \boldsymbol{E}, \varepsilon, \boldsymbol{R})$
+    -   $\boldsymbol{U}$：无人机集合。
+    -   $\boldsymbol{E}=\left[e_{u_{1}}, e_{u_{2}}, \ldots, e_{u_{n}}\right]$：无人机选择的任务集合，等价于任务集合 $\boldsymbol{T}$，即 $\boldsymbol{E}_{U}=\boldsymbol{T}$。
+    -   $\varepsilon$：评估无人机收益的效用函数。
+    -   $\boldsymbol{R}$：评估各个联盟效用的函数。
 
 ##### 2. 联盟划分问题
 
 原问题转化为联盟划分问题，无人机选择策略后形成 $(m+1)$ 个任务联盟。博弈目标是无人机集合选择合适策略，得到稳定的联盟结构 $\boldsymbol{C S}$：
 
-- 联盟结构：$\boldsymbol{C S}=\left\{\boldsymbol{c}_{t_{0}}, \boldsymbol{c}_{t_{1}}, \boldsymbol{c}_{t_{2}}, \ldots, \boldsymbol{c}_{t_{m}}\right\}$
-  - $\boldsymbol{c}_{t_{0}}$：未分配任务的无人机联盟集合。
-  - $\boldsymbol{c}_{t_{j}}$：执行任务 $t_{j}$ 的无人机联盟集合。
+-   联盟结构：$\boldsymbol{C S}=\left\{\boldsymbol{c}_{t_{0}}, \boldsymbol{c}_{t_{1}}, \boldsymbol{c}_{t_{2}}, \ldots, \boldsymbol{c}_{t_{m}}\right\}$
+    -   $\boldsymbol{c}_{t_{0}}$：未分配任务的无人机联盟集合。
+    -   $\boldsymbol{c}_{t_{j}}$：执行任务 $t_{j}$ 的无人机联盟集合。
 
 ##### 3. 无人机收益
 
 无人机 $u_{i}$ 加入联盟 $c_{t_{j}}$ 时，收益 $r_{u_{i}}\left(t_{j}\right)$ 包含三部分：
 
-- 资源贡献：$\operatorname{val}\left(u_{i}, t_{j}\right)$
-- 路径成本：$\operatorname{cost}\left(u_{i}, t_{j}\right)$
-- 威胁代价：$\operatorname{risk}\left(u_{i}, t_{j}\right)$
+-   资源贡献：$\operatorname{val}\left(u_{i}, t_{j}\right)$
+-   路径成本：$\operatorname{cost}\left(u_{i}, t_{j}\right)$
+-   威胁代价：$\operatorname{risk}\left(u_{i}, t_{j}\right)$
 
 ###### 3.1 资源贡献
 
@@ -149,10 +149,10 @@ $$
 \end{array}\right.
 $$
 
-- $\boldsymbol{K}$：权重矩阵，权衡资源在价值收益中的比重。
-- $\boldsymbol{K}(j,:)=\left\{k_{j 1}, k_{j 2}, \ldots, k_{j l}\right\}$：任务 $t_{j}$ 各异构资源的重要程度。
-- $\boldsymbol{I}=\left\{i_{1}, i_{2}, \ldots, i_{l}\right\}$：无人机可利用的每类资源的数目。
-- $O$：无人机未利用的总资源数目。
+-   $\boldsymbol{K}$：权重矩阵，权衡资源在价值收益中的比重。
+-   $\boldsymbol{K}(j,:)=\left\{k_{j 1}, k_{j 2}, \ldots, k_{j l}\right\}$：任务 $t_{j}$ 各异构资源的重要程度。
+-   $\boldsymbol{I}=\left\{i_{1}, i_{2}, \ldots, i_{l}\right\}$：无人机可利用的每类资源的数目。
+-   $O$：无人机未利用的总资源数目。
 
 ###### 3.2 路径成本
 
@@ -165,10 +165,10 @@ $$
 \end{array}\right.
 $$
 
-- $\boldsymbol{d}$：无人机与任务之间的欧氏距离。
-- $x$ 和 $y$：任务环境区域大小。
-- $\mu$：小于 0 的常数。
-  - 当 $\operatorname{val}\left(u_{i}, t_{j}\right)$ 为 0 时，设计 $r_{u_{i}}\left(t_{j}\right)$ 小于 0 。含义是当无人机 $u_{i}$ 加入任务 $t_{j}$ 联盟无法贡献资源时，加入该联盟的收益小于在 $c_{t_{0}}$ 中的收益。
+-   $\boldsymbol{d}$：无人机与任务之间的欧氏距离。
+-   $x$ 和 $y$：任务环境区域大小。
+-   $\mu$：小于 0 的常数。
+    -   当 $\operatorname{val}\left(u_{i}, t_{j}\right)$ 为 0 时，设计 $r_{u_{i}}\left(t_{j}\right)$ 小于 0 。含义是当无人机 $u_{i}$ 加入任务 $t_{j}$ 联盟无法贡献资源时，加入该联盟的收益小于在 $c_{t_{0}}$ 中的收益。
 
 ###### 3.3 威胁代价
 
@@ -178,7 +178,7 @@ $$
 \operatorname{risk}\left(u_{i}, t_{j}\right)=\text { value }_{\mathrm{u}_{\mathrm{i}}} \mathrm{a}_{\mathrm{t}_{\mathrm{j}}}
 $$
 
-- 表示任务的探测雷达和攻击能力等因素对无人机造成的威胁代价评估。
+-   表示任务的探测雷达和攻击能力等因素对无人机造成的威胁代价评估。
 
 ##### 4. 任务收益
 
@@ -188,7 +188,7 @@ $$
 r_{u_{i}}\left(t_{j}\right)=\alpha \mathbf{v a l}\left(u_{i}, t_{j}\right)+\beta \operatorname{cost}\left(u_{i}, t_{j}\right)-\gamma \operatorname{risk}\left(u_{i}, t_{j}\right)
 $$
 
-- $\alpha, ~ \beta, ~ \gamma$：常数权重值，分别决定资源重叠度、路径成本和威胁代价在收益中的比重。
+-   $\alpha, ~ \beta, ~ \gamma$：常数权重值，分别决定资源重叠度、路径成本和威胁代价在收益中的比重。
 
 ##### 5. 联盟效用
 
@@ -212,8 +212,8 @@ $$
 \varepsilon_{u_{i}}\left(e_{u_{i}}, \boldsymbol{E}_{-u_{i}}\right)=\boldsymbol{R}\left(c_{u_{i}}\right)-\boldsymbol{R}\left(c_{u_{i}} \mid u_{i}\right)
 $$
 
-- $c_{u_{i}}$：无人机 $u_{i}$ 选择策略 $e_{u_{i}}$ 时加入的任务联盟。
-- $\boldsymbol{R}\left(c_{u_{i}} \mid u_{i}\right)$：将 $u_{i}$ 从原所属联盟中删除后的剩余联盟效用。
+-   $c_{u_{i}}$：无人机 $u_{i}$ 选择策略 $e_{u_{i}}$ 时加入的任务联盟。
+-   $\boldsymbol{R}\left(c_{u_{i}} \mid u_{i}\right)$：将 $u_{i}$ 从原所属联盟中删除后的剩余联盟效用。
 
 ---
 
@@ -228,8 +228,8 @@ $$
 **目标**：为每个无人机规划访问其分配任务的顺序，最小化总路径成本（时间或距离）。  
 **变量**：
 
-- $x_{ijk} \in \{0,1\}$: 无人机$u_i$是否从任务$t_j$移动到$t_k$。
-- $s_{ij}$: 无人机$u_i$到达任务$t_j$的时间。
+-   $x_{ijk} \in \{0,1\}$: 无人机$u_i$是否从任务$t_j$移动到$t_k$。
+-   $s_{ij}$: 无人机$u_i$到达任务$t_j$的时间。
 
 **目标函数**：
 
@@ -242,21 +242,21 @@ $$
 **约束**：
 
 1. **任务覆盖**：每个任务被访问一次：
-   $$
-    \sum_{i=1}^n \sum_{k=0}^m x_{ikj} = 1, \quad \forall t_j \in T.
-   $$
+    $$
+     \sum_{i=1}^n \sum_{k=0}^m x_{ikj} = 1, \quad \forall t_j \in T.
+    $$
 2. **路径连续性**：无人机路径形成闭合回路：
-   $$
-    \sum_{j=0}^m x_{ijk} = \sum_{j=0}^m x_{ikj}, \quad \forall u_i \in U, t_k \in T.
-   $$
+    $$
+     \sum_{j=0}^m x_{ijk} = \sum_{j=0}^m x_{ikj}, \quad \forall u_i \in U, t_k \in T.
+    $$
 3. **资源约束**：
-   $$
-    \sum_{t_j \in T} \text{Re}_{t_j}^k \cdot \sum_{l=0}^m x_{ilj} \leq \text{Re}_{u_i}^k, \quad \forall u_i \in U, k=1,\ldots,l.
-   $$
+    $$
+     \sum_{t_j \in T} \text{Re}_{t_j}^k \cdot \sum_{l=0}^m x_{ilj} \leq \text{Re}_{u_i}^k, \quad \forall u_i \in U, k=1,\ldots,l.
+    $$
 4. **时间窗口**：
-   $$
-    t_{t_j}^{\text{minstart}} \leq s_{ij} \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } x_{ijk}=1.
-   $$
+    $$
+     t_{t_j}^{\text{minstart}} \leq s_{ij} \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } x_{ijk}=1.
+    $$
 
 ---
 
@@ -265,7 +265,7 @@ $$
 **目标**：将任务分配建模为多商品流问题，优化资源与时间约束下的流量分配。  
 **变量**：
 
-- $f_{i,jk} \in \{0,1\}$: 无人机$u_i$是否经过边$(t_j, t_k)$。
+-   $f_{i,jk} \in \{0,1\}$: 无人机$u_i$是否经过边$(t_j, t_k)$。
 
 **目标函数**：
 
@@ -276,13 +276,13 @@ $$
 **约束**：
 
 1. **流量守恒**：
-   $$
-    \sum_{k=0}^m f_{i,jk} = \sum_{k=0}^m f_{i,kj}, \quad \forall u_i \in U, t_j \in T.
-   $$
+    $$
+     \sum_{k=0}^m f_{i,jk} = \sum_{k=0}^m f_{i,kj}, \quad \forall u_i \in U, t_j \in T.
+    $$
 2. **资源容量**：
-   $$
-    \sum_{u_i \in U} \text{Re}_{u_i}^k \cdot \sum_{j=0}^m f_{i,jt} \geq \text{Re}_{t}^k, \quad \forall t \in T, k=1,\ldots,l.
-   $$
+    $$
+     \sum_{u_i \in U} \text{Re}_{u_i}^k \cdot \sum_{j=0}^m f_{i,jt} \geq \text{Re}_{t}^k, \quad \forall t \in T, k=1,\ldots,l.
+    $$
 3. **时间窗口**：通过时间扩展网络建模。
 
 ---
@@ -292,8 +292,8 @@ $$
 **目标**：为异构无人机规划路径，满足资源、时间窗口约束，最小化总成本。  
 **变量**：
 
-- $x_{ij} \in \{0,1\}$: 无人机$u_i$是否分配至任务$t_j$。
-- $y_{ijk} \in \{0,1\}$: 无人机$u_i$从$t_j$移动到$t_k$。
+-   $x_{ij} \in \{0,1\}$: 无人机$u_i$是否分配至任务$t_j$。
+-   $y_{ijk} \in \{0,1\}$: 无人机$u_i$从$t_j$移动到$t_k$。
 
 **目标函数**：
 
@@ -304,17 +304,17 @@ $$
 **约束**：
 
 1. **任务分配唯一性**：
-   $$
-    \sum_{i=1}^n x_{ij} = 1, \quad \forall t_j \in T.
-   $$
+    $$
+     \sum_{i=1}^n x_{ij} = 1, \quad \forall t_j \in T.
+    $$
 2. **资源约束**：
-   $$
-    \sum_{t_j \in T} \text{Re}_{t_j}^k \cdot x_{ij} \leq \text{Re}_{u_i}^k, \quad \forall u_i \in U, k=1,\ldots,l.
-   $$
+    $$
+     \sum_{t_j \in T} \text{Re}_{t_j}^k \cdot x_{ij} \leq \text{Re}_{u_i}^k, \quad \forall u_i \in U, k=1,\ldots,l.
+    $$
 3. **时间协调**：
-   $$
-    s_{ik} \geq s_{ij} + \frac{d_{jk}}{v_{u_i}}, \quad \text{if } y_{ijk}=1.
-   $$
+    $$
+     s_{ik} \geq s_{ij} + \frac{d_{jk}}{v_{u_i}}, \quad \text{if } y_{ijk}=1.
+    $$
 
 ---
 
@@ -323,7 +323,7 @@ $$
 **目标**：多无人机协同完成任务，优化任务完成率与威胁代价。  
 **变量**：
 
-- $z_{ij} \in \{0,1\}$: 无人机$u_i$是否参与任务$t_j$。
+-   $z_{ij} \in \{0,1\}$: 无人机$u_i$是否参与任务$t_j$。
 
 **目标函数**：
 
@@ -334,13 +334,13 @@ $$
 **约束**：
 
 1. **资源协同**：
-   $$
-    \sum_{i=1}^n \text{Re}_{u_i}^k \cdot z_{ij} \geq \text{Re}_{t_j}^k, \quad \forall t_j \in T, k=1,\ldots,l.
-   $$
+    $$
+     \sum_{i=1}^n \text{Re}_{u_i}^k \cdot z_{ij} \geq \text{Re}_{t_j}^k, \quad \forall t_j \in T, k=1,\ldots,l.
+    $$
 2. **时间协同**：
-   $$
-    \max_{u_i \in U} \left( \frac{\| \text{position}_{u_i} - \text{position}_{t_j} \|}{v_{u_i}} \right) \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } z_{ij}=1.
-   $$
+    $$
+     \max_{u_i \in U} \left( \frac{\| \text{position}_{u_i} - \text{position}_{t_j} \|}{v_{u_i}} \right) \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } z_{ij}=1.
+    $$
 
 ---
 
@@ -349,8 +349,8 @@ $$
 **目标**：通过线性约束建模任务分配、路径规划与资源协同。  
 **变量**：
 
-- $x_{ij} \in \{0,1\}$: 无人机$u_i$分配至任务$t_j$。
-- $s_{ij} \geq 0$: 无人机$u_i$开始执行任务$t_j$的时间。
+-   $x_{ij} \in \{0,1\}$: 无人机$u_i$分配至任务$t_j$。
+-   $s_{ij} \geq 0$: 无人机$u_i$开始执行任务$t_j$的时间。
 
 **目标函数**：
 
@@ -361,13 +361,13 @@ $$
 **约束**：
 
 1. **资源约束**：
-   $$
-    \sum_{j=1}^m \text{Re}_{t_j}^k \cdot x_{ij} \leq \text{Re}_{u_i}^k, \quad \forall u_i \in U, k=1,\ldots,l.
-   $$
+    $$
+     \sum_{j=1}^m \text{Re}_{t_j}^k \cdot x_{ij} \leq \text{Re}_{u_i}^k, \quad \forall u_i \in U, k=1,\ldots,l.
+    $$
 2. **时间窗口**：
-   $$
-    t_{t_j}^{\text{minstart}} \leq s_{ij} \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } x_{ij}=1.
-   $$
+    $$
+     t_{t_j}^{\text{minstart}} \leq s_{ij} \leq t_{t_j}^{\text{maxstart}}, \quad \text{if } x_{ij}=1.
+    $$
 
 ---
 
@@ -375,14 +375,14 @@ $$
 
 **五元组**：$\langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$
 
-- **状态空间$\mathcal{S}$**：无人机位置、资源、时间；任务时间窗口、完成状态。
-- **动作空间$\mathcal{A}$**：为无人机分配任务或路径点。
-- **转移函数$P(s' \mid s, a)$**：移动时间、资源消耗与任务完成状态更新。
-- **奖励函数$R(s, a)$**：
-  $$
-   R = \sum_{t_j \in T} r_j^{\text{complete}} - \sum_{u_i \in U} \sum_{t_j \in T} a_{t_j} \cdot \mathbf{1}_{\{u_i \text{ 参与 } t_j\}}.
-  $$
-- **策略$\pi: \mathcal{S} \to \mathcal{A}$**：最大化期望累积奖励$\mathbb{E}[\sum_{t=0}^\infty \gamma^t R_t]$。
+-   **状态空间$\mathcal{S}$**：无人机位置、资源、时间；任务时间窗口、完成状态。
+-   **动作空间$\mathcal{A}$**：为无人机分配任务或路径点。
+-   **转移函数$P(s' \mid s, a)$**：移动时间、资源消耗与任务完成状态更新。
+-   **奖励函数$R(s, a)$**：
+    $$
+     R = \sum_{t_j \in T} r_j^{\text{complete}} - \sum_{u_i \in U} \sum_{t_j \in T} a_{t_j} \cdot \mathbf{1}_{\{u_i \text{ 参与 } t_j\}}.
+    $$
+-   **策略$\pi: \mathcal{S} \to \mathcal{A}$**：最大化期望累积奖励$\mathbb{E}[\sum_{t=0}^\infty \gamma^t R_t]$。
 
 ---
 
@@ -390,25 +390,25 @@ $$
 
 ## Solving Algorithm
 
-- 集中式 vs 分布式
-- 预分配 vs 重分配
-- 同构 vs 异构
-- 中小规模 vs 大规模
-- 考虑的约束条件: 资源 通信 任务时序...
-- 静态 vs 动态: 能否在线处理
-  - 静态: agent 在执行前就知晓所有待分配任务的信息
-  - 动态: 在执行过程中出现新的任务 or 参与任务的机器人遭到破坏而必须将其任务序列中待完成的任务进行重新分配
+-   集中式 vs 分布式
+-   预分配 vs 重分配
+-   同构 vs 异构
+-   中小规模 vs 大规模
+-   考虑的约束条件: 资源 通信 任务时序...
+-   静态 vs 动态: 能否在线处理
+    -   静态: agent 在执行前就知晓所有待分配任务的信息
+    -   动态: 在执行过程中出现新的任务 or 参与任务的机器人遭到破坏而必须将其任务序列中待完成的任务进行重新分配
 
 ### 集中式
 
-- 最优化方法
-  - 穷举法、分支定界、整数规划、动态规划等
-  - NP 难问题, 计算量随规模指数增加; 难以求解大规模问题
-  - 不能处理真实环境中的随机性和动态性
-- 启发式方法
-  - 可行解 次优解
-  - 遗传算法、禁忌搜索算法、粒子群优化算法、模拟退火算法等
-  - 灰狼算法 仿生狼群无人机群任务分配方法
+-   最优化方法
+    -   穷举法、分支定界、整数规划、动态规划等
+    -   NP 难问题, 计算量随规模指数增加; 难以求解大规模问题
+    -   不能处理真实环境中的随机性和动态性
+-   启发式方法
+    -   可行解 次优解
+    -   遗传算法、禁忌搜索算法、粒子群优化算法、模拟退火算法等
+    -   灰狼算法 仿生狼群无人机群任务分配方法
 
 #### 启发式方法
 
@@ -418,24 +418,24 @@ $$
 
 ### 分布式
 
-- 自顶向下
-  - 利用分层递阶求解的思路, 将复杂任务协同分配问题逐层分解为若干个更简单的子任务分配问题, 各无人机通过协商与合作实现问题求解
-  - 分布式 MDP(decentralized MDP, Dec-MDP)方法
-  - 基于市场机制的方法
-  - 动态分布式约束优化问题 (dynamic distributed constraint optimization problem, DDCOP) 方法
-- 自下而上
-  - 通过研究无人机个体的局部感知和动态反应, 设计基于反应和行为的协同优化策略, 实现多无人机整体自组织任务分配
-  - 自组织算法(self-organized algorithm, SOA)
-  - 阈值响应法
-  - 蚁群优化(ant colony optimization, ACO)算法
+-   自顶向下
+    -   利用分层递阶求解的思路, 将复杂任务协同分配问题逐层分解为若干个更简单的子任务分配问题, 各无人机通过协商与合作实现问题求解
+    -   分布式 MDP(decentralized MDP, Dec-MDP)方法
+    -   基于市场机制的方法
+    -   动态分布式约束优化问题 (dynamic distributed constraint optimization problem, DDCOP) 方法
+-   自下而上
+    -   通过研究无人机个体的局部感知和动态反应, 设计基于反应和行为的协同优化策略, 实现多无人机整体自组织任务分配
+    -   自组织算法(self-organized algorithm, SOA)
+    -   阈值响应法
+    -   蚁群优化(ant colony optimization, ACO)算法
 
 ### 重分配
 
 随着战场对抗不断升级, 无人机集群在任务执行过程中遇到突发事件时, 任务重分配算法需要通过各无人机平台之间的信息交互对战场态势和动态任务快速做出反应, 在有限时间内完成任务的重构与优化, 并达成无冲突的任务重分配方案。
 
-- 基于市场机制的算法
-- 基于博弈的算法
-- 其他
+-   基于市场机制的算法
+-   基于博弈的算法
+-   其他
 
 ### 异构系统
 
@@ -463,28 +463,28 @@ $$
 
 **一般数学形式**：
 
-- **目标**：在完全图中找到访问所有节点且总距离最短的哈密顿回路。
-  - 寻找一条最短的路径，使得旅行商能够访问每个城市恰好一次，并最终返回起点。
-- **变量**：$x_{ij} \in \{0,1\}$，表示边 $(i,j)$ 是否被选中。
-- **目标函数**：
-  $$
-  \min \sum_{i=1}^n \sum_{j \neq i} d_{ij} x_{ij}
-  $$
-- **约束**：
-  $$
-  \begin{cases}
-  \sum_{i=1}^n x_{ij} = 1, & \forall j \ (\text{每个节点入度=1}) \\
-  \sum_{j=1}^n x_{ij} = 1, & \forall i \ (\text{每个节点出度=1}) \\
-  \sum_{i \in S, j \notin S} x_{ij} \geq 1, & \forall S \subset \{1,\ldots,n\}, S \neq \emptyset \ (\text{消除子回路})
-  \end{cases}
-  $$
+-   **目标**：在完全图中找到访问所有节点且总距离最短的哈密顿回路。
+    -   寻找一条最短的路径，使得旅行商能够访问每个城市恰好一次，并最终返回起点。
+-   **变量**：$x_{ij} \in \{0,1\}$，表示边 $(i,j)$ 是否被选中。
+-   **目标函数**：
+    $$
+    \min \sum_{i=1}^n \sum_{j \neq i} d_{ij} x_{ij}
+    $$
+-   **约束**：
+    $$
+    \begin{cases}
+    \sum_{i=1}^n x_{ij} = 1, & \forall j \ (\text{每个节点入度=1}) \\
+    \sum_{j=1}^n x_{ij} = 1, & \forall i \ (\text{每个节点出度=1}) \\
+    \sum_{i \in S, j \notin S} x_{ij} \geq 1, & \forall S \subset \{1,\ldots,n\}, S \neq \emptyset \ (\text{消除子回路})
+    \end{cases}
+    $$
 
 **常见求解方法**：
 
-- **精确算法**：分支定界、动态规划（Held-Karp 算法）。
-- **启发式算法**：最近邻法、插入法。
-- **元启发式算法**：遗传算法、蚁群优化、模拟退火。
-- **近似算法**：Christofides 算法（保证 1.5 倍最优解）。
+-   **精确算法**：分支定界、动态规划（Held-Karp 算法）。
+-   **启发式算法**：最近邻法、插入法。
+-   **元启发式算法**：遗传算法、蚁群优化、模拟退火。
+-   **近似算法**：Christofides 算法（保证 1.5 倍最优解）。
 
 ---
 
@@ -492,28 +492,28 @@ $$
 
 **一般数学形式**：
 
-- **目标**：在带容量的网络中优化流量分配，如最小成本流、最大流。
-  - 在图中找到从源到汇的最大流，同时满足容量约束。
-- **变量**：$f_{ij} \geq 0$，表示边 $(i,j)$ 上的流量。
-- **目标函数**（以最小费用流为例）：
-  $$
-  \min \sum_{(i,j)} c_{ij} f_{ij}
-  $$
-- **约束**：
-  $$
-  \begin{cases}
-  \sum_j f_{ij} - \sum_j f_{ji} = b_i, & \forall i \ (\text{流量守恒}) \\
-  l_{ij} \leq f_{ij} \leq u_{ij}, & \forall (i,j) \ (\text{容量约束})
-  \end{cases}
-  $$
-  其中 $b_i$ 为节点的供给/需求（$\sum b_i = 0$）。
+-   **目标**：在带容量的网络中优化流量分配，如最小成本流、最大流。
+    -   在图中找到从源到汇的最大流，同时满足容量约束。
+-   **变量**：$f_{ij} \geq 0$，表示边 $(i,j)$ 上的流量。
+-   **目标函数**（以最小费用流为例）：
+    $$
+    \min \sum_{(i,j)} c_{ij} f_{ij}
+    $$
+-   **约束**：
+    $$
+    \begin{cases}
+    \sum_j f_{ij} - \sum_j f_{ji} = b_i, & \forall i \ (\text{流量守恒}) \\
+    l_{ij} \leq f_{ij} \leq u_{ij}, & \forall (i,j) \ (\text{容量约束})
+    \end{cases}
+    $$
+    其中 $b_i$ 为节点的供给/需求（$\sum b_i = 0$）。
 
 **常见求解方法**：
 
-- **单纯形法**：针对线性网络流问题。
-- **消圈算法（Cycle Canceling）**：消除负费用环。
-- **最短增广路算法**（如 Successive Shortest Path）。
-- **预流推进算法**：用于最大流问题。
+-   **单纯形法**：针对线性网络流问题。
+-   **消圈算法（Cycle Canceling）**：消除负费用环。
+-   **最短增广路算法**（如 Successive Shortest Path）。
+-   **预流推进算法**：用于最大流问题。
 
 ---
 
@@ -521,29 +521,29 @@ $$
 
 **一般数学形式**：
 
-- **目标**：多车辆服务所有客户，最小化总成本（距离、时间等）。
-- **变量**：
-  - $x_{ijk} \in \{0,1\}$，车辆 $k$ 是否从 $i$ 到 $j$。
-  - $q_k \leq Q_k$，车辆 $k$ 的载重约束。
-- **目标函数**：
-  $$
-  \min \sum_{k=1}^K \sum_{i,j} d_{ij} x_{ijk}
-  $$
-- **约束**：
-  $$
-  \begin{cases}
-  \sum_{k} \sum_j x_{ijk} = 1, & \forall i \ (\text{客户被服务}) \\
-  \sum_{i} d_i \sum_j x_{ijk} \leq Q_k, & \forall k \ (\text{容量约束}) \\
-  \text{路径连续性约束} & (\text{类似TSP})
-  \end{cases}
-  $$
+-   **目标**：多车辆服务所有客户，最小化总成本（距离、时间等）。
+-   **变量**：
+    -   $x_{ijk} \in \{0,1\}$，车辆 $k$ 是否从 $i$ 到 $j$。
+    -   $q_k \leq Q_k$，车辆 $k$ 的载重约束。
+-   **目标函数**：
+    $$
+    \min \sum_{k=1}^K \sum_{i,j} d_{ij} x_{ijk}
+    $$
+-   **约束**：
+    $$
+    \begin{cases}
+    \sum_{k} \sum_j x_{ijk} = 1, & \forall i \ (\text{客户被服务}) \\
+    \sum_{i} d_i \sum_j x_{ijk} \leq Q_k, & \forall k \ (\text{容量约束}) \\
+    \text{路径连续性约束} & (\text{类似TSP})
+    \end{cases}
+    $$
 
 **常见求解方法**：
 
-- **精确算法**：分支定价（Branch-and-Price）。
-- **启发式算法**：Clarke-Wright 节约算法、扫描算法。
-- **元启发式算法**：禁忌搜索、大规模邻域搜索（LNS）。
-- **强化学习**：基于神经网络的端到端求解。
+-   **精确算法**：分支定价（Branch-and-Price）。
+-   **启发式算法**：Clarke-Wright 节约算法、扫描算法。
+-   **元启发式算法**：禁忌搜索、大规模邻域搜索（LNS）。
+-   **强化学习**：基于神经网络的端到端求解。
 
 ---
 
@@ -551,27 +551,27 @@ $$
 
 **一般数学形式**：
 
-- **目标**：多智能体协同完成任务，最大化任务完成率或最小化代价。
-- **变量**：$z_{ik} \in \{0,1\}$，智能体 $i$ 是否执行任务 $k$。
-- **目标函数**（以最小化威胁代价为例）：
-  $$
-  \min \sum_{i,k} a_k z_{ik} + \sum_{k} \lambda \cdot \mathbf{1}_{\{\sum_i z_{ik} < R_k\}}
-  $$
-- **约束**：
-  $$
-  \begin{cases}
-  \sum_i z_{ik} \geq R_k, & \forall k \ (\text{资源需求}) \\
-  \sum_k z_{ik} \leq C_i, & \forall i \ (\text{智能体能力限制})
-  \end{cases}
-  $$
-  其中 $R_k$ 为任务 $k$ 所需智能体数，$a_k$ 为威胁系数。
+-   **目标**：多智能体协同完成任务，最大化任务完成率或最小化代价。
+-   **变量**：$z_{ik} \in \{0,1\}$，智能体 $i$ 是否执行任务 $k$。
+-   **目标函数**（以最小化威胁代价为例）：
+    $$
+    \min \sum_{i,k} a_k z_{ik} + \sum_{k} \lambda \cdot \mathbf{1}_{\{\sum_i z_{ik} < R_k\}}
+    $$
+-   **约束**：
+    $$
+    \begin{cases}
+    \sum_i z_{ik} \geq R_k, & \forall k \ (\text{资源需求}) \\
+    \sum_k z_{ik} \leq C_i, & \forall i \ (\text{智能体能力限制})
+    \end{cases}
+    $$
+    其中 $R_k$ 为任务 $k$ 所需智能体数，$a_k$ 为威胁系数。
 
 **常见求解方法**：
 
-- **集中式优化**：整数规划求解器（如 CPLEX、Gurobi）。
-- **分布式算法**：合同网协议（Contract Net）、拍卖算法。
-- **群智能算法**：粒子群优化（PSO）、蜂群算法。
-- **博弈论方法**：Nash 均衡求解。
+-   **集中式优化**：整数规划求解器（如 CPLEX、Gurobi）。
+-   **分布式算法**：合同网协议（Contract Net）、拍卖算法。
+-   **群智能算法**：粒子群优化（PSO）、蜂群算法。
+-   **博弈论方法**：Nash 均衡求解。
 
 ---
 
@@ -579,26 +579,26 @@ $$
 
 **一般数学形式**：
 
-- **目标**：线性目标函数，含连续和整数变量。
-- **标准形式**：
-  $$
-  \begin{aligned}
-  \min \quad & c^T x + d^T y \\
-  \text{s.t.} \quad & A x + B y \leq b \\
-  & x \in \mathbb{Z}^p, \ y \in \mathbb{R}^q
-  \end{aligned}
-  $$
-  其中 $x$ 为整数变量，$y$ 为连续变量。
+-   **目标**：线性目标函数，含连续和整数变量。
+-   **标准形式**：
+    $$
+    \begin{aligned}
+    \min \quad & c^T x + d^T y \\
+    \text{s.t.} \quad & A x + B y \leq b \\
+    & x \in \mathbb{Z}^p, \ y \in \mathbb{R}^q
+    \end{aligned}
+    $$
+    其中 $x$ 为整数变量，$y$ 为连续变量。
 
 **常见求解方法**：
 
-- **精确算法**：
-  - 分支定界（Branch-and-Bound）。
-  - 分支切割（Branch-and-Cut）。
-- **启发式算法**：
-  - 松弛固定法（Fix-and-Relax）。
-  - 大邻域搜索（Large Neighborhood Search）。
-- **分解算法**：Benders 分解、列生成（Column Generation）。
+-   **精确算法**：
+    -   分支定界（Branch-and-Bound）。
+    -   分支切割（Branch-and-Cut）。
+-   **启发式算法**：
+    -   松弛固定法（Fix-and-Relax）。
+    -   大邻域搜索（Large Neighborhood Search）。
+-   **分解算法**：Benders 分解、列生成（Column Generation）。
 
 ---
 
@@ -606,26 +606,26 @@ $$
 
 **一般数学形式**：
 
-- **五元组**：$\langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$
-  - **状态空间** $\mathcal{S}$：系统所有可能状态。
-  - **动作空间** $\mathcal{A}$：智能体可选动作。
-  - **转移函数** $P(s'|s,a)$：状态转移概率。
-  - **奖励函数** $R(s,a)$：即时奖励。
-  - **折扣因子** $\gamma \in [0,1]$。
-- **目标**：找到策略 $\pi: \mathcal{S} \to \mathcal{A}$，最大化期望累积奖励：
-  $$
-  \max_\pi \mathbb{E}\left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t) \right]
-  $$
+-   **五元组**：$\langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$
+    -   **状态空间** $\mathcal{S}$：系统所有可能状态。
+    -   **动作空间** $\mathcal{A}$：智能体可选动作。
+    -   **转移函数** $P(s'|s,a)$：状态转移概率。
+    -   **奖励函数** $R(s,a)$：即时奖励。
+    -   **折扣因子** $\gamma \in [0,1]$。
+-   **目标**：找到策略 $\pi: \mathcal{S} \to \mathcal{A}$，最大化期望累积奖励：
+    $$
+    \max_\pi \mathbb{E}\left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t) \right]
+    $$
 
 **常见求解方法**：
 
-- **动态规划**：
-  - 值迭代（Value Iteration）。
-  - 策略迭代（Policy Iteration）。
-- **蒙特卡洛方法**：基于采样的策略评估。
-- **时序差分学习**：Q 学习、SARSA。
-- **深度强化学习**：DQN、PPO、A3C。
-- **逆向强化学习**：从专家演示中学习奖励函数。
+-   **动态规划**：
+    -   值迭代（Value Iteration）。
+    -   策略迭代（Policy Iteration）。
+-   **蒙特卡洛方法**：基于采样的策略评估。
+-   **时序差分学习**：Q 学习、SARSA。
+-   **深度强化学习**：DQN、PPO、A3C。
+-   **逆向强化学习**：从专家演示中学习奖励函数。
 
 ---
 

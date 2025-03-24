@@ -39,3 +39,40 @@ IndentWidth: 2
   ]
 }
 ```
+
+#### `VSCode settings.json`
+
+```json
+{
+  "http.proxy": "http://1.2.3.4:1234",
+
+  // window
+  "window.commandCenter": false,
+  // workbench
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "top",
+  "workbench.secondarySideBar.showLabels": false,
+  // editor
+  "editor.minimap.enabled": false,
+
+  // langguage settings
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // python
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "ruff.lineLength": 100,
+}
+```

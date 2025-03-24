@@ -6,16 +6,16 @@ SSCI(文科) ≈ SCI ＞ EI 源刊 ＞ EI 会议 ＞ CDCI(综合类) ＞ 国内�
 
 国外
 
-- SCI (science citation index 科学引文索引) 美国科学信息研究所
-  - JCR 分区（汤森路透）
-    - 影响因子前 25%为一区，前 50%为二区，前 75%为三区，最后 25%为四区
-  - 中科院分区
-    - 影响因子前 5%为一区，前 20%为二区，前 50%为三区，剩下 50%都为四区
-- SSCI（社会科学引文索引）
-- EI (the engineering index) 工程索引 美国工程师学会联合会
-  - JA（EI 源刊）和 CA（EI 会议）。
-  - EI 源刊是发表在 EII 录入的正式版的学术期刊上面的论文，
-  - EI 会议是在 EI 的会议上发表或者是被会议论文集收录的论文。
+-   SCI (science citation index 科学引文索引) 美国科学信息研究所
+    -   JCR 分区（汤森路透）
+        -   影响因子前 25%为一区，前 50%为二区，前 75%为三区，最后 25%为四区
+    -   中科院分区
+        -   影响因子前 5%为一区，前 20%为二区，前 50%为三区，剩下 50%都为四区
+-   SSCI（社会科学引文索引）
+-   EI (the engineering index) 工程索引 美国工程师学会联合会
+    -   JA（EI 源刊）和 CA（EI 会议）。
+    -   EI 源刊是发表在 EII 录入的正式版的学术期刊上面的论文，
+    -   EI 会议是在 EI 的会议上发表或者是被会议论文集收录的论文。
 
 国内
 
@@ -27,39 +27,39 @@ CCF ABC
 
 ## Misc
 
-- [scimagojr](https://www.scimagojr.com/index.php)
-- [pubmed](https://www.pubmed.pro/home)
-- [letpub](https://www.letpub.com.cn/)
-- [Conference Partner](https://www.myhuiban.com/)
-- [中国计算机学会（CCF）推荐国际学术会议和期刊目录（2022）](https://ying-zhang.cn/misc/2022-ccf-list/)
+-   [scimagojr](https://www.scimagojr.com/index.php)
+-   [pubmed](https://www.pubmed.pro/home)
+-   [letpub](https://www.letpub.com.cn/)
+-   [Conference Partner](https://www.myhuiban.com/)
+-   [中国计算机学会（CCF）推荐国际学术会议和期刊目录（2022）](https://ying-zhang.cn/misc/2022-ccf-list/)
 
 browser extensions
 
-- [github: extension, Rapid-Journal-Quality-Check-main](https://github.com/AndreasKarasenko/Rapid-Journal-Quality-Check-main)
-- [github: extension, show-rank](https://github.com/hnshhslsh/show-rank)
-  - upports CCF(China Computer Federation) rankings on Springer, DBLP, IEEExplore and ACM Digital Library.
-- [extension: ExCITATION journal ranking in Google Scholar™](https://chromewebstore.google.com/detail/excitation-journal-rankin/aolbomhlimkdakklifkocohcgpmojdia)
+-   [github: extension, Rapid-Journal-Quality-Check-main](https://github.com/AndreasKarasenko/Rapid-Journal-Quality-Check-main)
+-   [github: extension, show-rank](https://github.com/hnshhslsh/show-rank)
+    -   upports CCF(China Computer Federation) rankings on Springer, DBLP, IEEExplore and ACM Digital Library.
+-   [extension: ExCITATION journal ranking in Google Scholar™](https://chromewebstore.google.com/detail/excitation-journal-rankin/aolbomhlimkdakklifkocohcgpmojdia)
 
 论文检索地址
 
-- [IEEE Xplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
-- [DBLP](https://dblp.uni-trier.de/db/)
-- [Springer](https://link.springer.com/)
-- [ACM DL](https://www.acm.org/publications/digital-library)
+-   [IEEE Xplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
+-   [DBLP](https://dblp.uni-trier.de/db/)
+-   [Springer](https://link.springer.com/)
+-   [ACM DL](https://www.acm.org/publications/digital-library)
 
 引文关系可视化
 
-- [connected papers](https://www.connectedpapers.com/)
+-   [connected papers](https://www.connectedpapers.com/)
 
 引用文献管理工具 Reference Management (on linux)
 
-- [mendeley](https://www.mendeley.com/)
-- [jabref](https://www.jabref.org/), open-source
-- [zotero](https://www.zotero.org/), open-source
-- [wikindx](https://wikindx.sourceforge.io/web/trunk/index.html), open-source
-- [docear](https://docear.org/), open-source, 2015
+-   [mendeley](https://www.mendeley.com/)
+-   [jabref](https://www.jabref.org/), open-source
+-   [zotero](https://www.zotero.org/), open-source
+-   [wikindx](https://wikindx.sourceforge.io/web/trunk/index.html), open-source
+-   [docear](https://docear.org/), open-source, 2015
 
 出版商
 
-- [MDPI - Multidisciplinary Digital Publishing Institute](https://en.wikipedia.org/wiki/MDPI)
-  - MDPI（多学科数字出版研究所）是一家开放获取科学期刊的出版商。它出版 390 多种经过同行评审的开放获取期刊。 MDPI 是世界上期刊文章产量最大的出版商之一， 也是最大的开放获取文章出版商。
+-   [MDPI - Multidisciplinary Digital Publishing Institute](https://en.wikipedia.org/wiki/MDPI)
+    -   MDPI（多学科数字出版研究所）是一家开放获取科学期刊的出版商。它出版 390 多种经过同行评审的开放获取期刊。 MDPI 是世界上期刊文章产量最大的出版商之一， 也是最大的开放获取文章出版商。
